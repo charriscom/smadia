@@ -2,6 +2,16 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.5'
 gem 'devise', '1.1.8'
+gem 'mysql','2.8.1'
+gem 'haml'
+gem 'web-app-theme', '>= 0.6.2'
+gem 'hpricot'
+gem 'ruby_parser'
+gem 'will_paginate'
+
+group :test do
+  gem 'ruby-debug'
+end
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

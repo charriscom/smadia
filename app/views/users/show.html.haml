@@ -1,0 +1,127 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", users_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_user_path
+      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", user_path
+  .content
+    .inner
+      %p
+        %b
+          = t("activerecord.attributes.user.email_type", :default => t("activerecord.labels.email_type", :default => "Email type"))
+          \:
+        = @user.email_type
+      %p
+        %b
+          = t("activerecord.attributes.user.email", :default => t("activerecord.labels.email", :default => "Email"))
+          \:
+        = @user.email
+      %p
+        %b
+          = t("activerecord.attributes.user.identifier", :default => t("activerecord.labels.identifier", :default => "Identifier"))
+          \:
+        = @user.identifier
+      %p
+        %b
+          = t("activerecord.attributes.user.name", :default => t("activerecord.labels.name", :default => "Name"))
+          \:
+        = @user.name
+      %p
+        %b
+          = t("activerecord.attributes.user.middle_name", :default => t("activerecord.labels.middle_name", :default => "Middle name"))
+          \:
+        = @user.middle_name
+      %p
+        %b
+          = t("activerecord.attributes.user.last_name", :default => t("activerecord.labels.last_name", :default => "Last name"))
+          \:
+        = @user.last_name
+      %p
+        %b
+          = t("activerecord.attributes.user.second_last_name", :default => t("activerecord.labels.second_last_name", :default => "Second last name"))
+          \:
+        = @user.second_last_name
+      %p
+        %b
+          = t("activerecord.attributes.user.login", :default => t("activerecord.labels.login", :default => "Login"))
+          \:
+        = @user.login
+      %p
+        %b
+          = t("activerecord.attributes.user.birth_date", :default => t("activerecord.labels.birth_date", :default => "Birth date"))
+          \:
+        = @user.birth_date
+      %p
+        %b
+          = t("activerecord.attributes.user.profesion", :default => t("activerecord.labels.profesion", :default => "Profesion"))
+          \:
+        = @user.profesion
+      %p
+        %b
+          = t("activerecord.attributes.user.position", :default => t("activerecord.labels.position", :default => "Position"))
+          \:
+        = @user.position
+      %p
+        %b
+          = t("activerecord.attributes.user.business_name", :default => t("activerecord.labels.business_name", :default => "Business name"))
+          \:
+        = @user.business_name
+      %p
+        %b
+          = t("activerecord.attributes.user.business_phone", :default => t("activerecord.labels.business_phone", :default => "Business phone"))
+          \:
+        = @user.business_phone
+      %p
+        %b
+          = t("activerecord.attributes.user.business_phone_ext", :default => t("activerecord.labels.business_phone_ext", :default => "Business phone ext"))
+          \:
+        = @user.business_phone_ext
+      %p
+        %b
+          = t("activerecord.attributes.user.business_phone_type", :default => t("activerecord.labels.business_phone_type", :default => "Business phone type"))
+          \:
+        = @user.business_phone_type
+      %p
+        %b
+          = t("activerecord.attributes.user.phone", :default => t("activerecord.labels.phone", :default => "Phone"))
+          \:
+        = @user.phone
+      %p
+        %b
+          = t("activerecord.attributes.user.phone_type", :default => t("activerecord.labels.phone_type", :default => "Phone type"))
+          \:
+        = @user.phone_type
+      %p
+        %b
+          = t("activerecord.attributes.user.mobile", :default => t("activerecord.labels.mobile", :default => "Mobile"))
+          \:
+        = @user.mobile
+      %p
+        %b
+          = t("activerecord.attributes.user.address", :default => t("activerecord.labels.address", :default => "Address"))
+          \:
+        = @user.address
+      %p
+        %b
+          = t("activerecord.attributes.user.address_type", :default => t("activerecord.labels.address_type", :default => "Address type"))
+          \:
+        = @user.address_type
+      %p
+        %b
+          = t("activerecord.attributes.user.country", :default => t("activerecord.labels.country", :default => "Country"))
+          \:
+        = @user.country
+      %p
+        %b
+          = t("activerecord.attributes.user.state", :default => t("activerecord.labels.state", :default => "State"))
+          \:
+        = @user.state
+      %p
+        %b
+          = t("activerecord.attributes.user.city", :default => t("activerecord.labels.city", :default => "City"))
+          \:
+        = @user.city
+      .wat-cf
+        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_user_path(@user), :class => "button"
+        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), user_path(@user), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+- content_for :sidebar, render(:partial => 'sidebar')
