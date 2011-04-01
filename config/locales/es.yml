@@ -1,0 +1,116 @@
+es:
+  date:
+    order: [ :year, :month, :day ]
+    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+
+  web-app-theme: 
+    save: Guardar
+    cancel: Cancelar
+    list: Lista
+    edit: Editar
+    new: Nuevo
+    show: Ver
+    delete: Eliminar
+    confirm: Esta seguro?
+    created_at: Creatdo
+    all: Todos
+    profile: Perfil
+    settings: Opciones
+    logout: Salir
+    
+  activerecord:
+    attributes:
+      user:
+        identifier: Identificacion
+        profile: Perfil contacto
+        name: Primer Nombre
+        middle_name: Segundo Nombre
+        last_name: Primer Apellido
+        second_last_name: Segundo Apellido
+        login: Alias Usuario
+        password: Contraseña
+        password_confirmation: Confirmar Contraseña
+        birth_date: Fecha de Nacimiento
+        profesion: Profesion
+        position: Cargo
+        business_name: Empresa
+        business_phone: Telefono de oficina
+        business_phone_ext: Extencion
+        phone: Telefono de Residencia
+        mobile: Celular
+        address: Direccion principal
+        country: Pais
+        state: Departamento
+        city: Ciudad
+      profile:
+        name: Nombre
+        description: Descripcion
+        user_create: Crear Usuario
+        user_edit: Editar Usuario
+        user_delete: Eliminar Usuario
+        user_view: Ver Usuario
+        user_export: Exportar Usuario
+        category_create: Crear Categoria
+        category_edit: Editar Categoria
+        category_delete: Eliminar Categoria
+        category_view: Ver Categoria
+        category_export: Exportar Categoria
+        news_create: Crear Noticia
+        news_edit: Editar Noticia
+        news_delete: Eliminar Noticia
+        news_view: Ver Noticia
+        news_export: Exportar Noticia
+        promotion_create: Crear Promocion
+        promotion_edit: Editar Promocion
+        promotion_delete: Eliminar Promocion
+        promotion_view: Ver Promocion
+        promotion_export: Exportar Promocion
+        form_create: Crear Formulario
+        form_edit: Editar Formulario
+        form_delete: Eliminar Formulario
+        form_view: Ver Formulario
+        form_export: Exportar Formulario
+        social_network_create: Crear Red Social
+        social_network_edit: Editar Red Social
+        social_network_delete: Eliminar Red Social
+        social_network_view: Ver Red Social
+        social_network_export: Exportar Red Social
+        comment_create: Crear Comentario
+        comment_edit: Editar Comentario
+        comment_delete: Eliminar Comentario
+        comment_view: Ver Comentario
+        comment_export: Exportar Comentario
+        video_create: Crear Video
+        video_edit: Editar Video
+        video_delete: Eliminar Video
+        video_view: Ver Video
+        video_export: Exportar Video
+        microsite_create: Crear Micrositio
+        microsite_edit: Editar Micrositio
+        microsite_delete: Eliminar Micrositio
+        microsite_view: Ver Micrositio
+        microsite_export: Exportar Micrositio
+        
+    errors:
+      messages:
+        # Default messages: complete sentences
+        inclusion: "no esta incluida en la lista"
+        exclusion: "esta reservado"
+        invalid: "es invalido"
+        confirmation: "no concuerda con la confirmacion"
+        accepted: "debe ser aceptado"
+        empty: "no puede estar vacio"
+        blank: "no puede estar en blanco"
+        too_long: "is too long (maximum is {{count}} characters)"
+        too_short: "is too short (minimum is {{count}} characters)"
+        wrong_length: "is the wrong length (should be {{count}} characters)"
+        taken: "ya esta en uso"
+        not_a_number: "no es un numero"
+        greater_than: "must be greater than {{count}}"
+        greater_than_or_equal_to: "must be greater than or equal to {{count}}"
+        equal_to: "must be equal to {{count}}"
+        less_than: "must be less than {{count}}"
+        less_than_or_equal_to: "must be less than or equal to {{count}}"    
+        odd: "must be odd"
+        even: "must be even"
+      

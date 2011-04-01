@@ -8,6 +8,9 @@
   = f.select :email_type, ["Personal", "Corporativo"] ,:class => 'text_field'
   %span.description Ex: a simple text
 .group
+  =f.label :profile_id, t("activerecord.attributes.user.profile", :default => "Profile"), :class => :label
+  =f.collection_select :profile_id, @profiles,:id,:name
+.group
   = f.label :identifier, t("activerecord.attributes.user.identifier", :default => "Identifier"), :class => :label
   = f.text_field :identifier, :class => 'text_field'
   %span.description Ex: a simple text
@@ -31,11 +34,12 @@
   = f.label :login, t("activerecord.attributes.user.login", :default => "Login"), :class => :label
   = f.text_field :login, :class => 'text_field'
   %span.description Ex: a simple text
--if controller.action_name = "new"
+
+-if controller.action_name == "new" || controller.action_name == "create"
   .group
-    = f.label :password, t("activerecord.attributes.user.login", :default => "Password"), :class => :label
+    = f.label :password, t("activerecord.attributes.user.password", :default => "Password"), :class => :label
     = f.text_field :password, :class => 'text_field'
-    = f.label :password_confirmation, t("activerecord.attributes.user.login", :default => "Password Confirmation"), :class => :label
+    = f.label :password_confirmation, t("activerecord.attributes.user.password_confirmation", :default => "Password Confirmation"), :class => :label
     = f.text_field :password_confirmation, :class => 'text_field'
   
 .group
@@ -61,17 +65,11 @@
 .group
   = f.label :business_phone_ext, t("activerecord.attributes.user.business_phone_ext", :default => "Business phone ext"), :class => :label
   = f.text_field :business_phone_ext ,:class => 'text_field'
-  %span.description Ex: a simple text
-.group
-  = f.label :business_phone_type, t("activerecord.attributes.user.business_phone_type", :default => "Business phone type"), :class => :label
   = f.select :business_phone_type, ["Principal", "Secundario", "No llamar", "Fax", "Invalido", "Otro"], :class => 'text_field'
   %span.description Ex: a simple text
 .group
   = f.label :phone, t("activerecord.attributes.user.phone", :default => "Phone"), :class => :label
   = f.text_field :phone, :class => 'text_field'
-  %span.description Ex: a simple text
-.group
-  = f.label :phone_type, t("activerecord.attributes.user.phone_type", :default => "Phone type"), :class => :label
   = f.select :phone_type, ["Principal", "Secundario", "No llamar", "Fax", "Invalido", "Otro"], :class => 'text_field'
   %span.description Ex: a simple text
 .group
@@ -81,9 +79,6 @@
 .group
   = f.label :address, t("activerecord.attributes.user.address", :default => "Address"), :class => :label
   = f.text_field :address, :class => 'text_field'
-  %span.description Ex: a simple text
-.group
-  = f.label :address_type, t("activerecord.attributes.user.address_type", :default => "Address type"), :class => :label
   = f.select :address_type,["Residencia", "Oficina", "Otra"], :class => 'text_field'
   %span.description Ex: a simple text
 .group
@@ -103,4 +98,4 @@
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")
     = t("web-app-theme.save", :default => "Save")
   %span.text_button_padding= t("web-app-theme.or", :default => "or")
-  = link_to t("web-app-theme.cancel", :default => "Cancel"), users_path, :class => "text_button_padding link_button"
+  = link_to t("web-app-theme.cancel", :default => "Cancel"), admin_users_path, :class => "text_button_padding link_button"

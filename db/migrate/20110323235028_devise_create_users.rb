@@ -27,6 +27,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string  :state
       t.string  :city
       t.string  :email_type
+      t.integer :profile_id
       
 
       # t.confirmable

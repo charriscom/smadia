@@ -1,0 +1,235 @@
+.group
+  = f.label :name, t("activerecord.attributes.profile.name", :default => "Name"), :class => :label
+  = f.text_field :name, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = label_tag "admin users","Administrar Usuarios" , :class => :label
+  = check_box_tag "admin users", 1,false,:class => 'check_box admin'
+  .group
+    = f.label :user_create, t("activerecord.attributes.profile.user_create", :default => "User create"), :class => :label
+    = f.check_box :user_create, :class => 'check_box'
+    %span.description Ex: a simple text
+  .group
+    = f.label :user_edit, t("activerecord.attributes.profile.user_edit", :default => "User edit"), :class => :label
+    = f.check_box :user_edit, :class => 'check_box'
+    %span.description Ex: a simple text
+  .group
+    = f.label :user_delete, t("activerecord.attributes.profile.user_delete", :default => "User delete"), :class => :label
+    = f.check_box :user_delete, :class => 'check_box'
+    %span.description Ex: a simple text
+  .group
+    = f.label :user_view, t("activerecord.attributes.profile.user_view", :default => "User view"), :class => :label
+    = f.check_box :user_view, :class => 'check_box'
+    %span.description Ex: a simple text
+  .group
+    = f.label :user_export, t("activerecord.attributes.profile.user_export", :default => "User export"), :class => :label
+    = f.check_box :user_export, :class => 'check_box'
+    %span.description Ex: a simple text
+.group
+  = label_tag "admin page","Administrar Pagina Web" , :class => :label
+  = check_box_tag "admin page"
+  .group
+    = label_tag "admin category","Administrar Categoria" , :class => :label
+    = check_box_tag "admin category", 1,false,:class => 'check_box admin'
+    .group
+      = f.label :category_create, t("activerecord.attributes.profile.category_create", :default => "Category create"), :class => :label
+      = f.check_box :category_create, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :category_edit, t("activerecord.attributes.profile.category_edit", :default => "Category edit"), :class => :label
+      = f.check_box :category_edit, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :category_delete, t("activerecord.attributes.profile.category_delete", :default => "Category delete"), :class => :label
+      = f.check_box :category_delete, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :category_view, t("activerecord.attributes.profile.category_view", :default => "Category view"), :class => :label
+      = f.check_box :category_view, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :category_export, t("activerecord.attributes.profile.category_export", :default => "Category export"), :class => :label
+      = f.check_box :category_export, :class => 'check_box'
+      %span.description Ex: a simple text
+
+  .group
+    = label_tag "admin news","Administrar Noticias" , :class => :label
+    = check_box_tag "admin news", 1,false,:class => 'check_box admin'
+    .group
+      = f.label :news_create, t("activerecord.attributes.profile.news_create", :default => "News create"), :class => :label
+      = f.check_box :news_create, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :news_edit, t("activerecord.attributes.profile.news_edit", :default => "News edit"), :class => :label
+      = f.check_box :news_edit, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :news_delete, t("activerecord.attributes.profile.news_delete", :default => "News delete"), :class => :label
+      = f.check_box :news_delete, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :news_view, t("activerecord.attributes.profile.news_view", :default => "News view"), :class => :label
+      = f.check_box :news_view, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :news_export, t("activerecord.attributes.profile.news_export", :default => "News export"), :class => :label
+      = f.check_box :news_export, :class => 'check_box'
+      %span.description Ex: a simple text
+  
+  .group
+    = label_tag "admin promotion","Administrar Promociones" , :class => :label
+    = check_box_tag "admin promotion", 1,false,:class => 'check_box admin'
+    .group
+      = f.label :promotion_create, t("activerecord.attributes.profile.promotion_create", :default => "Promotion create"), :class => :label
+      = f.check_box :promotion_create, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :promotion_edit, t("activerecord.attributes.profile.promotion_edit", :default => "Promotion edit"), :class => :label
+      = f.check_box :promotion_edit, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :promotion_delete, t("activerecord.attributes.profile.promotion_delete", :default => "Promotion delete"), :class => :label
+      = f.check_box :promotion_delete, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :promotion_view, t("activerecord.attributes.profile.promotion_view", :default => "Promotion view"), :class => :label
+      = f.check_box :promotion_view, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :promotion_export, t("activerecord.attributes.profile.promotion_export", :default => "Promotion export"), :class => :label
+      = f.check_box :promotion_export, :class => 'check_box'
+      %span.description Ex: a simple text
+
+  .group
+    = label_tag "admin video","Administrar Videos" , :class => :label
+    = check_box_tag "admin video", 1,false,:class => 'check_box admin'
+    .group
+      = f.label :video_create, t("activerecord.attributes.profile.video_create", :default => "Video create"), :class => :label
+      = f.check_box :video_create, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :video_edit, t("activerecord.attributes.profile.video_edit", :default => "Video edit"), :class => :label
+      = f.check_box :video_edit, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :video_delete, t("activerecord.attributes.profile.video_delete", :default => "Video delete"), :class => :label
+      = f.check_box :video_delete, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :video_view, t("activerecord.attributes.profile.video_view", :default => "Video view"), :class => :label
+      = f.check_box :video_view, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :video_export, t("activerecord.attributes.profile.video_export", :default => "Video export"), :class => :label
+      = f.check_box :video_export, :class => 'check_box'
+      %span.description Ex: a simple text
+
+  .group
+    = label_tag "admin microsites","Administrar Micrositios" , :class => :label
+    = check_box_tag "admin microsites", 1,false,:class => 'check_box admin'
+    .group
+      = f.label :microsite_create, t("activerecord.attributes.profile.microsite_create", :default => "Microsite create"), :class => :label
+      = f.check_box :microsite_create, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :microsite_edit, t("activerecord.attributes.profile.microsite_edit", :default => "Microsite edit"), :class => :label
+      = f.check_box :microsite_edit, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :microsite_delete, t("activerecord.attributes.profile.microsite_delete", :default => "Microsite delete"), :class => :label
+      = f.check_box :microsite_delete, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :microsite_view, t("activerecord.attributes.profile.microsite_view", :default => "Microsite view"), :class => :label
+      = f.check_box :microsite_view, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :microsite_export, t("activerecord.attributes.profile.microsite_export", :default => "Microsite export"), :class => :label
+      = f.check_box :microsite_export, :class => 'check_box'
+      %span.description Ex: a simple text
+
+  .group
+    = label_tag "admin comment","Administrar Comentarios" , :class => :label
+    = check_box_tag "admin comment", 1,false,:class => 'check_box admin'
+    .group
+      = f.label :comment_create, t("activerecord.attributes.profile.comment_create", :default => "Comment create"), :class => :label
+      = f.check_box :comment_create, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :comment_edit, t("activerecord.attributes.profile.comment_edit", :default => "Comment edit"), :class => :label
+      = f.check_box :comment_edit, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :comment_delete, t("activerecord.attributes.profile.comment_delete", :default => "Comment delete"), :class => :label
+      = f.check_box :comment_delete, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :comment_view, t("activerecord.attributes.profile.comment_view", :default => "Comment view"), :class => :label
+      = f.check_box :comment_view, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :comment_export, t("activerecord.attributes.profile.comment_export", :default => "Comment export"), :class => :label
+      = f.check_box :comment_export, :class => 'check_box'
+      %span.description Ex: a simple text
+
+  .group
+    = label_tag "admin social_network","Administrar Redes Sociales" , :class => :label
+    = check_box_tag "admin social_network", 1,false,:class => 'check_box admin'
+    .group
+      = f.label :socail_network_create, t("activerecord.attributes.profile.socail_network_create", :default => "Socail network create"), :class => :label
+      = f.check_box :socail_network_create, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :socail_network_edit, t("activerecord.attributes.profile.socail_network_edit", :default => "Socail network edit"), :class => :label
+      = f.check_box :socail_network_edit, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :socail_network_delete, t("activerecord.attributes.profile.socail_network_delete", :default => "Socail network delete"), :class => :label
+      = f.check_box :socail_network_delete, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :socail_network_view, t("activerecord.attributes.profile.socail_network_view", :default => "Socail network view"), :class => :label
+      = f.check_box :socail_network_view, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :socail_network_export, t("activerecord.attributes.profile.socail_network_export", :default => "Socail network export"), :class => :label
+      = f.check_box :socail_network_export, :class => 'check_box'
+      %span.description Ex: a simple text
+
+  .group
+    = label_tag "admin form","Administrar Formularios" , :class => :label
+    = check_box_tag "admin form", 1,false,:class => 'check_box admin'
+    .group
+      = f.label :form_create, t("activerecord.attributes.profile.form_create", :default => "Form create"), :class => :label
+      = f.check_box :form_create, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :form_edit, t("activerecord.attributes.profile.form_edit", :default => "Form edit"), :class => :label
+      = f.check_box :form_edit, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :form_delete, t("activerecord.attributes.profile.form_delete", :default => "Form delete"), :class => :label
+      = f.check_box :form_delete, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :form_view, t("activerecord.attributes.profile.form_view", :default => "Form view"), :class => :label
+      = f.check_box :form_view, :class => 'check_box'
+      %span.description Ex: a simple text
+    .group
+      = f.label :form_export, t("activerecord.attributes.profile.form_export", :default => "Form export"), :class => :label
+      = f.check_box :form_export, :class => 'check_box'
+      %span.description Ex: a simple text
+.group
+  = f.label :description, t("activerecord.attributes.profile.description", :default => "Description"), :class => :label
+  = f.text_area :description, :class => 'text_area'
+  %span.description Ex: a simple text
+.group.navform.wat-cf
+  %button.button{:type => "submit"}
+    = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")
+    = t("web-app-theme.save", :default => "Save")
+  %span.text_button_padding= t("web-app-theme.or", :default => "or")
+  = link_to t("web-app-theme.cancel", :default => "Cancel"), admin_profiles_path, :class => "text_button_padding link_button"
+:javascript
+  $('.admin').change(function(){$(this).siblings(".group").children(".check_box").toggleAttr("checked")})
+    $('#admin_page').change(function(){$('#admin_page').siblings(".group").children(".group").children(".check_box").toggleAttr("checked")})
+    $('#admin_page').change(function(){$('#admin_page').siblings(".group").children(".check_box").toggleAttr("checked")})

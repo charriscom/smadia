@@ -408,3 +408,15 @@ button.button:active, a.button:active {
 .link_button{
   cursor: pointer;
 }
+.field_with_errors{
+	display: inline !important;
+}
+.fieldWithErrors{
+	display: inline !important;
+}
+.field_with_errors label{
+	display: inline !important;
+}
+.group .group{
+	padding-left: 10px;
+}

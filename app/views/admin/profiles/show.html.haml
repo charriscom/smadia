@@ -1,0 +1,247 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", admin_profiles_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_profile_path
+      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_profile_path
+  .content
+    .inner
+      %p
+        %b
+          = t("activerecord.attributes.profile.name", :default => t("activerecord.labels.name", :default => "Name"))
+          \:
+        = @profile.name
+      %p
+        %b
+          = t("activerecord.attributes.profile.description", :default => t("activerecord.labels.description", :default => "Description"))
+          \:
+        = @profile.description
+      %p
+        %b
+          = t("activerecord.attributes.profile.user_create", :default => t("activerecord.labels.user_create", :default => "User create"))
+          \:
+        = @profile.user_create
+      %p
+        %b
+          = t("activerecord.attributes.profile.user_edit", :default => t("activerecord.labels.user_edit", :default => "User edit"))
+          \:
+        = @profile.user_edit
+      %p
+        %b
+          = t("activerecord.attributes.profile.user_delete", :default => t("activerecord.labels.user_delete", :default => "User delete"))
+          \:
+        = @profile.user_delete
+      %p
+        %b
+          = t("activerecord.attributes.profile.user_view", :default => t("activerecord.labels.user_view", :default => "User view"))
+          \:
+        = @profile.user_view
+      %p
+        %b
+          = t("activerecord.attributes.profile.user_export", :default => t("activerecord.labels.user_export", :default => "User export"))
+          \:
+        = @profile.user_export
+      %p
+        %b
+          = t("activerecord.attributes.profile.category_create", :default => t("activerecord.labels.category_create", :default => "Category create"))
+          \:
+        = @profile.category_create
+      %p
+        %b
+          = t("activerecord.attributes.profile.category_edit", :default => t("activerecord.labels.category_edit", :default => "Category edit"))
+          \:
+        = @profile.category_edit
+      %p
+        %b
+          = t("activerecord.attributes.profile.category_delete", :default => t("activerecord.labels.category_delete", :default => "Category delete"))
+          \:
+        = @profile.category_delete
+      %p
+        %b
+          = t("activerecord.attributes.profile.category_view", :default => t("activerecord.labels.category_view", :default => "Category view"))
+          \:
+        = @profile.category_view
+      %p
+        %b
+          = t("activerecord.attributes.profile.category_export", :default => t("activerecord.labels.category_export", :default => "Category export"))
+          \:
+        = @profile.category_export
+      %p
+        %b
+          = t("activerecord.attributes.profile.news_create", :default => t("activerecord.labels.news_create", :default => "News create"))
+          \:
+        = @profile.news_create
+      %p
+        %b
+          = t("activerecord.attributes.profile.news_edit", :default => t("activerecord.labels.news_edit", :default => "News edit"))
+          \:
+        = @profile.news_edit
+      %p
+        %b
+          = t("activerecord.attributes.profile.news_delete", :default => t("activerecord.labels.news_delete", :default => "News delete"))
+          \:
+        = @profile.news_delete
+      %p
+        %b
+          = t("activerecord.attributes.profile.news_view", :default => t("activerecord.labels.news_view", :default => "News view"))
+          \:
+        = @profile.news_view
+      %p
+        %b
+          = t("activerecord.attributes.profile.news_export", :default => t("activerecord.labels.news_export", :default => "News export"))
+          \:
+        = @profile.news_export
+      %p
+        %b
+          = t("activerecord.attributes.profile.promotion_create", :default => t("activerecord.labels.promotion_create", :default => "Promotion create"))
+          \:
+        = @profile.promotion_create
+      %p
+        %b
+          = t("activerecord.attributes.profile.promotion_edit", :default => t("activerecord.labels.promotion_edit", :default => "Promotion edit"))
+          \:
+        = @profile.promotion_edit
+      %p
+        %b
+          = t("activerecord.attributes.profile.promotion_delete", :default => t("activerecord.labels.promotion_delete", :default => "Promotion delete"))
+          \:
+        = @profile.promotion_delete
+      %p
+        %b
+          = t("activerecord.attributes.profile.promotion_view", :default => t("activerecord.labels.promotion_view", :default => "Promotion view"))
+          \:
+        = @profile.promotion_view
+      %p
+        %b
+          = t("activerecord.attributes.profile.promotion_export", :default => t("activerecord.labels.promotion_export", :default => "Promotion export"))
+          \:
+        = @profile.promotion_export
+      %p
+        %b
+          = t("activerecord.attributes.profile.video_create", :default => t("activerecord.labels.video_create", :default => "Video create"))
+          \:
+        = @profile.video_create
+      %p
+        %b
+          = t("activerecord.attributes.profile.video_edit", :default => t("activerecord.labels.video_edit", :default => "Video edit"))
+          \:
+        = @profile.video_edit
+      %p
+        %b
+          = t("activerecord.attributes.profile.video_delete", :default => t("activerecord.labels.video_delete", :default => "Video delete"))
+          \:
+        = @profile.video_delete
+      %p
+        %b
+          = t("activerecord.attributes.profile.video_view", :default => t("activerecord.labels.video_view", :default => "Video view"))
+          \:
+        = @profile.video_view
+      %p
+        %b
+          = t("activerecord.attributes.profile.video_export", :default => t("activerecord.labels.video_export", :default => "Video export"))
+          \:
+        = @profile.video_export
+      %p
+        %b
+          = t("activerecord.attributes.profile.microsite_create", :default => t("activerecord.labels.microsite_create", :default => "Microsite create"))
+          \:
+        = @profile.microsite_create
+      %p
+        %b
+          = t("activerecord.attributes.profile.microsite_edit", :default => t("activerecord.labels.microsite_edit", :default => "Microsite edit"))
+          \:
+        = @profile.microsite_edit
+      %p
+        %b
+          = t("activerecord.attributes.profile.microsite_delete", :default => t("activerecord.labels.microsite_delete", :default => "Microsite delete"))
+          \:
+        = @profile.microsite_delete
+      %p
+        %b
+          = t("activerecord.attributes.profile.microsite_view", :default => t("activerecord.labels.microsite_view", :default => "Microsite view"))
+          \:
+        = @profile.microsite_view
+      %p
+        %b
+          = t("activerecord.attributes.profile.microsite_export", :default => t("activerecord.labels.microsite_export", :default => "Microsite export"))
+          \:
+        = @profile.microsite_export
+      %p
+        %b
+          = t("activerecord.attributes.profile.comment_create", :default => t("activerecord.labels.comment_create", :default => "Comment create"))
+          \:
+        = @profile.comment_create
+      %p
+        %b
+          = t("activerecord.attributes.profile.comment_edit", :default => t("activerecord.labels.comment_edit", :default => "Comment edit"))
+          \:
+        = @profile.comment_edit
+      %p
+        %b
+          = t("activerecord.attributes.profile.comment_delete", :default => t("activerecord.labels.comment_delete", :default => "Comment delete"))
+          \:
+        = @profile.comment_delete
+      %p
+        %b
+          = t("activerecord.attributes.profile.comment_view", :default => t("activerecord.labels.comment_view", :default => "Comment view"))
+          \:
+        = @profile.comment_view
+      %p
+        %b
+          = t("activerecord.attributes.profile.comment_export", :default => t("activerecord.labels.comment_export", :default => "Comment export"))
+          \:
+        = @profile.comment_export
+      %p
+        %b
+          = t("activerecord.attributes.profile.socail_network_create", :default => t("activerecord.labels.socail_network_create", :default => "Socail network create"))
+          \:
+        = @profile.socail_network_create
+      %p
+        %b
+          = t("activerecord.attributes.profile.socail_network_edit", :default => t("activerecord.labels.socail_network_edit", :default => "Socail network edit"))
+          \:
+        = @profile.socail_network_edit
+      %p
+        %b
+          = t("activerecord.attributes.profile.socail_network_delete", :default => t("activerecord.labels.socail_network_delete", :default => "Socail network delete"))
+          \:
+        = @profile.socail_network_delete
+      %p
+        %b
+          = t("activerecord.attributes.profile.socail_network_view", :default => t("activerecord.labels.socail_network_view", :default => "Socail network view"))
+          \:
+        = @profile.socail_network_view
+      %p
+        %b
+          = t("activerecord.attributes.profile.socail_network_export", :default => t("activerecord.labels.socail_network_export", :default => "Socail network export"))
+          \:
+        = @profile.socail_network_export
+      %p
+        %b
+          = t("activerecord.attributes.profile.form_create", :default => t("activerecord.labels.form_create", :default => "Form create"))
+          \:
+        = @profile.form_create
+      %p
+        %b
+          = t("activerecord.attributes.profile.form_edit", :default => t("activerecord.labels.form_edit", :default => "Form edit"))
+          \:
+        = @profile.form_edit
+      %p
+        %b
+          = t("activerecord.attributes.profile.form_delete", :default => t("activerecord.labels.form_delete", :default => "Form delete"))
+          \:
+        = @profile.form_delete
+      %p
+        %b
+          = t("activerecord.attributes.profile.form_view", :default => t("activerecord.labels.form_view", :default => "Form view"))
+          \:
+        = @profile.form_view
+      %p
+        %b
+          = t("activerecord.attributes.profile.form_export", :default => t("activerecord.labels.form_export", :default => "Form export"))
+          \:
+        = @profile.form_export
+      .wat-cf
+        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admin_profile_path(@profile), :class => "button"
+        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admin_profile_path(@profile), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+- content_for :sidebar, render(:partial => 'sidebar')
