@@ -228,8 +228,8 @@
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")
     = t("web-app-theme.save", :default => "Save")
   %span.text_button_padding= t("web-app-theme.or", :default => "or")
-  = link_to t("web-app-theme.cancel", :default => "Cancel"), admin_profiles_path, :class => "text_button_padding link_button"
+  = link_to t("web-app-theme.cancel", :default => "Cancel"), admins_profiles_path, :class => "text_button_padding link_button"
 :javascript
   $('.admin').change(function(){$(this).siblings(".group").children(".check_box").toggleAttr("checked")})
-    $('#admin_page').change(function(){$('#admin_page').siblings(".group").children(".group").children(".check_box").toggleAttr("checked")})
-    $('#admin_page').change(function(){$('#admin_page').siblings(".group").children(".check_box").toggleAttr("checked")})
+    $('#admins_page').change(function(){$('#admins_page').siblings(".group").children(".group").children(".check_box").toggleAttr("checked")})
+    $('#admins_page').change(function(){$('#admins_page').siblings(".group").children(".check_box").toggleAttr("checked")})

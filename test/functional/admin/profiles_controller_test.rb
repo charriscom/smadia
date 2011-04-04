@@ -2,13 +2,13 @@ require 'test_helper'
 
 class Admin::ProfilesControllerTest < ActionController::TestCase
   setup do
-    @admin_profile = admin_profiles(:one)
+    @admins_profile = admins_profiles(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:admin_profiles)
+    assert_not_nil assigns(:admins_profiles)
   end
 
   test "should get new" do
@@ -16,34 +16,34 @@ class Admin::ProfilesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create admin_profile" do
+  test "should create admins_profile" do
     assert_difference('Admin::Profile.count') do
-      post :create, :admin_profile => @admin_profile.attributes
+      post :create, :admins_profile => @admins_profile.attributes
     end
 
-    assert_redirected_to admin_profile_path(assigns(:admin_profile))
+    assert_redirected_to admins_profile_path(assigns(:admins_profile))
   end
 
-  test "should show admin_profile" do
-    get :show, :id => @admin_profile.to_param
+  test "should show admins_profile" do
+    get :show, :id => @admins_profile.to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => @admin_profile.to_param
+    get :edit, :id => @admins_profile.to_param
     assert_response :success
   end
 
-  test "should update admin_profile" do
-    put :update, :id => @admin_profile.to_param, :admin_profile => @admin_profile.attributes
-    assert_redirected_to admin_profile_path(assigns(:admin_profile))
+  test "should update admins_profile" do
+    put :update, :id => @admins_profile.to_param, :admins_profile => @admins_profile.attributes
+    assert_redirected_to admins_profile_path(assigns(:admins_profile))
   end
 
-  test "should destroy admin_profile" do
+  test "should destroy admins_profile" do
     assert_difference('Admin::Profile.count', -1) do
-      delete :destroy, :id => @admin_profile.to_param
+      delete :destroy, :id => @admins_profile.to_param
     end
 
-    assert_redirected_to admin_profiles_path
+    assert_redirected_to admins_profiles_path
   end
 end

@@ -9,7 +9,7 @@
   %span.description Ex: a simple text
 .group
   =f.label :profile_id, t("activerecord.attributes.user.profile", :default => "Profile"), :class => :label
-  =f.collection_select :profile_id, @profiles,:id,:name
+  =f.collection_select :profile_id, @profiles,:id,:name, :selected => user.profile.id
 .group
   = f.label :identifier, t("activerecord.attributes.user.identifier", :default => "Identifier"), :class => :label
   = f.text_field :identifier, :class => 'text_field'
@@ -98,4 +98,4 @@
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")
     = t("web-app-theme.save", :default => "Save")
   %span.text_button_padding= t("web-app-theme.or", :default => "or")
-  = link_to t("web-app-theme.cancel", :default => "Cancel"), admin_users_path, :class => "text_button_padding link_button"
+  = link_to t("web-app-theme.cancel", :default => "Cancel"), admins_users_path, :class => "text_button_padding link_button"

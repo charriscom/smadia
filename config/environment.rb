@@ -3,3 +3,4 @@ require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
 Smadia::Application.initialize!
+Mime::Type.register 'application/xls', :xls

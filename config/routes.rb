@@ -1,14 +1,14 @@
 Smadia::Application.routes.draw do
 
-  devise_for :admins do
-     root :to => 'users#index'
-  end
+  devise_for :admins 
   
   devise_for :users
-  namespace :admin do
+  namespace :admins do
     resources :users
     resources :profiles
   end
+  
+  root :to =>"devise/sessions#create"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

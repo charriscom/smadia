@@ -17,6 +17,7 @@ es:
     profile: Perfil
     settings: Opciones
     logout: Salir
+    export: Exportar
     
   activerecord:
     attributes:

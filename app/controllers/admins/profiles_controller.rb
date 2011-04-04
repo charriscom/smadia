@@ -1,11 +1,11 @@
-class Admin::ProfilesController < AdminController
+class Admins::ProfilesController < AdminController
   # GET /admin/profiles
   # GET /admin/profiles.xml
   def index
-    @profiles = Profile.all
+    @profiles = Profile.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.xml  { render :xml => @profiles }
     end
   end
@@ -16,7 +16,7 @@ class Admin::ProfilesController < AdminController
     @profile = Profile.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # show.html.haml
       format.xml  { render :xml => @profile }
     end
   end
@@ -27,7 +27,7 @@ class Admin::ProfilesController < AdminController
     @profile = Profile.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # new.html.haml
       format.xml  { render :xml => @profile }
     end
   end
@@ -43,7 +43,7 @@ class Admin::ProfilesController < AdminController
     @profile = Profile.new(params[:profile])
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to admin_profile_path(@profile, :notice => 'Profile was successfully created.') }
+        format.html { redirect_to admins_profile_path(@profile, :notice => 'Profile was successfully created.') }
         format.xml  { render :xml => @profile, :status => :created, :location => @profile }
       else
         format.html { render :action => "new" }
@@ -59,7 +59,7 @@ class Admin::ProfilesController < AdminController
 
     respond_to do |format|
       if @profile.update_attributes(params[:profile])
-        format.html { redirect_to admin_profile_path(@profile, :notice => 'Profile was successfully updated.') }
+        format.html { redirect_to admins_profile_path(@profile, :notice => 'Profile was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -75,7 +75,7 @@ class Admin::ProfilesController < AdminController
     @profile.destroy
 
     respond_to do |format|
-      format.html { redirect_to(admin_profiles_path) }
+      format.html { redirect_to(admins_profiles_path) }
       format.xml  { head :ok }
     end
   end

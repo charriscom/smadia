@@ -1,8 +1,9 @@
 .block
   .secondary-navigation
     %ul.wat-cf
-      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", admin_users_path
-      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_user_path
+      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", admins_users_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admins_user_path
+      %li= link_to "#{t("web-app-theme.export", :default => "Export")}", admins_users_path(:format => "xls")
   .content
     %h2.title
       = t("web-app-theme.all", :default => "All")
@@ -22,9 +23,9 @@
         - @users.each do |user|
           %tr{:class => cycle("odd", "even")}
             %td
-              = user.id
+              = user.identifier
             %td
-              = link_to user.email, admin_user_path(user)
+              = link_to user.email, admins_user_path(user)
             %td
               = "#{user.name} #{user.middle_name} #{user.last_name} #{user.second_last_name}" 
             %td
@@ -36,10 +37,10 @@
             %td
               = user.login
             %td.last
-              = link_to "#{t("web-app-theme.show", :default => "Show")}", admin_user_path(user)
+              = link_to "#{t("web-app-theme.show", :default => "Show")}", admins_user_path(user)
               |
-              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_user_path(user)} |
-              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_user_path(user), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admins_user_path(user)} |
+              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admins_user_path(user), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
       .actions-bar.wat-cf
         .actions
         = will_paginate @users
