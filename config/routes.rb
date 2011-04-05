@@ -6,6 +6,8 @@ Smadia::Application.routes.draw do
   namespace :admins do
     resources :users
     resources :profiles
+    resources :categories
+    resources :articles
   end
   
   root :to =>"devise/sessions#create"

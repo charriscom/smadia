@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110331214912) do
+ActiveRecord::Schema.define(:version => 20110405150300) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -31,6 +31,39 @@ ActiveRecord::Schema.define(:version => 20110331214912) do
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
+  create_table "articles", :force => true do |t|
+    t.integer  "category_id"
+    t.date     "published"
+    t.date     "closed"
+    t.string   "title"
+    t.text     "highlights"
+    t.text     "content"
+    t.text     "content_html"
+    t.boolean  "carrusel"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "images", :force => true do |t|
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.string   "purpose"
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "profiles", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -44,11 +77,11 @@ ActiveRecord::Schema.define(:version => 20110331214912) do
     t.boolean  "category_delete"
     t.boolean  "category_view"
     t.boolean  "category_export"
-    t.boolean  "news_create"
-    t.boolean  "news_edit"
-    t.boolean  "news_delete"
-    t.boolean  "news_view"
-    t.boolean  "news_export"
+    t.boolean  "article_create"
+    t.boolean  "article_edit"
+    t.boolean  "article_delete"
+    t.boolean  "article_view"
+    t.boolean  "article_export"
     t.boolean  "promotion_create"
     t.boolean  "promotion_edit"
     t.boolean  "promotion_delete"

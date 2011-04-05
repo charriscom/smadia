@@ -15,11 +15,11 @@ class CreateProfiles < ActiveRecord::Migration
       t.boolean :category_view
       t.boolean :category_export
       
-      t.boolean :news_create
-      t.boolean :news_edit
-      t.boolean :news_delete
-      t.boolean :news_view
-      t.boolean :news_export
+      t.boolean :article_create
+      t.boolean :article_edit
+      t.boolean :article_delete
+      t.boolean :article_view
+      t.boolean :article_export
       
       t.boolean :promotion_create
       t.boolean :promotion_edit

@@ -56,11 +56,11 @@ es:
         category_delete: Eliminar Categoria
         category_view: Ver Categoria
         category_export: Exportar Categoria
-        news_create: Crear Noticia
-        news_edit: Editar Noticia
-        news_delete: Eliminar Noticia
-        news_view: Ver Noticia
-        news_export: Exportar Noticia
+        article_create: Crear Articulo
+        article_edit: Editar Articulo
+        article_delete: Eliminar Articulo
+        article_view: Ver Articulo
+        article_export: Exportar Articulo
         promotion_create: Crear Promocion
         promotion_edit: Editar Promocion
         promotion_delete: Eliminar Promocion

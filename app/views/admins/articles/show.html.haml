@@ -1,0 +1,58 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", admins_articles_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admins_article_path
+      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", admins_article_path
+  .content
+    .inner
+      %p
+        %b
+          = t("activerecord.attributes.admins_article.category_id", :default => t("activerecord.labels.category_id", :default => "Category"))
+          \:
+        = @article.category_id
+      %p
+        %b
+          = t("activerecord.attributes.admins_article.published", :default => t("activerecord.labels.published", :default => "Published"))
+          \:
+        = @article.published
+      %p
+        %b
+          = t("activerecord.attributes.admins_article.closed", :default => t("activerecord.labels.closed", :default => "Closed"))
+          \:
+        = @article.closed
+      %p
+        %b
+          = t("activerecord.attributes.admins_article.title", :default => t("activerecord.labels.title", :default => "Title"))
+          \:
+        = @article.title
+      %p
+        %b
+          = t("activerecord.attributes.admins_article.highlights", :default => t("activerecord.labels.highlights", :default => "Highlights"))
+          \:
+        = @article.highlights
+      %p
+        %b
+          = t("activerecord.attributes.admins_article.content", :default => t("activerecord.labels.content", :default => "Content"))
+          \:
+        .group
+          = raw @article.content
+      %p
+        %b
+          = t("activerecord.attributes.admins_article.content_html", :default => t("activerecord.labels.content_html", :default => "Content html"))
+          \:
+        = @article.content_html
+      %p
+        %b
+          = t("activerecord.attributes.admins_article.image", :default => t("activerecord.labels.image", :default => "Image"))
+          \:
+        = image_tag @article.image.picture.url(:thumb)
+      %p
+        %b
+          = t("activerecord.attributes.admins_article.carrusel_image", :default => t("activerecord.labels.carrusel_image", :default => "Image"))
+          \:
+        = image_tag @article.carrusel_image.picture.url(:thumb)
+      .wat-cf
+        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admins_article_path(@article), :class => "button"
+        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admins_article_path(@article), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+- content_for :sidebar, render(:partial => 'sidebar')

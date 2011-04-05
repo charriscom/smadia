@@ -25,6 +25,10 @@ class Admins::UsersController < AdminController
   # GET /admin/users/new
   # GET /admin/users/new.xml
   def new
+    if Profile.count == 0
+      flash[:error] = "Debe Existir un Perfil antes de crear un usuario"
+      return redirect_to admins_users_path() 
+    end
     @user = User.new
     @user.build_profile
     @profiles = Profile.all
@@ -45,6 +49,8 @@ class Admins::UsersController < AdminController
   # POST /admin/users.xml
   def create
     @user = User.new(params[:user])
+    @profiles = Profile.all
+    
     respond_to do |format|
       if @user.save
         format.html { redirect_to admins_user_path(@user, :notice => 'User was successfully created.') }
@@ -60,7 +66,8 @@ class Admins::UsersController < AdminController
   # PUT /admin/users/1.xml
   def update
     @user = User.find(params[:id])
-
+    @profiles = Profile.all
+    
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to admins_user_path(@user, :notice => 'User was successfully updated.') }

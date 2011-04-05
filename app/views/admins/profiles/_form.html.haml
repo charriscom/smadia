@@ -53,27 +53,27 @@
       %span.description Ex: a simple text
 
   .group
-    = label_tag "admin news","Administrar Noticias" , :class => :label
-    = check_box_tag "admin news", 1,false,:class => 'check_box admin'
+    = label_tag "admin articles","Administrar Noticias" , :class => :label
+    = check_box_tag "admin articles", 1,false,:class => 'check_box admin'
     .group
-      = f.label :news_create, t("activerecord.attributes.profile.news_create", :default => "News create"), :class => :label
-      = f.check_box :news_create, :class => 'check_box'
+      = f.label :article_create, t("activerecord.attributes.profile.article_create", :default => "News create"), :class => :label
+      = f.check_box :article_create, :class => 'check_box'
       %span.description Ex: a simple text
     .group
-      = f.label :news_edit, t("activerecord.attributes.profile.news_edit", :default => "News edit"), :class => :label
-      = f.check_box :news_edit, :class => 'check_box'
+      = f.label :article_edit, t("activerecord.attributes.profile.article_edit", :default => "News edit"), :class => :label
+      = f.check_box :article_edit, :class => 'check_box'
       %span.description Ex: a simple text
     .group
-      = f.label :news_delete, t("activerecord.attributes.profile.news_delete", :default => "News delete"), :class => :label
-      = f.check_box :news_delete, :class => 'check_box'
+      = f.label :article_delete, t("activerecord.attributes.profile.article_delete", :default => "News delete"), :class => :label
+      = f.check_box :article_delete, :class => 'check_box'
       %span.description Ex: a simple text
     .group
-      = f.label :news_view, t("activerecord.attributes.profile.news_view", :default => "News view"), :class => :label
-      = f.check_box :news_view, :class => 'check_box'
+      = f.label :article_view, t("activerecord.attributes.profile.article_view", :default => "News view"), :class => :label
+      = f.check_box :article_view, :class => 'check_box'
       %span.description Ex: a simple text
     .group
-      = f.label :news_export, t("activerecord.attributes.profile.news_export", :default => "News export"), :class => :label
-      = f.check_box :news_export, :class => 'check_box'
+      = f.label :article_export, t("activerecord.attributes.profile.article_export", :default => "News export"), :class => :label
+      = f.check_box :article_export, :class => 'check_box'
       %span.description Ex: a simple text
   
   .group

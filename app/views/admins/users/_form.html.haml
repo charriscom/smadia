@@ -1,9 +1,5 @@
 .group
   = f.label :email, t("activerecord.attributes.user.email", :default => "Email"), :class => :label
-  -unless user.errors[:email].empty?
-    .fieldWithErrors
-      %span.error
-        =user.errors[:email]
   = f.text_field :email, :class => 'text_field'
   = f.select :email_type, ["Personal", "Corporativo"] ,:class => 'text_field'
   %span.description Ex: a simple text

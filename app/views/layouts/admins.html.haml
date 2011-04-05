@@ -5,6 +5,7 @@
     = stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/default/style", "web-app-theme/override"
     = javascript_include_tag :all
     = csrf_meta_tag
+    = include_tiny_mce_if_needed
   %body
     #container
       #header
@@ -24,6 +25,10 @@
               = link_to "Usuarios", admins_users_path
             %li
               = link_to "Perfiles", admins_profiles_path
+            %li
+              = link_to "Categorias", admins_categories_path
+            %li
+              = link_to "Articulos", admins_articles_path
       #wrapper.wat-cf
         .flash
           - flash.each do |type, message|

@@ -8,11 +8,9 @@ gem 'web-app-theme', '>= 0.6.2'
 gem 'hpricot', '0.8.4'
 gem 'ruby_parser', '2.0.5'
 gem 'will_paginate', '3.0.pre2'
-#gem 'roo', '1.9.3'
-#gem 'rubyzip'
-#gem 'nokogiri'
 gem 'spreadsheet'
-#gem 'google-spreadsheet-ruby'
+gem 'tiny_mce'
+gem "paperclip"
 
 group :test do
   gem 'ruby-debug'
