@@ -1,0 +1,69 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", admins_promotions_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admins_promotion_path
+      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", admins_promotion_path
+  .content
+    .inner
+      %p
+        %b
+          = t("activerecord.attributes.admins_promotion.category_id", :default => t("activerecord.labels.category_id", :default => "Category"))
+          \:
+        = @promotion.category_id
+      %p
+        %b
+          = t("activerecord.attributes.admins_promotion.value", :default => t("activerecord.labels.value", :default => "Value"))
+          \:
+        = @promotion.value
+      %p
+        %b
+          = t("activerecord.attributes.admins_promotion.discount", :default => t("activerecord.labels.discount", :default => "Discount"))
+          \:
+        = @promotion.discount
+      %p
+        %b
+          = t("activerecord.attributes.admins_promotion.discount_value", :default => t("activerecord.labels.discount_value", :default => "Discount value"))
+          \:
+        = @promotion.discount_value
+      %p
+        %b
+          = t("activerecord.attributes.admins_promotion.published", :default => t("activerecord.labels.published", :default => "Published"))
+          \:
+        = @promotion.published
+      %p
+        %b
+          = t("activerecord.attributes.admins_promotion.closed", :default => t("activerecord.labels.closed", :default => "Closed"))
+          \:
+        = @promotion.closed
+      %p
+        %b
+          = t("activerecord.attributes.admins_promotion.title", :default => t("activerecord.labels.title", :default => "Title"))
+          \:
+        = @promotion.title
+      %p
+        %b
+          = t("activerecord.attributes.admins_promotion.terms", :default => t("activerecord.labels.terms", :default => "Terms"))
+          \:
+        = @promotion.terms
+      %p
+        %b
+          = t("activerecord.attributes.admins_promotion.summary", :default => t("activerecord.labels.summary", :default => "Summary"))
+          \:
+        = @promotion.summary
+      %p
+        %b
+          = t("activerecord.attributes.admins_promotion.content", :default => t("activerecord.labels.content", :default => "Content"))
+          \:
+        = @promotion.content      
+      %p
+        %b
+          = t("activerecord.attributes.admins_promotion.images", :default => t("activerecord.labels.images", :default => "Images"))
+          \:
+          -@promotion.images.each do |image|
+            %p{:style => "clear:left"}
+            = image_tag image.picture.url(:thumb)
+      .wat-cf
+        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admins_promotion_path(@promotion), :class => "button"
+        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admins_promotion_path(@promotion), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+- content_for :sidebar, render(:partial => 'sidebar')

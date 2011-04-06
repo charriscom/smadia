@@ -1,5 +1,7 @@
 Smadia::Application.routes.draw do
 
+  namespace :admins do resources :promotions end
+
   devise_for :admins 
   
   devise_for :users
