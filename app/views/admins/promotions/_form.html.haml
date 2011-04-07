@@ -28,7 +28,7 @@
   %span.description Ex: a simple text
 .group
   = f.label :terms, t("activerecord.attributes.promotion.terms", :default => "Terms"), :class => :label
-  = f.text_area :terms, :class => 'text_area'
+  = f.text_area :terms, :class => 'text_area mceEditor'
   %span.description Ex: a simple text
 .group
   = f.label :summary, t("activerecord.attributes.promotion.summary", :default => "Summary"), :class => :label
@@ -36,7 +36,7 @@
   %span.description Ex: a simple text
 .group
   = f.label :content, t("activerecord.attributes.promotion.content", :default => "Content"), :class => :label
-  = f.text_area :content, :class => 'text_area'
+  = f.text_area :content, :class => 'text_area mceEditor'
   %span.description Ex: a simple text
 .group
   -f.fields_for :images do |images_form|

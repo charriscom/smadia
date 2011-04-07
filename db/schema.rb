@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110405222011) do
+ActiveRecord::Schema.define(:version => 20110407153210) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -30,21 +30,6 @@ ActiveRecord::Schema.define(:version => 20110405222011) do
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
-
-  create_table "admins_promotions", :force => true do |t|
-    t.integer  "category_id"
-    t.decimal  "value",          :precision => 10, :scale => 0
-    t.integer  "discount"
-    t.decimal  "discount_value", :precision => 10, :scale => 0
-    t.date     "published"
-    t.date     "closed"
-    t.string   "title"
-    t.text     "terms"
-    t.text     "summary"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "articles", :force => true do |t|
     t.integer  "category_id"
@@ -72,6 +57,34 @@ ActiveRecord::Schema.define(:version => 20110405222011) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.string   "purpose"
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "microsites", :force => true do |t|
+    t.string   "name"
+    t.date     "published"
+    t.date     "closed"
+    t.text     "summary"
+    t.boolean  "home_page"
+    t.boolean  "section_page"
+    t.boolean  "external_page"
+    t.boolean  "other_category"
+    t.integer  "category_id"
+    t.text     "contenido"
+    t.boolean  "form"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "paperclip_files", :force => true do |t|
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
     t.string   "purpose"
     t.integer  "owner_id"
     t.string   "owner_type"
@@ -131,6 +144,21 @@ ActiveRecord::Schema.define(:version => 20110405222011) do
     t.datetime "updated_at"
   end
 
+  create_table "promotions", :force => true do |t|
+    t.integer  "category_id"
+    t.decimal  "value",          :precision => 10, :scale => 0
+    t.integer  "discount"
+    t.decimal  "discount_value", :precision => 10, :scale => 0
+    t.date     "published"
+    t.date     "closed"
+    t.string   "title"
+    t.text     "terms"
+    t.text     "summary"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
@@ -172,5 +200,17 @@ ActiveRecord::Schema.define(:version => 20110405222011) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "videos", :force => true do |t|
+    t.boolean  "home_page"
+    t.string   "title"
+    t.date     "published"
+    t.date     "closed"
+    t.string   "link"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "category_id"
+  end
 
 end

@@ -11,6 +11,7 @@ gem 'will_paginate', '3.0.pre2'
 gem 'spreadsheet'
 gem 'tiny_mce'
 gem "paperclip"
+gem "swf_fu"
 
 group :test do
   gem 'ruby-debug'

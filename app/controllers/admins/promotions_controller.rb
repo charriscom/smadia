@@ -1,4 +1,7 @@
 class Admins::PromotionsController < AdminController
+  
+  uses_tiny_mce 
+  
   # GET /admins/promotions
   # GET /admins/promotions.xml
   def index

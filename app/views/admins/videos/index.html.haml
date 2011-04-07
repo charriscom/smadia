@@ -1,0 +1,38 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", admins_videos_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admins_video_path
+  .content
+    %h2.title
+      = t("web-app-theme.all", :default => "All")
+      Videos
+    .inner
+      %table.table
+        %tr
+          %th.first ID
+          %th
+            = t("activerecord.attributes.admins_video.title", :default => t("activerecord.labels.title", :default => "title"))
+          %th
+            = t("activerecord.attributes.admins_video.category", :default => t("activerecord.labels.category", :default => "Category"))
+          %th
+            = t("activerecord.attributes.admins_video.home_page", :default => t("activerecord.labels.home_page", :default => "Home Page"))
+          %th.last &nbsp;
+        - @videos.each do |video|
+          %tr{:class => cycle("odd", "even")}
+            %td
+              = video.id
+            %td
+              = link_to video.title, admins_video_path(video)
+            %td
+              = video.category.name
+            %td
+              = video.home_page
+            %td.last
+              = link_to "#{t("web-app-theme.show", :default => "Show")}", admins_video_path(video)
+              |
+              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admins_video_path(video)} |
+              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admins_video_path(video), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+      .actions-bar.wat-cf
+        .actions
+- content_for :sidebar, render(:partial => 'sidebar')

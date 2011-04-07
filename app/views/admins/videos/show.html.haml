@@ -1,0 +1,47 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", admins_videos_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admins_video_path
+      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", admins_video_path
+  .content
+    .inner
+      %p
+        %b
+          = t("activerecord.attributes.admins_video.home_page", :default => t("activerecord.labels.home_page", :default => "Home page"))
+          \:
+        = @video.home_page
+      %p
+        %b
+          = t("activerecord.attributes.admins_video.title", :default => t("activerecord.labels.title", :default => "Title"))
+          \:
+        = @video.title
+      %p
+        %b
+          = t("activerecord.attributes.admins_video.category", :default => t("activerecord.labels.category", :default => "Category"))
+          \:
+        = @video.category.name
+      %p
+        %b
+          = t("activerecord.attributes.admins_video.published", :default => t("activerecord.labels.published", :default => "Published"))
+          \:
+        = @video.published
+      %p
+        %b
+          = t("activerecord.attributes.admins_video.closed", :default => t("activerecord.labels.closed", :default => "Closed"))
+          \:
+        = @video.closed
+      %p
+        %b
+          = t("activerecord.attributes.admins_video.link", :default => t("activerecord.labels.link", :default => "Link"))
+          \:
+        = @video.link
+      %p
+        %b
+          = t("activerecord.attributes.admins_video.description", :default => t("activerecord.labels.description", :default => "Description"))
+          \:
+        = @video.description
+      .wat-cf
+        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admins_video_path(@video), :class => "button"
+        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admins_video_path(@video), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+- content_for :sidebar, render(:partial => 'sidebar')

@@ -1,0 +1,34 @@
+.group
+  = f.label :category_id, t("activerecord.attributes.promotion.category_id", :default => "Category"), :class => :label
+  =f.collection_select :category_id, @categories,:id,:name, :selected => @video.category.id
+  %span.description Ex: a simple text
+.group
+  = f.label :home_page, t("activerecord.attributes.video.home_page", :default => "Home page"), :class => :label
+  = f.check_box :home_page, :class => 'check_box'
+  %span.description Ex: a simple text
+.group
+  = f.label :title, t("activerecord.attributes.video.title", :default => "Title"), :class => :label
+  = f.text_field :title, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :published, t("activerecord.attributes.video.published", :default => "Published"), :class => :label
+  = f.date_select :published, :class => 'date_select'
+  %span.description Ex: a simple text
+.group
+  = f.label :closed, t("activerecord.attributes.video.closed", :default => "Closed"), :class => :label
+  = f.date_select :closed, :class => 'date_select'
+  %span.description Ex: a simple text
+.group
+  = f.label :link, t("activerecord.attributes.video.link", :default => "Link"), :class => :label
+  = f.text_field :link, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :description, t("activerecord.attributes.video.description", :default => "Description"), :class => :label
+  = f.text_area :description, :class => 'text_area'
+  %span.description Ex: a simple text
+.group.navform.wat-cf
+  %button.button{:type => "submit"}
+    = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")
+    = t("web-app-theme.save", :default => "Save")
+  %span.text_button_padding= t("web-app-theme.or", :default => "or")
+  = link_to t("web-app-theme.cancel", :default => "Cancel"), admins_videos_path, :class => "text_button_padding link_button"

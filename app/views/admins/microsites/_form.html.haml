@@ -1,0 +1,59 @@
+.group
+  = f.label :name, t("activerecord.attributes.microsite.name", :default => "Name"), :class => :label
+  = f.text_field :name, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :published, t("activerecord.attributes.microsite.published", :default => "Published"), :class => :label
+  = f.date_select :published, :class => 'date_select'
+  %span.description Ex: a simple text
+.group
+  = f.label :closed, t("activerecord.attributes.microsite.closed", :default => "Closed"), :class => :label
+  = f.date_select :closed, :class => 'date_select'
+  %span.description Ex: a simple text
+.group
+  = f.label :image, t("activerecord.attributes.microsite.image", :default => "Image"), :class => :label
+  = f.fields_for :image do |image_form|
+    = image_form.file_field :picture
+.group
+  = f.label :summary, t("activerecord.attributes.microsite.summary", :default => "Summary"), :class => :label
+  = f.text_area :summary, :class => 'text_area'
+  %span.description Ex: a simple text
+.group
+  = f.label :home_page, t("activerecord.attributes.microsite.home_page", :default => "Home page"), :class => :label
+  = f.check_box :home_page, :class => 'check_box'
+  %span.description Ex: a simple text
+.group
+  = f.label :section_page, t("activerecord.attributes.microsite.section_page", :default => "Section page"), :class => :label
+  = f.check_box :section_page, :class => 'check_box'
+  %span.description Ex: a simple text
+.group
+  = f.label :external_page, t("activerecord.attributes.microsite.external_page", :default => "External page"), :class => :label
+  = f.check_box :external_page, :class => 'check_box'
+  %span.description Ex: a simple text
+.group
+  = f.label :other_category, t("activerecord.attributes.microsite.other_category", :default => "Other category"), :class => :label
+  = f.check_box :other_category, :class => 'check_box'
+  %span.description Ex: a simple text
+.group
+  = f.label :header, t("activerecord.attributes.microsite.header", :default => "Header"), :class => :label
+  = f.fields_for :header do |header_form|
+    = header_form.file_field :file
+    = header_form.hidden_field :purpose, :value => "header"
+.group
+  = f.label :category_id, t("activerecord.attributes.microsite.category_id", :default => "Category"), :class => :label
+  = f.text_field :category_id, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :contenido, t("activerecord.attributes.microsite.contenido", :default => "Contenido"), :class => :label
+  = f.text_area :contenido, :class => 'text_area'
+  %span.description Ex: a simple text
+.group
+  = f.label :form, t("activerecord.attributes.microsite.form", :default => "Form"), :class => :label
+  = f.check_box :form, :class => 'check_box'
+  %span.description Ex: a simple text
+.group.navform.wat-cf
+  %button.button{:type => "submit"}
+    = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")
+    = t("web-app-theme.save", :default => "Save")
+  %span.text_button_padding= t("web-app-theme.or", :default => "or")
+  = link_to t("web-app-theme.cancel", :default => "Cancel"), admins_microsites_path, :class => "text_button_padding link_button"

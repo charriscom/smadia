@@ -1,15 +1,17 @@
 Smadia::Application.routes.draw do
 
-  namespace :admins do resources :promotions end
+  namespace :admins do resources :microsites end
 
   devise_for :admins 
-  
   devise_for :users
+  
   namespace :admins do
     resources :users
     resources :profiles
     resources :categories
     resources :articles
+    resources :promotions
+    resources :videos
   end
   
   root :to =>"devise/sessions#create"

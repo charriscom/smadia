@@ -1,0 +1,78 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", admins_microsites_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admins_microsite_path
+      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", admins_microsite_path
+  .content
+    .inner
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.name", :default => t("activerecord.labels.name", :default => "Name"))
+          \:
+        = @microsite.name
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.published", :default => t("activerecord.labels.published", :default => "Published"))
+          \:
+        = @microsite.published
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.closed", :default => t("activerecord.labels.closed", :default => "Closed"))
+          \:
+        = @microsite.closed
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.image", :default => t("activerecord.labels.image", :default => "Image"))
+          \:
+        = image_tag @microsite.image.picture.url(:thumb)
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.summary", :default => t("activerecord.labels.summary", :default => "Summary"))
+          \:
+        = @microsite.summary
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.home_page", :default => t("activerecord.labels.home_page", :default => "Home page"))
+          \:
+        = @microsite.home_page
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.section_page", :default => t("activerecord.labels.section_page", :default => "Section page"))
+          \:
+        = @microsite.section_page
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.external_page", :default => t("activerecord.labels.external_page", :default => "External page"))
+          \:
+        = @microsite.external_page
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.other_category", :default => t("activerecord.labels.other_category", :default => "Other category"))
+          \:
+        = @microsite.other_category
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.category_id", :default => t("activerecord.labels.category_id", :default => "Category"))
+          \:
+        = @microsite.category_id
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.header", :default => t("activerecord.labels.header", :default => "Header"))
+          \:
+        -debugger
+        = swf_tag("small_fry_smallfry")
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.contenido", :default => t("activerecord.labels.contenido", :default => "Contenido"))
+          \:
+        = @microsite.contenido
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.form", :default => t("activerecord.labels.form", :default => "Form"))
+          \:
+        = @microsite.form
+      .wat-cf
+        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admins_microsite_path(@microsite), :class => "button"
+        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admins_microsite_path(@microsite), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+- content_for :sidebar, render(:partial => 'sidebar')
