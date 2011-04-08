@@ -35,22 +35,47 @@
   = f.check_box :other_category, :class => 'check_box'
   %span.description Ex: a simple text
 .group
+  = f.label :category_id, t("activerecord.attributes.microsite.category_id", :default => "Category"), :class => :label
+  = f.text_field :category_id, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
   = f.label :header, t("activerecord.attributes.microsite.header", :default => "Header"), :class => :label
   = f.fields_for :header do |header_form|
     = header_form.file_field :file
     = header_form.hidden_field :purpose, :value => "header"
 .group
-  = f.label :category_id, t("activerecord.attributes.microsite.category_id", :default => "Category"), :class => :label
-  = f.text_field :category_id, :class => 'text_field'
+  = f.label :space1, t("activerecord.attributes.microsite.space1", :default => "Space1"), :class => :label
+  = f.fields_for :space1 do |space_form|
+    = space_form.file_field :file
+    = space_form.hidden_field :purpose, :value => "space1"
+.group
+  = f.label :space2, t("activerecord.attributes.microsite.space2", :default => "Space2"), :class => :label
+  = f.fields_for :space2 do |space_form|
+    = space_form.file_field :file
+    = space_form.hidden_field :purpose, :value => "space2"
+.group
+  = f.label :content, t("activerecord.attributes.microsite.content", :default => "Content"), :class => :label
+  = f.text_area :content, :class => 'text_area mceEditor'
   %span.description Ex: a simple text
 .group
-  = f.label :contenido, t("activerecord.attributes.microsite.contenido", :default => "Contenido"), :class => :label
-  = f.text_area :contenido, :class => 'text_area'
-  %span.description Ex: a simple text
+  = f.label :space3, t("activerecord.attributes.microsite.space3", :default => "Space3"), :class => :label
+  = f.fields_for :space3 do |space_form|
+    = space_form.file_field :file
+    = space_form.hidden_field :purpose, :value => "space3"
+.group
+  = f.label :space4, t("activerecord.attributes.microsite.space4", :default => "Space4"), :class => :label
+  = f.fields_for :space4 do |space_form|
+    = space_form.file_field :file
+    = space_form.hidden_field :purpose, :value => "space4"
 .group
   = f.label :form, t("activerecord.attributes.microsite.form", :default => "Form"), :class => :label
   = f.check_box :form, :class => 'check_box'
   %span.description Ex: a simple text
+.group
+  = f.label :footer, t("activerecord.attributes.microsite.footer", :default => "Footer"), :class => :label
+  = f.fields_for :footer do |footer_form|
+    = footer_form.file_field :file
+    = footer_form.hidden_field :purpose, :value => "footer"
 .group.navform.wat-cf
   %button.button{:type => "submit"}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")

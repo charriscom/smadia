@@ -1,4 +1,7 @@
 class Admins::MicrositesController < AdminController
+  
+  uses_tiny_mce 
+  
   # GET /admins/microsites
   # GET /admins/microsites.xml
   def index
@@ -25,7 +28,7 @@ class Admins::MicrositesController < AdminController
   # GET /admins/microsites/new.xml
   def new
     @microsite = Microsite.new
-    @microsite.build_image
+    build_microsite(@microsite)
     
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +39,7 @@ class Admins::MicrositesController < AdminController
   # GET /admins/microsites/1/edit
   def edit
     @microsite = Microsite.find(params[:id])
+    build_microsite(@microsite)
   end
 
   # POST /admins/microsites
@@ -58,7 +62,6 @@ class Admins::MicrositesController < AdminController
   # PUT /admins/microsites/1.xml
   def update
     @microsite = Microsite.find(params[:id])
-
     respond_to do |format|
       if @microsite.update_attributes(params[:microsite])
         format.html { redirect_to admins_microsite_path(@microsite, :notice => 'Microsite was successfully updated.') }
@@ -81,4 +84,16 @@ class Admins::MicrositesController < AdminController
       format.xml  { head :ok }
     end
   end
+  
+  private
+    
+    def build_microsite(microsite)
+      microsite.build_image if microsite.image.nil?
+      microsite.build_header if microsite.header.nil?
+      microsite.build_space1 if microsite.space1.nil?
+      microsite.build_space2 if microsite.space2.nil?
+      microsite.build_space3 if microsite.space3.nil?
+      microsite.build_space4 if microsite.space4.nil?
+      microsite.build_footer if microsite.footer.nil?
+    end
 end

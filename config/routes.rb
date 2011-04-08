@@ -1,6 +1,8 @@
 Smadia::Application.routes.draw do
 
-  namespace :admins do resources :microsites end
+  namespace :pages do
+    get 'googlehostedservice'
+  end
 
   devise_for :admins 
   devise_for :users
@@ -12,9 +14,10 @@ Smadia::Application.routes.draw do
     resources :articles
     resources :promotions
     resources :videos
+    resources :microsites
   end
   
-  root :to =>"devise/sessions#create"
+  root :to =>"pages#googlehostedservice"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

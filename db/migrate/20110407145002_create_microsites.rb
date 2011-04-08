@@ -10,7 +10,7 @@ class CreateMicrosites < ActiveRecord::Migration
       t.boolean     :external_page
       t.boolean     :other_category
       t.integer     :category_id
-      t.text        :contenido
+      t.text        :content
       t.boolean     :form
       t.timestamps
     end

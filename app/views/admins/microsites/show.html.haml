@@ -60,18 +60,60 @@
         %b
           = t("activerecord.attributes.admins_microsite.header", :default => t("activerecord.labels.header", :default => "Header"))
           \:
-        -debugger
-        = swf_tag("small_fry_smallfry")
+        -if (@microsite.header.file.content_type == "application/x-shockwave-flash")
+          = swf_tag(@microsite.header.file.url)
+        -else
+          = image_tag @microsite.header.file.url(:thumb)
       %p
         %b
-          = t("activerecord.attributes.admins_microsite.contenido", :default => t("activerecord.labels.contenido", :default => "Contenido"))
+          = t("activerecord.attributes.admins_microsite.space1", :default => t("activerecord.labels.space1", :default => "Space1"))
           \:
-        = @microsite.contenido
+        -if (@microsite.space1.file.content_type == "application/x-shockwave-flash")
+          = swf_tag(@microsite.space1.file.url)
+        -else
+          = image_tag @microsite.space1.file.url
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.space2", :default => t("activerecord.labels.space2", :default => "Space2"))
+          \:
+        -if (@microsite.space2.file.content_type == "application/x-shockwave-flash")
+          = swf_tag(@microsite.space2.file.url)
+        -else
+          = image_tag @microsite.space2.file.url
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.content", :default => t("activerecord.labels.content", :default => "Content"))
+          \:
+        = @microsite.content
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.space3", :default => t("activerecord.labels.space3", :default => "Space3"))
+          \:
+        -if (@microsite.space3.file.content_type == "application/x-shockwave-flash")
+          = swf_tag(@microsite.space3.file.url)
+        -else
+          = image_tag @microsite.space3.file.url
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.space4", :default => t("activerecord.labels.space4", :default => "Space4"))
+          \:
+        -if (@microsite.space4.file.content_type == "application/x-shockwave-flash")
+          = swf_tag(@microsite.space4.file.url)
+        -else
+          = image_tag @microsite.space4.file.url
       %p
         %b
           = t("activerecord.attributes.admins_microsite.form", :default => t("activerecord.labels.form", :default => "Form"))
           \:
         = @microsite.form
+      %p
+        %b
+          = t("activerecord.attributes.admins_microsite.space4", :default => t("activerecord.labels.space4", :default => "Space4"))
+          \:
+        -if (@microsite.footer.file.content_type == "application/x-shockwave-flash")
+          = swf_tag(@microsite.footer.file.url)
+        -else
+          = image_tag @microsite.footer.file.url
       .wat-cf
         = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admins_microsite_path(@microsite), :class => "button"
         = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admins_microsite_path(@microsite), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"

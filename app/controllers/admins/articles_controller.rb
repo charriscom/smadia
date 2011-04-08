@@ -88,4 +88,5 @@ class Admins::ArticlesController < AdminController
       format.xml  { head :ok }
     end
   end
+
 end
