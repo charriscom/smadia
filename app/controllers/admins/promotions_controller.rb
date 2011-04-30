@@ -28,7 +28,8 @@ class Admins::PromotionsController < AdminController
   # GET /admins/promotions/new.xml
   def new
     @promotion = Promotion.new
-    @promotion.build_category
+    category = Category.where("name = 'Promociones'")
+    category.empty? ? @promotion.build_category : @promotion.category = category.first
     (1..5).each do 
       @promotion.images.build
     end
@@ -52,6 +53,10 @@ class Admins::PromotionsController < AdminController
   # POST /admins/promotions.xml
   def create
     @promotion = Promotion.new(params[:promotion])
+    @promotion.build_category if @promotion.category.nil?
+    (1..5-@promotion.images.to_a.count).each do 
+      @promotion.images.build
+    end
     @categories = Category.all
     respond_to do |format|
       if @promotion.save
@@ -68,8 +73,10 @@ class Admins::PromotionsController < AdminController
   # PUT /admins/promotions/1.xml
   def update
     @promotion = Promotion.find(params[:id])
+    (1..5-@promotion.images.count).each do 
+      @promotion.images.build
+    end
     @categories = Category.all
-    debugger
     respond_to do |format|
       if @promotion.update_attributes(params[:promotion])
         format.html { redirect_to admins_promotion_path(@promotion, :notice => 'Promotion was successfully updated.') }

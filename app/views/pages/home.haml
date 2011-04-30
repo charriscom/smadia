@@ -1,0 +1,144 @@
+
+#containerslider
+  #slider.nivoSlider
+    =image_tag "slider-azul.jpg", :title => "hola mundo"
+    =image_tag "slider-rosado.jpg"
+    =image_tag "slider-verde.jpg"
+  #htmlcaption.nivo-html-caption
+    %strong This
+    is SPARTA of a
+    %em HTML
+    caption with
+    = succeed "." do
+      %a{:href => "#"} a link
+#rightcol
+  .categorias
+    %h3 Destacados
+    %ul
+      %li Micrositio
+      %li
+        %hr/
+      %li Micrositio
+      %li
+        %hr/
+      %li Micrositio
+      %li
+        %hr/
+      %li Micrositio
+      %li
+        %hr/
+      %li Micrositio
+      %li
+        %hr/
+      %li Micrositio
+      %li
+        %hr/
+      %li Micrositio
+      %li
+        %hr/
+      %li Micrositio
+      %li
+        %hr/
+      %li Micrositio
+      %li
+        %hr/
+  .facebook
+    %iframe{:allowTransparency => "true", :frameborder => "0", :scrolling => "no", :src => "http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fplatform&width=200&colorscheme=light&show_faces=true&stream=false&header=false&height=300", :style => "border:none; overflow:hidden; width:200px; height:300px;"}
+  .noticias
+    %h3 Highlights
+    %ul
+      -@articles.each do |article|
+        %li
+          =article.highlights
+#leftcold
+  .home
+    .title
+      %span VIDEOS
+    %ul
+      %li
+        =image_tag "imagen_home.jpg"
+        %h4 Titulo
+        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, orci nec mattis porta, mauris tellus ultricies.
+      %li
+        =image_tag "imagen_home.jpg"
+        %h4 Titulo
+        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, orci nec mattis porta, mauris tellus ultricies.
+      %li
+        =image_tag "imagen_home.jpg"
+        %h4 Titulo
+        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, orci nec mattis porta, mauris tellus ultricies.
+      %li
+        =image_tag "imagen_home.jpg"
+        %h4 Titulo
+        %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, orci nec mattis porta, mauris tellus ultricies.
+  .comentarios
+    .title
+      %span COMENTARIOS
+    %ul
+      %li
+        %span Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, orci nec mattis porta, mauris tellus ultricies.
+        %p.cby by Lolo
+      %li
+        %span Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, orci nec mattis porta, mauris tellus ultricies.
+        %p.cby by Lolo
+      %li
+        %span Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, orci nec mattis porta, mauris tellus ultricies.
+        %p.cby by Lolo
+      %li
+        %span Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, orci nec mattis porta, mauris tellus ultricies.
+        %p.cby by Lolo
+#rightcold
+  .title
+    %span PROMOCIONES
+  %ul
+    %li
+      =image_tag "about_imagen.jpg", :class => "image"
+      %h3 Cirugia Estetica
+      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, orci nec mattis porta, mauris tellus ultricies.
+      #precio
+        %span.desc
+          50%
+          %br/
+          desc.
+        %span.pactual $ 1.000.000
+        %span.panterior $ 2.000.000
+      %p.bottompromo
+        =image_tag "chulo.png", :class => "chulo"
+        Oferta Conseguida
+        =image_tag "clock.png"
+        Tiempo Restante
+        = succeed "h" do
+          %span 20
+        = succeed "m" do
+          %span 10
+        = succeed "s" do
+          %span 06
+        %a{:href => "#"}
+          =image_tag "button.png", :class => "boton"
+    %li
+      =image_tag "about_imagen.jpg", :class => "image"
+      %h3 Cirugia Estetica
+      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, orci nec mattis porta, mauris tellus ultricies.
+      #precio
+        %span.desc
+          50%
+          %br/
+          desc.
+        %span.pactual $ 1.000.000
+        %span.panterior $ 2.000.000
+      %p.bottompromo
+        =image_tag "chulo.png", :class => "chulo"
+        Oferta Conseguida
+        =image_tag "clock.png"
+        Tiempo Restante
+        = succeed "h" do
+          %span 20
+        = succeed "m" do
+          %span 10
+        = succeed "s" do
+          %span 06
+        %a{:href => "#"}
+          =image_tag "button.png", :class => "boton"
+
+:javascript
+  $(window).load(function() {$('#slider').nivoSlider({ effect:'sliceUpDown'});});

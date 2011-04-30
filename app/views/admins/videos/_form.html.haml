@@ -12,11 +12,11 @@
   %span.description Ex: a simple text
 .group
   = f.label :published, t("activerecord.attributes.video.published", :default => "Published"), :class => :label
-  = f.date_select :published, :class => 'date_select'
+  = f.text_field :published, :class => 'date_select'
   %span.description Ex: a simple text
 .group
   = f.label :closed, t("activerecord.attributes.video.closed", :default => "Closed"), :class => :label
-  = f.date_select :closed, :class => 'date_select'
+  = f.text_field :published, :class => 'date_select'
   %span.description Ex: a simple text
 .group
   = f.label :link, t("activerecord.attributes.video.link", :default => "Link"), :class => :label

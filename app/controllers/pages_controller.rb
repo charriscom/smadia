@@ -1,3 +1,7 @@
 class PagesController < ApplicationController
-  layout false
+  before_filter :menu_bar
+  
+  def home
+    @articles = Article.where("highlights != ''").order("created_at").first(20)
+  end
 end

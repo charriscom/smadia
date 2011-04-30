@@ -7,6 +7,7 @@ class Admins::ProfilesController < AdminController
     respond_to do |format|
       format.html # index.html.haml
       format.xml  { render :xml => @profiles }
+      format.xls  {ModelXls.new(Profile) ;send_file "#{Rails.root}/tmp/xls/Profiles.xls"}
     end
   end
 

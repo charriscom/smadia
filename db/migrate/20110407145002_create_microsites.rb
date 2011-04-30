@@ -8,8 +8,8 @@ class CreateMicrosites < ActiveRecord::Migration
       t.boolean     :home_page
       t.boolean     :section_page
       t.boolean     :external_page
-      t.boolean     :other_category
       t.integer     :category_id
+      t.integer     :microsite_id
       t.text        :content
       t.boolean     :form
       t.timestamps
@@ -17,6 +17,6 @@ class CreateMicrosites < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :admins_microsites
+    drop_table :microsites
   end
 end

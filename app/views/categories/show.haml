@@ -1,0 +1,13 @@
+#main
+  #titulo
+    %span.tpagina 
+      SMADIA &nbsp;&nbsp;&nbsp;&nbsp;/ 
+      %br 
+      %span.letrap clinic
+    %span
+      =@category.name
+#cuadros
+  %ul
+    =render @category.articles
+    =render @category.promotions
+    =render @category.videos

@@ -1,0 +1,16 @@
+%li.livideos
+  .videos
+    %object{:width=>280, :height=>240}
+      =raw video.link
+  .textos
+    %h3<
+      =video.title
+    %p
+      = video.description
+    .addthis_toolbox.addthis_default_style.redesociales
+      %a.addthis_button_preferred_1
+      %a.addthis_button_preferred_2
+      %a.addthis_button_preferred_3
+      %a.addthis_button_preferred_4
+      %a.addthis_button_compact
+      %a.addthis_counter.addthis_bubble_style

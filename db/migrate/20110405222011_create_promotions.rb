@@ -16,6 +16,6 @@ class CreatePromotions < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :admins_promotions
+    drop_table :promotions
   end
 end

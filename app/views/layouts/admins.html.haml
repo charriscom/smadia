@@ -2,39 +2,45 @@
 %html
   %head
     %title Smadia
-    = stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/default/style", "web-app-theme/override"
+    = stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/default/style", "web-app-theme/override", "jquery-ui"
     = javascript_include_tag :all
     = csrf_meta_tag
     = include_tiny_mce_if_needed
+    :javascript
+      $(window).load(function () {$( ".date_select" ).datepicker();});
   %body
     #container
       #header
         %h1
           %a{:href => "/"} Smadia
-        #user-navigation
-          %ul.wat-cf
-            %li
-              %a{:href => "#"}= t("web-app-theme.profile", :default => "Profile")
-            %li
-              %a{:href => "#"}= t("web-app-theme.settings", :default => "Settings")
-            %li
-              %a.logout{:href => destroy_admin_session_path }= t("web-app-theme.logout", :default => "Logout")
-        #main-navigation
-          %ul.wat-cf
-            %li
-              = link_to "Usuarios", admins_users_path
-            %li
-              = link_to "Perfiles", admins_profiles_path
-            %li
-              = link_to "Categorias", admins_categories_path
-            %li
-              = link_to "Articulos", admins_articles_path
-            %li
-              = link_to "Promociones", admins_promotions_path
-            %li
-              = link_to "Videos", admins_videos_path
-            %li
-              = link_to "Micrositios", admins_microsites_path
+        -if admin_signed_in? || user_signed_in?
+          #user-navigation
+            %ul.wat-cf
+              %li
+                %a{:href => "#"}= t("web-app-theme.profile", :default => "Profile")
+              %li
+                %a{:href => "#"}= t("web-app-theme.settings", :default => "Settings")
+              %li
+                %a.logout{:href => destroy_admin_session_path }= t("web-app-theme.logout", :default => "Logout")
+          #main-navigation
+            %ul.wat-cf
+            
+              %li
+                = link_to "Usuarios", admins_users_path
+              %li
+                = link_to "Perfiles", admins_profiles_path
+              %li
+                = link_to "Categorias", admins_categories_path
+              %li
+                = link_to "Articulos", admins_articles_path
+              %li
+                = link_to "Promociones", admins_promotions_path
+              %li
+                = link_to "Videos", admins_videos_path
+              %li
+                = link_to "Micrositios", admins_microsites_path
+              %li
+                = link_to "Comentarios", admins_comments_path
       #wrapper.wat-cf
         .flash
           - flash.each do |type, message|

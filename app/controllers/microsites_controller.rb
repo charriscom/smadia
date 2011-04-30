@@ -1,0 +1,2 @@
+class MicrositesController < ApplicationController
+end

@@ -3,6 +3,7 @@
     %ul.wat-cf
       %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", admins_articles_path
       %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admins_article_path
+      %li= link_to "#{t("web-app-theme.export", :default => "Export")}", admins_articles_path(:format => "xls")
   .content
     %h2.title
       = t("web-app-theme.all", :default => "All")
@@ -12,7 +13,7 @@
         %tr
           %th.first ID
           %th
-            = t("activerecord.attributes.admins_article.category_id", :default => t("activerecord.labels.category_id", :default => "Category_id"))
+            = t("activerecord.attributes.admins_article.title", :default => t("activerecord.labels.title", :default => "Title"))
           %th= t("web-app-theme.created_at", :default => "Created at")
           %th.last &nbsp;
         - @articles.each do |article|
@@ -20,7 +21,7 @@
             %td
               = article.id
             %td
-              = link_to article.category_id, admins_article_path(article)
+              = link_to article.title, admins_article_path(article)
             %td
               = article.created_at
             %td.last
@@ -30,4 +31,5 @@
               \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admins_article_path(article), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
       .actions-bar.wat-cf
         .actions
+          =will_paginate @articles
 - content_for :sidebar, render(:partial => 'sidebar')

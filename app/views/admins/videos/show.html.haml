@@ -35,7 +35,7 @@
         %b
           = t("activerecord.attributes.admins_video.link", :default => t("activerecord.labels.link", :default => "Link"))
           \:
-        = @video.link
+        = raw @video.link
       %p
         %b
           = t("activerecord.attributes.admins_video.description", :default => t("activerecord.labels.description", :default => "Description"))

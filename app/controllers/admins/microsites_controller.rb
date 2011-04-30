@@ -29,7 +29,9 @@ class Admins::MicrositesController < AdminController
   def new
     @microsite = Microsite.new
     build_microsite(@microsite)
-    
+    @categories = Category.all
+    @microsites = Microsite.all
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @microsite }
@@ -39,6 +41,8 @@ class Admins::MicrositesController < AdminController
   # GET /admins/microsites/1/edit
   def edit
     @microsite = Microsite.find(params[:id])
+    @microsites = Microsite.where("id != ?",@microsite.id)
+    @categories = Category.all
     build_microsite(@microsite)
   end
 
@@ -46,7 +50,9 @@ class Admins::MicrositesController < AdminController
   # POST /admins/microsites.xml
   def create
     @microsite = Microsite.new(params[:microsite])
-
+    @microsites = Microsite.all
+    @categories = Category.all
+    build_microsite(@microsite)
     respond_to do |format|
       if @microsite.save
         format.html { redirect_to admins_microsite_path(@microsite, :notice => 'Microsite was successfully created.') }
@@ -62,6 +68,7 @@ class Admins::MicrositesController < AdminController
   # PUT /admins/microsites/1.xml
   def update
     @microsite = Microsite.find(params[:id])
+    @microsites = Microsite.where("id != ?",@microsite.id)
     respond_to do |format|
       if @microsite.update_attributes(params[:microsite])
         format.html { redirect_to admins_microsite_path(@microsite, :notice => 'Microsite was successfully updated.') }
@@ -95,5 +102,7 @@ class Admins::MicrositesController < AdminController
       microsite.build_space3 if microsite.space3.nil?
       microsite.build_space4 if microsite.space4.nil?
       microsite.build_footer if microsite.footer.nil?
+      microsite.build_parent_microsite if microsite.parent_microsite.nil?
+      microsite.build_category if microsite.category.nil?
     end
 end

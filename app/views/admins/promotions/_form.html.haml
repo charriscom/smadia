@@ -16,11 +16,11 @@
   %span.description Ex: a simple text
 .group
   = f.label :published, t("activerecord.attributes.promotion.published", :default => "Published"), :class => :label
-  = f.date_select :published, :class => 'date_select'
+  = f.text_field :published, :class => 'date_select'
   %span.description Ex: a simple text
 .group
   = f.label :closed, t("activerecord.attributes.promotion.closed", :default => "Closed"), :class => :label
-  = f.date_select :closed, :class => 'date_select'
+  = f.text_field :published, :class => 'date_select'
   %span.description Ex: a simple text
 .group
   = f.label :title, t("activerecord.attributes.promotion.title", :default => "Title"), :class => :label
@@ -39,6 +39,7 @@
   = f.text_area :content, :class => 'text_area mceEditor'
   %span.description Ex: a simple text
 .group
+  = f.label :images, t("activerecord.attributes.promotion.images", :default => "Images"), :class => :label
   -f.fields_for :images do |images_form|
     .group
       = images_form.file_field :picture 

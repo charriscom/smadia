@@ -5,11 +5,12 @@ class Admins::ArticlesController < AdminController
   # GET /admins/articles
   # GET /admins/articles.xml
   def index
-    @articles = Article.all
+    @articles = Article.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @articles }
+      format.xls  {ModelXls.new(Article) ;send_file "#{Rails.root}/tmp/xls/Articles.xls"}
     end
   end
 
@@ -28,9 +29,10 @@ class Admins::ArticlesController < AdminController
   # GET /admins/articles/new.xml
   def new
     @article = Article.new
-    @article.build_category
-    @article.build_image
+    @article.build_thumb
     @article.build_carrusel_image
+    category = Category.where("name = 'Articulos'")
+    category.empty? ? @article.build_category : @article.category = category.first
     @categories = Category.all
     respond_to do |format|
       format.html # new.html.erb
@@ -49,7 +51,6 @@ class Admins::ArticlesController < AdminController
   def create
     @article = Article.new(params[:article])
     @categories = Category.all
-    debugger
     respond_to do |format|
       if @article.save
         format.html { redirect_to admins_article_path(@article, :notice => 'Article was successfully created.') }
@@ -65,7 +66,7 @@ class Admins::ArticlesController < AdminController
   # PUT /admins/articles/1.xml
   def update
     @article = Article.find(params[:id])
-
+    @categories = Category.all
     respond_to do |format|
       if @article.update_attributes(params[:article])
         format.html { redirect_to admins_article_path(@article, :notice => 'Article was successfully updated.') }

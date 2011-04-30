@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110407153210) do
+ActiveRecord::Schema.define(:version => 20110418160457) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -52,6 +52,16 @@ ActiveRecord::Schema.define(:version => 20110407153210) do
     t.datetime "updated_at"
   end
 
+  create_table "comments", :force => true do |t|
+    t.string   "name"
+    t.date     "published"
+    t.date     "closed"
+    t.text     "content"
+    t.string   "signature"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "images", :force => true do |t|
     t.string   "picture_file_name"
     t.string   "picture_content_type"
@@ -72,22 +82,10 @@ ActiveRecord::Schema.define(:version => 20110407153210) do
     t.boolean  "home_page"
     t.boolean  "section_page"
     t.boolean  "external_page"
-    t.boolean  "other_category"
     t.integer  "category_id"
-    t.text     "contenido"
+    t.integer  "microsite_id"
+    t.text     "content"
     t.boolean  "form"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "paperclip_files", :force => true do |t|
-    t.string   "file_file_name"
-    t.string   "file_content_type"
-    t.integer  "file_file_size"
-    t.datetime "file_updated_at"
-    t.string   "purpose"
-    t.integer  "owner_id"
-    t.string   "owner_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -208,9 +206,9 @@ ActiveRecord::Schema.define(:version => 20110407153210) do
     t.date     "closed"
     t.string   "link"
     t.text     "description"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id"
   end
 
 end

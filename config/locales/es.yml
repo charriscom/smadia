@@ -43,6 +43,7 @@ es:
         country: Pais
         state: Departamento
         city: Ciudad
+        email: Email
       profile:
         name: Nombre
         description: Descripcion
@@ -91,7 +92,19 @@ es:
         microsite_delete: Eliminar Micrositio
         microsite_view: Ver Micrositio
         microsite_export: Exportar Micrositio
-        
+      article:
+        category: Categoria
+        published: Fecha de Publicacion
+        closed: Fecha de Cierre
+        title: Titulo
+        highlights: Highlights
+        content: Contenido
+        thumb: Imagen Pequeña
+        carrusel: Carrusel
+        carrusel_image: Imagen del Carrusel
+      category:
+        name: Nombre
+        description: Descripcion
     errors:
       messages:
         # Default messages: complete sentences

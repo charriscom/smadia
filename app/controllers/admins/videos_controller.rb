@@ -25,7 +25,8 @@ class Admins::VideosController < AdminController
   # GET /admins/videos/new.xml
   def new
     @video = Video.new
-    @video.build_category
+    category = Category.where("name = 'Videos'")
+    category.empty? ? @video.build_category : @video.category = category.first 
     @categories = Category.all
 
     respond_to do |format|

@@ -1,14 +1,14 @@
 .group
-  = f.label :category_id, t("activerecord.attributes.article.category_id", :default => "Category"), :class => :label
+  = f.label :category_id, t("activerecord.attributes.article.category", :default => "Category"), :class => :label
   =f.collection_select :category_id, @categories,:id,:name, :selected => article.category.id
   %span.description Ex: a simple text
 .group
   = f.label :published, t("activerecord.attributes.article.published", :default => "Published"), :class => :label
-  = f.date_select :published, :class => 'date_select'
+  = f.text_field :published, :class => 'date_select'
   %span.description Ex: a simple text
 .group
   = f.label :closed, t("activerecord.attributes.article.closed", :default => "Closed"), :class => :label
-  = f.date_select :closed, :class => 'date_select'
+  = f.text_field :closed, :class => 'date_select'
   %span.description Ex: a simple text
 .group
   = f.label :title, t("activerecord.attributes.article.title", :default => "Title"), :class => :label
@@ -16,29 +16,27 @@
   %span.description Ex: a simple text
 .group
   = f.label :highlights, t("activerecord.attributes.article.highlights", :default => "Highlights"), :class => :label
-  .flash
-    .message.warning 
-      %p
-        Solo escriba en esta tabla si desea que el resumen más importante de la noticia salga en la página de inicio, en esta página solo saldrán los últimos 20 (highlights) por fecha de publicación del articulo<p></p>
   = f.text_area :highlights, :class => 'text_area'
-  %span.description Ex: a simple text
+  %span.description Solo escriba en esta tabla si desea que el resumen más importante de la noticia salga en la página de inicio, en esta página solo saldrán los últimos 20 (highlights) por fecha de publicación del articulo
 .group
   = f.label :content, t("activerecord.attributes.article.content", :default => "Content"), :class => :label
   = f.text_area :content, :class => 'text_area mceEditor'
-  %span.description Ex: a simple text
+  %span.description Tenga en cuenta que el tamaño del contenido en pixeles no debe superar 640 de ancho, incluyendo tablas e imagenes
 .group
-  = f.label :image, t("activerecord.attributes.article.image", :default => "Image"), :class => :label
-  = f.fields_for :image do |image_form|
-    = image_form.file_field :picture
-    = image_form.hidden_field :purpose, :value => "thumb"
+  = f.label :thumb, t("activerecord.attributes.article.thumb", :default => "Thumb"), :class => :label
+  = f.fields_for :thumb do |thumb_form|
+    = thumb_form.file_field :picture, :class => "text_field"
+    = thumb_form.hidden_field :purpose, :value => "thumb"
+  %span.description 100 ancho maximo
 .group
   = label_tag "carrusel","Carrusel" , :class => :label
   = check_box_tag "carrusel", 1,false,:class => 'check_box'
 .group
   = f.label :carrusel_image, t("activerecord.attributes.article.carrusel_image", :default => "Carrusel Image"), :class => :label
   = f.fields_for :carrusel_image do |carrusel_image_form|
-    = carrusel_image_form.file_field :picture
+    = carrusel_image_form.file_field :picture, :class => "text_field"
     = carrusel_image_form.hidden_field :purpose, :value => "carrusel"
+  %span.description 620 x 100 ancho
 .group.navform.wat-cf
   %button.button{:type => "submit"}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")

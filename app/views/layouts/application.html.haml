@@ -1,39 +1,37 @@
 !!!
 %html
   %head
-    %title Smadia
-    = stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/default/style", "web-app-theme/override"
+    %title Smadia Clinic
+    %link{:href => "images/smadia-ico.ico", :rel => "shortcut icon", :type => "image/ico"}/
+    = stylesheet_link_tag "style", "nivo-slider"
     = javascript_include_tag :all
     = csrf_meta_tag
+    = javascript_include_tag "http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4dac4fa3199b4742"
+    :javascript
+          Cufon.replace('.title span,#rightcold .title span, #login, #rightcol h3');
+          var addthis_config = {"data_track_clickback":true};
   %body
-    #container
+    #wrapper 
       #header
-        %h1
-          %a{:href => "/"} Smadia
-        #user-navigation
-          %ul.wat-cf
-            %li
-              %a{:href => "#"}= t("web-app-theme.profile", :default => "Profile")
-            %li
-              %a{:href => "#"}= t("web-app-theme.settings", :default => "Settings")
-            %li
-              %a.logout{:href => "/logout"}= t("web-app-theme.logout", :default => "Logout")
-        #main-navigation
-          %ul.wat-cf
-            %li
-              = link_to "Usuarios", admins_users_path
-            %li
-              = link_to "Perfiles", admins_profiles_path
-      #wrapper.wat-cf
-        .flash
-          - flash.each do |type, message|
-            %div{:class => "message #{type}"}
-              %p= message
-        #main
-          = yield
-          #footer
-            .block
-              %p
-                Copyright &copy; #{Time.now.year} Web App.
-        #sidebar
-          = yield :sidebar
+        .logo
+        %span#login log in
+      #menu
+        %ul#nav
+          = render @main_menu.subcategories   
+        %span.search
+          %input{:name => "Buscar", :type => "text"}/      
+      .flash
+        - flash.each do |type, message|
+          %div{:class => "message #{type}"}
+            %p= message
+      = yield
+    #footer                                                             
+      %p                                                                
+        Cra 47 No. 80-45 Local 2 Barranquilla, Colombia                 
+        %br/                                                            
+        PBX. (5) 378 4140 Cel. (301) 278 5986 USA. (305) 848 9560       
+        %br/                                                            
+        www.smadiaclinic.com                                            
+        %br/                                                            
+        info@smadiaclinic.com                                           
+                                                                            

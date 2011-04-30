@@ -1,0 +1,39 @@
+%li
+  .cuadroi
+    =swf_or_image_tag("small",promotion.images.first.picture)
+  .textos
+    %h3<
+      =promotion.title
+    %p
+      =promotion.summary
+    .addthis_toolbox.addthis_default_style.redesociales
+      %a.addthis_button_preferred_1
+      %a.addthis_button_preferred_2
+      %a.addthis_button_preferred_3
+      %a.addthis_button_preferred_4
+      %a.addthis_button_compact
+      %a.addthis_counter.addthis_bubble_style
+    #precio
+      %span.desc
+        ="#{promotion.discount}%"
+        %br
+        desc.
+      %span.pactual
+        ="$ #{promotion.discount_value}"
+      %span.panterior
+        ="$ #{promotion.value}"
+    .tabajo
+      %p.bottompromo
+        =image_tag "chulo.png"
+        Oferta Conseguida
+        =image_tag "clock.png"
+        Tiempo Restante 
+        %span 20
+        h 
+        %span 10
+        m 
+        %span 06
+        s 
+      =link_to image_tag("button.png"), "#"
+      
+  =link_to image_tag("button.png", :class => "boton"), promotion_path(promotion.id)

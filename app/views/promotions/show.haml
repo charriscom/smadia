@@ -1,0 +1,51 @@
+#titulo
+  %span.tpagina 
+    SMADIA &nbsp;&nbsp;&nbsp;&nbsp;/
+    %br
+    %span.letrap clinic
+  %span 
+    = @promotion.summary
+#main
+  #producto
+    .cuadroic
+    %p.bottompromo
+      =image_tag "clock.png"
+      Tiempo Restante 
+      %span 20
+      h 
+      %span 10
+      m 
+      %span 06
+      s
+  #comprar
+    %table{ :width =>"265", :border=> "0"}
+      %tr
+        %th{:width=>"88", :height=>"30"}
+          precio
+        %th{:colspan =>"2"}
+          ="$ #{@promotion.discount_value}"
+      %tr
+        %td.d{:height=>"21", :align=>"center"}
+          antes
+        %td{:width =>"86", :align =>"center"}
+          descuento
+        %td{:width =>"77", :align=>"center"}
+          ahora
+      %tr
+        %td{:align=>"center"}
+          ="$ #{@promotion.value}"
+        %td{:align=>"center"}
+          ="$ #{@promotion.discount}"
+        %td{:align=>"center"}
+          ="$ #{@promotion.discount_value}"
+    %span
+      =link_to "comprar" ,"#", :class => "botoninferior"
+  .cfacebook
+    %iframe{:src=>"http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fplatform&amp;width=266&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=false&amp;height=216", :scrolling=>"no", :frameborder=>"0", :style=>"border:none; overflow:hidden; width:266px; height:216px;", :allowtransparency=>"true"}
+  #infoprod
+    #tinfo
+      Informacion del producto
+    #articulo
+      = raw @promotion.content
+  %p.pyc
+    Politicas y condiciones

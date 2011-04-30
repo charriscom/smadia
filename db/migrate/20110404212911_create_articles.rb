@@ -7,7 +7,6 @@ class CreateArticles < ActiveRecord::Migration
       t.string  :title
       t.text    :highlights
       t.text    :content
-      t.text    :content_html
       t.boolean :carrusel
       t.timestamps
     end

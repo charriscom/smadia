@@ -2,11 +2,12 @@ class Admins::CategoriesController < AdminController
   # GET /admins/categories
   # GET /admins/categories.xml
   def index
-    @categories = Category.all
+    @categories = Category.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @categories }
+      format.xls  {ModelXls.new(Category) ;send_file "#{Rails.root}/tmp/xls/Categories.xls"}
     end
   end
 
@@ -78,7 +79,7 @@ class Admins::CategoriesController < AdminController
   # DELETE /admins/categories/1.xml
   def destroy
     @category = Category.find(params[:id])
-    @category.destroy
+    @category.destroy unless @category.name =="Menu Principal"
 
     respond_to do |format|
       format.html { redirect_to(admins_categories_url) }

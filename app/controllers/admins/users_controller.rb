@@ -7,7 +7,7 @@ class Admins::UsersController < AdminController
     respond_to do |format|
       format.html # index.html.haml
       format.xml  { render :xml => @users }
-      format.xls  {UsersXls.new ;send_file "#{Rails.root}/tmp/xls/users.xls"}
+      format.xls  {ModelXls.new(User) ;send_file "#{Rails.root}/tmp/xls/Users.xls"}
     end
   end
 
