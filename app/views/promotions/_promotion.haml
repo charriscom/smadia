@@ -1,6 +1,6 @@
 %li
   .cuadroi
-    =swf_or_image_tag("small",promotion.images.first.picture)
+    =swf_or_image_tag(nil,"small",promotion.images.first.picture)
   .textos
     %h3<
       =promotion.title
@@ -23,17 +23,15 @@
       %span.panterior
         ="$ #{promotion.value}"
     .tabajo
+      #countdown
       %p.bottompromo
         =image_tag "chulo.png"
         Oferta Conseguida
         =image_tag "clock.png"
         Tiempo Restante 
-        %span 20
-        h 
-        %span 10
-        m 
-        %span 06
-        s 
+
       =link_to image_tag("button.png"), "#"
       
   =link_to image_tag("button.png", :class => "boton"), promotion_path(promotion.id)
+:javascript
+  $('#countdown').countdown({until: new Date("#{promotion.closed.to_time.to_s}")});

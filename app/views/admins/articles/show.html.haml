@@ -42,13 +42,13 @@
           = t("activerecord.attributes.admins_article.thumb", :default => t("activerecord.labels.thumb", :default => "Thumb"))
           \:
       %p
-        =swf_or_image_tag("thumb",@article.thumb.picture)
+        =swf_or_image_tag(nil,"thumb",@article.thumb.picture)
       %p
         %b
           = t("activerecord.attributes.admins_article.carrusel_image", :default => t("activerecord.labels.carrusel_image", :default => "Carrusel Image"))
           \:
       %p
-        =swf_or_image_tag("thumb",@article.carrusel_image.picture)
+        =swf_or_image_tag(nil,"thumb",@article.carrusel_image.picture)
       .wat-cf
         = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admins_article_path(@article), :class => "button"
         = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admins_article_path(@article), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"

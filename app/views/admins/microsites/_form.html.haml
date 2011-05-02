@@ -4,11 +4,11 @@
   %span.description Ex: a simple text
 .group
   = f.label :published, t("activerecord.attributes.microsite.published", :default => "Published"), :class => :label
-  = f.text_field :published, :class => 'date_select'
+  = f.text_field :published, :id => 'published', :class => "text_field"
   %span.description Ex: a simple text
 .group
   = f.label :closed, t("activerecord.attributes.microsite.closed", :default => "Closed"), :class => :label
-  = f.text_field :published, :class => 'date_select'
+  = f.text_field :closed, :id => 'closed', :class => "text_field"
   %span.description Ex: a simple text
 .group
   = f.label :image, t("activerecord.attributes.microsite.image", :default => "Image"), :class => :label

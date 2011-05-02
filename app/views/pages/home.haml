@@ -1,9 +1,8 @@
 
 #containerslider
   #slider.nivoSlider
-    =image_tag "slider-azul.jpg", :title => "hola mundo"
-    =image_tag "slider-rosado.jpg"
-    =image_tag "slider-verde.jpg"
+    -@carrusel.each do |article|
+      =link_to swf_or_image_tag(article.highlights,"medium",article.carrusel_image.picture) , article_path(article.id)
   #htmlcaption.nivo-html-caption
     %strong This
     is SPARTA of a
@@ -47,7 +46,7 @@
   .noticias
     %h3 Highlights
     %ul
-      -@articles.each do |article|
+      -@highlights.each do |article|
         %li
           =article.highlights
 #leftcold
@@ -75,46 +74,38 @@
     .title
       %span COMENTARIOS
     %ul
-      %li
-        %span Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, orci nec mattis porta, mauris tellus ultricies.
-        %p.cby by Lolo
-      %li
-        %span Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, orci nec mattis porta, mauris tellus ultricies.
-        %p.cby by Lolo
-      %li
-        %span Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, orci nec mattis porta, mauris tellus ultricies.
-        %p.cby by Lolo
-      %li
-        %span Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, orci nec mattis porta, mauris tellus ultricies.
-        %p.cby by Lolo
+      -@comments.each do |comment|
+        %li
+          %span
+            =comment.content
+          %p.cby
+            by
+            =comment.signature
 #rightcold
   .title
     %span PROMOCIONES
   %ul
-    %li
-      =image_tag "about_imagen.jpg", :class => "image"
-      %h3 Cirugia Estetica
-      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, orci nec mattis porta, mauris tellus ultricies.
-      #precio
-        %span.desc
-          50%
-          %br/
-          desc.
-        %span.pactual $ 1.000.000
-        %span.panterior $ 2.000.000
-      %p.bottompromo
-        =image_tag "chulo.png", :class => "chulo"
-        Oferta Conseguida
-        =image_tag "clock.png"
-        Tiempo Restante
-        = succeed "h" do
-          %span 20
-        = succeed "m" do
-          %span 10
-        = succeed "s" do
-          %span 06
-        %a{:href => "#"}
-          =image_tag "button.png", :class => "boton"
+    -@promotions.each do |promotion|
+      %li
+        =swf_or_image_tag(nil,"thumb",promotion.images.first.picture)
+        %h3 
+          =promotion.title
+        %p
+          =promotion.summary
+        #precio
+          %span.desc
+            ="#{promotion.discount}%"
+            %br/
+            desc.
+          %span.pactual
+            ="$ #{promotion.discount_value}"
+          %span.panterior
+            ="$ #{promotion.value}"
+        #countdown
+          %a{:href => "#"}
+            =image_tag "button.png", :class => "boton"
+        :javascript
+          $('#countdown').countdown({until: new Date("#{promotion.closed.to_time.to_s}")});
     %li
       =image_tag "about_imagen.jpg", :class => "image"
       %h3 Cirugia Estetica

@@ -7,7 +7,7 @@
     = csrf_meta_tag
     = include_tiny_mce_if_needed
     :javascript
-      $(window).load(function () {$( ".date_select" ).datepicker();});
+      $(window).load(function () {$( "#published" ).datepicker();$( "#closed" ).datepicker()});
   %body
     #container
       #header

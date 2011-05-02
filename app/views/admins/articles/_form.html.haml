@@ -4,11 +4,11 @@
   %span.description Ex: a simple text
 .group
   = f.label :published, t("activerecord.attributes.article.published", :default => "Published"), :class => :label
-  = f.text_field :published, :class => 'date_select'
+  = f.text_field :published, :id => 'published', :class => "text_field"
   %span.description Ex: a simple text
 .group
   = f.label :closed, t("activerecord.attributes.article.closed", :default => "Closed"), :class => :label
-  = f.text_field :closed, :class => 'date_select'
+  = f.text_field :closed, :id => 'closed', :class => "text_field"
   %span.description Ex: a simple text
 .group
   = f.label :title, t("activerecord.attributes.article.title", :default => "Title"), :class => :label
@@ -29,8 +29,8 @@
     = thumb_form.hidden_field :purpose, :value => "thumb"
   %span.description 100 ancho maximo
 .group
-  = label_tag "carrusel","Carrusel" , :class => :label
-  = check_box_tag "carrusel", 1,false,:class => 'check_box'
+  = f.label :carrusel,"Carrusel" , :class => :label
+  = f.check_box :carrusel, :class => 'check_box'
 .group
   = f.label :carrusel_image, t("activerecord.attributes.article.carrusel_image", :default => "Carrusel Image"), :class => :label
   = f.fields_for :carrusel_image do |carrusel_image_form|

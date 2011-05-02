@@ -7,7 +7,7 @@ class CreateArticles < ActiveRecord::Migration
       t.string  :title
       t.text    :highlights
       t.text    :content
-      t.boolean :carrusel
+      t.boolean :carrusel, :default => false
       t.timestamps
     end
   end

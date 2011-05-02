@@ -8,6 +8,7 @@
 #main
   #producto
     .cuadroic
+    #countdown
     %p.bottompromo
       =image_tag "clock.png"
       Tiempo Restante 
@@ -49,3 +50,6 @@
       = raw @promotion.content
   %p.pyc
     Politicas y condiciones
+    
+:javascript
+  $('#countdown').countdown({until: new Date("#{@promotion.closed.to_time.to_s}")});

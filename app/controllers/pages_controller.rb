@@ -2,6 +2,10 @@ class PagesController < ApplicationController
   before_filter :menu_bar
   
   def home
-    @articles = Article.where("highlights != ''").order("created_at").first(20)
+    @highlights = Article.where("highlights != ''").order("created_at").first(20)
+    @carrusel = Article.where("carrusel is not ?", nil)
+    @promotions = Promotion.order("created_at").first(5)
+    @videos = Video.order("created_at").first(5)
+    @comments = Comment.order("created_at").first(5)
   end
 end
