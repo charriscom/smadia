@@ -95,7 +95,7 @@ class Admins::PromotionsController < AdminController
     @promotion.destroy
 
     respond_to do |format|
-      format.html { redirect_to(promotions_url) }
+      format.html { redirect_to(admins_promotions_url) }
       format.xml  { head :ok }
     end
   end
