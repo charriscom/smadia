@@ -1,0 +1,16 @@
+development:
+  bucket: smadia.development
+  access_key_id: "AKIAIHZGDIYPBTB2HJLA"
+  secret_access_key: "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"
+test:
+  bucket: smadia.test
+  access_key_id: "AKIAIHZGDIYPBTB2HJLA"
+  secret_access_key: "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"
+production:
+  bucket: smadia.production
+  access_key_id: "AKIAIHZGDIYPBTB2HJLA"
+  secret_access_key: "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"
+staging:
+  bucket: smadia.staging
+  access_key_id: "AKIAIHZGDIYPBTB2HJLA"
+  secret_access_key: "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"

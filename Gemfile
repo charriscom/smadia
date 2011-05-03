@@ -12,6 +12,7 @@ gem 'spreadsheet'
 gem 'tiny_mce'
 gem "paperclip"
 gem "swf_fu"
+gem 'aws-s3', '0.6.2'
 
 group :test do
   gem 'ruby-debug'
