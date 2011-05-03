@@ -105,7 +105,7 @@
           %a{:href => "#"}
             =image_tag "button.png", :class => "boton"
         :javascript
-          $('#countdown').countdown({until: new Date("#{promotion.closed.to_time.to_s}")});
+          $('#countdown').countdown({until: new Date("#{promotion.closed.year},#{promotion.closed.month-1},#{promotion.closed.day}")});
     %li
       =image_tag "about_imagen.jpg", :class => "image"
       %h3 Cirugia Estetica
