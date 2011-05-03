@@ -1,7 +1,7 @@
 class Image < ActiveRecord::Base
   belongs_to :owner, :polymorphic => true  
   has_attached_file :picture, 
-                    :styles => {:small => "201x201>", :medium => "300x300>", :thumb => "100x100>" },
+                    :styles => {:small => "201x201>", :medium => "300x300>", :carrusel => "820x388#", :thumb => "100x100>" },
                     :url => "/assets/images/:id/:style/:basename.:extension",
                     :path => ":style/:id-:basename.:extension",
                     :storage => :s3,

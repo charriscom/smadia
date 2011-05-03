@@ -2,7 +2,7 @@
 #containerslider
   #slider.nivoSlider
     -@carrusel.each do |article|
-      =link_to swf_or_image_tag(article.highlights,"medium",article.carrusel_image.picture) , article_path(article.id)
+      = link_to swf_or_image_tag(article.highlights,"carrusel",article.carrusel_image.picture) , article_path(article.id)
   #htmlcaption.nivo-html-caption
     %strong This
     is SPARTA of a
