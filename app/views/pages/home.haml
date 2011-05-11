@@ -102,7 +102,8 @@
           %span.panterior
             ="$ #{promotion.value}"
         #countdown
-          %a{:href => "#"}
+        %p.bottompromo
+          %a{:href => promotion_path(promotion)}
             =image_tag "button.png", :class => "boton"
         :javascript
           $('#countdown').countdown({until: new Date("#{promotion.closed.year},#{promotion.closed.month-1},#{promotion.closed.day}")});
