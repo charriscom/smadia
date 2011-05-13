@@ -22,6 +22,7 @@ Smadia::Application.routes.draw do
     resources :videos
     resources :microsites
     resources :comments
+    resources :images
   end
   
   root :to =>"pages#home"

@@ -1,0 +1,34 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", admins_images_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admins_image_path
+      %li= link_to "#{t("web-app-theme.export", :default => "Export")}", admins_images_path(:format => "xls")
+  .content
+    %h2.title
+      = t("web-app-theme.all", :default => "All")
+      Imagenes
+    .inner
+      %table.table
+        %tr
+          %th.first ID
+          %th
+
+          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th.last &nbsp;
+        - @images.each do |image|
+          %tr{:class => cycle("odd", "even")}
+            %td
+              = image.id
+            %td
+              = link_to image_tag(image.picture(:thumb)), admins_image_path(image)
+            %td
+              = image.created_at
+            %td.last
+              = link_to "#{t("web-app-theme.show", :default => "Show")}", admins_image_path(image)
+              |
+              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admins_image_path(image)} |
+              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admins_image_path(image), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Estas seguro?")}"}
+      .actions-bar.wat-cf
+        .actions
+          = will_paginate @images
