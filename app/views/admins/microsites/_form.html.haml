@@ -24,10 +24,6 @@
   = f.check_box :home_page, :class => 'check_box'
   %span.description Ex: a simple text
 .group
-  = f.label :section_page, t("activerecord.attributes.microsite.section_page", :default => "Section page"), :class => :label
-  = f.check_box :section_page, :class => 'check_box'
-  %span.description Ex: a simple text
-.group
   = f.label :external_page, t("activerecord.attributes.microsite.external_page", :default => "External page"), :class => :label
   = f.check_box :external_page, :class => 'check_box'
   %span.description Ex: a simple text
@@ -79,7 +75,7 @@
     = footer_form.hidden_field :purpose, :value => "footer"
 .group
   = f.label :microsite_id, t("activerecord.attributes.microsite.microsite_id", :default => "Parent Microsite"), :class => :label
-  =f.collection_select :microsite_id, @microsites,:id,:name, :selected => @microsite.parent_microsite.id
+  =f.collection_select :microsite_id, @microsites,:id,:name, {:selected => @microsite.parent_microsite.id, :include_blank => true }
   %span.description Ex: a simple text
 .group.navform.wat-cf
   %button.button{:type => "submit"}

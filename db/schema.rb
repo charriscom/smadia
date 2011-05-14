@@ -38,8 +38,7 @@ ActiveRecord::Schema.define(:version => 20110418160457) do
     t.string   "title"
     t.text     "highlights"
     t.text     "content"
-    t.text     "content_html"
-    t.boolean  "carrusel"
+    t.boolean  "carrusel",    :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -81,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20110418160457) do
     t.text     "summary"
     t.boolean  "home_page"
     t.boolean  "section_page"
+    t.boolean  "other_category"
     t.boolean  "external_page"
     t.integer  "category_id"
     t.integer  "microsite_id"

@@ -7,6 +7,7 @@ class CreateMicrosites < ActiveRecord::Migration
       t.text        :summary
       t.boolean     :home_page
       t.boolean     :section_page
+      t.boolean     :other_category
       t.boolean     :external_page
       t.integer     :category_id
       t.integer     :microsite_id
