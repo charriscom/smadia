@@ -1,0 +1,74 @@
+!!!
+%html
+  %head
+    %title Smadia Clinic
+    %link{:href => "images/smadia-ico.ico", :rel => "shortcut icon", :type => "image/ico"}/
+    = stylesheet_link_tag "style"
+    = javascript_include_tag :all
+    = csrf_meta_tag
+    = javascript_include_tag "http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4dac4fa3199b4742"
+    :javascript
+          Cufon.replace('.title span,#rightcold .title span, #login, #rightcol h3');
+          var addthis_config = {"data_track_clickback":true};
+  %body
+    -if @microsite.header.picture.file?
+      #headerms
+        =swf_or_image_tag(nil,"original",@microsite.header.picture)
+    #wrapms
+      #menums
+        -@microsite.sub_microsites.each do |microsite|
+          %li
+            =link_to microsite.name,microsite_path(microsite.id)
+      -if @microsite.space1.picture.file?
+        #fotoms.ffoto.fpf
+          =swf_or_image_tag(nil,"original",@microsite.space1.picture) 
+      -if @microsite.space2.picture.file?
+        #fotoms.fpf
+          =swf_or_image_tag(nil,"small",@microsite.space2.picture) 
+      %br
+      #pms
+        %h3 Welcome to Summoner's Rift
+        %p
+          =raw @microsite.content
+      -if @microsite.space3.picture.file?
+        #fotoms.ffoto
+          =swf_or_image_tag(nil,"small",@microsite.space3.picture) 
+      -if @microsite.space4.picture.file?
+        #fotoms
+          =swf_or_image_tag(nil,"small",@microsite.space4.picture) 
+      #stylized.myform2
+        %form#form{:action => "", :method => "post", :name => "form"}
+          %h1 Contactenos
+          %p Ingrese sus Datos
+          %label
+            Nombre
+            %span.small
+          %input{:id => "", :name => "", :type => "text"}/
+          %label
+            Apellido
+            %span.small
+          %input{:id => "", :name => "", :type => "text"}/
+          %label
+            Telefono Fijo
+            %span.small
+          %input{:id => "", :name => "", :type => "text"}/
+          %label
+            Celular
+            %span.small
+          %input{:id => "", :name => "", :type => "text"}/
+          %label
+            E-mail
+            %span.small E-mail Valido
+          %input{:id => "", :name => "", :type => "text"}/
+          %label
+            Confirmar E-mail
+            %span.small
+          %input{:id => "", :name => "", :type => "text"}/
+          %label
+            Comentario
+            %span.small
+          %textarea{:rows => "2"}
+          %button{:type => "submit"} Enviar
+          .spacer
+    #footerms
+      =swf_or_image_tag(nil,"small",@microsite.footer.picture)

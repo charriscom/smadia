@@ -686,7 +686,7 @@ a:hover, a:active {
 	margin:auto;
 	width:960px;
 	height:235px;
-	background:url(../images/mshead.jpg) no-repeat;}
+	}
 
 #menums{
 	margin:auto; 
@@ -737,7 +737,8 @@ li, li a {color:#FFF; text-decoration:none;}
 	padding:30px;
 	overflow:hidden;
 	margin-left:87px;
-	background-color:#FFF;}
+	background-color:#FFF;
+	}
 #pms h3{ font-family:Tahoma, Geneva, sans-serif;
 	}
 #pms p{
@@ -751,9 +752,88 @@ li, li a {color:#FFF; text-decoration:none;}
 	width:960px;
 	height:45px;
 	background-color:#000;
-	margin:auto;
+	margin:0px auto;
 	color:#FFF;
 	line-height:45px;}
 
 #footerms p{
 	margin-left:20px;}
+/*Formulario Nuevo*/
+}
+form, button{border:0; margin:0; padding:0;}
+.spacer{clear:both; height:1px;}
+/* ----------- My Form ----------- */
+.myform, .myform2{
+margin-left:45px;
+margin-top:18px;
+margin-bottom:10px;
+width:550px;
+padding:14px;
+float:left;
+}
+
+.myform2{
+	margin-left:87px;
+	}
+
+/* ----------- stylized ----------- */
+#stylized{
+border:solid 2px #F9F;
+background:#ED63AE;
+}
+#stylized h1 {
+color:#FFF;
+font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+}
+#stylized p{
+font-size:11px;
+color:#FFF;
+margin-bottom:20px;
+border-bottom:solid 1px #F9F;
+padding-bottom:10px;
+}
+#stylized label{
+color:#FFF;
+display:block;
+font-weight:bold;
+text-align:right;
+font-size:14px;
+width:140px;
+float:left;
+}
+#stylized .small{
+color:#FFF;
+display:block;
+font-size:11px;
+font-style:italic;
+text-align:right;
+width:140px;
+}
+#stylized input, #stylized select{
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #aacfe4;
+width:300px;
+margin:2px 0 20px 10px;
+}
+#stylized textarea{
+	font-size:12px;
+	float:left;
+	width:300px;
+	margin:2px 0 20px 10px;
+	}
+#stylized button{
+clear:both;
+margin-left:150px;
+width:125px;
+height:31px;
+background:#F6F no-repeat;
+text-align:center;
+line-height:31px;
+color:#FFFFFF;
+font-size:12px;
+font-family:Tahoma, Geneva, sans-serif;
+}

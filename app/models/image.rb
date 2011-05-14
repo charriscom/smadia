@@ -2,8 +2,8 @@ class Image < ActiveRecord::Base
   belongs_to :owner, :polymorphic => true  
   has_attached_file :picture, 
                     :styles => {:small => "201x201>", :medium => "300x300>", :carrusel => "820x388#", :thumb => "100x100>" },
-                    :url => "/assets/images/:id/:style/:basename.:extension",
-                    :path => ":style/:id-:basename.:extension",
+                    :url => "/assets/images/:style/:id-:basename.:extension",
+                    :path => ":owner_type/:style/:owner_id:id-:basename.:extension",
                     :storage => :s3,
                     :s3_credentials => "#{Rails.root}/config/s3.yml",
                     :default_url => "/images/avatar_missing.jpg"

@@ -1,0 +1,15 @@
+%li
+  .cuadroi
+    =swf_or_image_tag(nil,"small",microsite.image.picture)
+  .textos
+    %h3<
+      =microsite.name
+    =raw microsite.content
+    .addthis_toolbox.addthis_default_style.redesociales
+      %a.addthis_button_preferred_1
+      %a.addthis_button_preferred_2
+      %a.addthis_button_preferred_3
+      %a.addthis_button_preferred_4
+      %a.addthis_button_compact
+      %a.addthis_counter.addthis_bubble_style
+  =link_to image_tag("button.png", :class => "boton"), microsite_path(microsite.id)
