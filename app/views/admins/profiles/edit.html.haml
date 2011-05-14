@@ -11,4 +11,4 @@
     .inner
       = form_for @profile, :url => admins_profile_path(@profile), :html => { :class => :form } do |f|
         = render :partial => "form", :locals => {:f => f}
-- content_for :sidebar, render(:partial => 'sidebar')
+

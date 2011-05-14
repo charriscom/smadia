@@ -10,4 +10,4 @@
     .inner
       = form_for @microsite, :url => admins_microsites_path, :html => { :class => :form, :multipart => true } do |f|
         = render :partial => "form", :locals => {:f => f}
-- content_for :sidebar, render(:partial => 'sidebar')
+

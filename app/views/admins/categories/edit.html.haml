@@ -11,4 +11,4 @@
     .inner
       = form_for @category, :url => admins_category_path(@category), :html => { :class => :form } do |f|
         = render :partial => "form", :locals => {:f => f, :category => @category}
-- content_for :sidebar, render(:partial => 'sidebar')
+
