@@ -8,44 +8,49 @@
     .inner
       %p
         %b
-          = t("activerecord.attributes.admins_article.category_id", :default => t("activerecord.labels.category_id", :default => "Category"))
+          = t("activerecord.attributes.article.category_id", :default => t("activerecord.labels.category_id", :default => "Category"))
           \:
         = @article.category_id
       %p
         %b
-          = t("activerecord.attributes.admins_article.published", :default => t("activerecord.labels.published", :default => "Published"))
+          = t("activerecord.attributes.article.published", :default => t("activerecord.labels.published", :default => "Published"))
           \:
         = @article.published
       %p
         %b
-          = t("activerecord.attributes.admins_article.closed", :default => t("activerecord.labels.closed", :default => "Closed"))
+          = t("activerecord.attributes.article.closed", :default => t("activerecord.labels.closed", :default => "Closed"))
           \:
         = @article.closed
       %p
         %b
-          = t("activerecord.attributes.admins_article.title", :default => t("activerecord.labels.title", :default => "Title"))
+          = t("activerecord.attributes.article.title", :default => t("activerecord.labels.title", :default => "Title"))
           \:
         = @article.title
       %p
         %b
-          = t("activerecord.attributes.admins_article.highlights", :default => t("activerecord.labels.highlights", :default => "Highlights"))
+          = t("activerecord.attributes.article.highlights", :default => t("activerecord.labels.highlights", :default => "Highlights"))
           \:
         = @article.highlights
       %p
         %b
-          = t("activerecord.attributes.admins_article.content", :default => t("activerecord.labels.content", :default => "Content"))
+          = t("activerecord.attributes.article.summary", :default => t("activerecord.labels.summary", :default => "Summary"))
+          \:
+        = @article.summary
+      %p
+        %b
+          = t("activerecord.attributes.article.content", :default => t("activerecord.labels.content", :default => "Content"))
           \:
         .group
           = raw @article.content
       %p
         %b
-          = t("activerecord.attributes.admins_article.thumb", :default => t("activerecord.labels.thumb", :default => "Thumb"))
+          = t("activerecord.attributes.article.thumb", :default => t("activerecord.labels.thumb", :default => "Thumb"))
           \:
       %p
         =swf_or_image_tag(nil,"thumb",@article.thumb.picture)
       %p
         %b
-          = t("activerecord.attributes.admins_article.carrusel_image", :default => t("activerecord.labels.carrusel_image", :default => "Carrusel Image"))
+          = t("activerecord.attributes.article.carrusel_image", :default => t("activerecord.labels.carrusel_image", :default => "Carrusel Image"))
           \:
       %p
         =swf_or_image_tag(nil,"thumb",@article.carrusel_image.picture)

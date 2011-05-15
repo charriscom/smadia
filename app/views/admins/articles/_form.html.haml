@@ -19,6 +19,10 @@
   = f.text_area :highlights, :class => 'text_area'
   %span.description Solo escriba en esta tabla si desea que el resumen más importante de la noticia salga en la página de inicio, en esta página solo saldrán los últimos 20 (highlights) por fecha de publicación del articulo
 .group
+  = f.label :summary, t("activerecord.attributes.article.summary", :default => "Summary"), :class => :label
+  = f.text_area :summary, :class => 'text_area'
+  %span.description Ex: a simple text
+.group
   = f.label :content, t("activerecord.attributes.article.content", :default => "Content"), :class => :label
   = f.text_area :content, :class => 'text_area mceEditor'
   %span.description Tenga en cuenta que el tamaño del contenido en pixeles no debe superar 640 de ancho, incluyendo tablas e imagenes

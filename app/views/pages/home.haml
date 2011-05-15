@@ -45,7 +45,7 @@
     %iframe{:allowTransparency => "true", :frameborder => "0", :scrolling => "no", :src => "http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fplatform&width=200&colorscheme=light&show_faces=true&stream=false&header=false&height=300", :style => "border:none; overflow:hidden; width:200px; height:300px;"}
   .noticias
     %h3 Highlights
-    %ul
+    %ul#highlights
       -@highlights.each do |article|
         %li
           =article.highlights
@@ -101,12 +101,17 @@
             ="$ #{promotion.discount_value}"
           %span.panterior
             ="$ #{promotion.value}"
-        #countdown
+        
         %p.bottompromo
+          =image_tag "chulo.png", :class => "chulo"
+          Oferta Conseguida
+          =image_tag "clock.png"
+          Tiempo Restante
+          %span{:id =>"countdown#{promotion.id}"}
           %a{:href => promotion_path(promotion)}
             =image_tag "button.png", :class => "boton"
         :javascript
-          $('#countdown').countdown({until: new Date("#{promotion.closed.year},#{promotion.closed.month-1},#{promotion.closed.day}")});
+          $(window).load(function() { $('#countdown#{promotion.id}').countdown({date:'#{promotion.closed}',id:"countdown#{promotion.id}"});});
     %li
       =image_tag "about_imagen.jpg", :class => "image"
       %h3 Cirugia Estetica
@@ -134,3 +139,4 @@
 
 :javascript
   $(window).load(function() {$('#slider').nivoSlider({ effect:'sliceUpDown'});});
+  $("#highlights").ticker(50, true, true);

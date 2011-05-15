@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20110418160457) do
     t.date     "closed"
     t.string   "title"
     t.text     "highlights"
+    t.text     "summary"
     t.text     "content"
     t.boolean  "carrusel",    :default => false
     t.datetime "created_at"

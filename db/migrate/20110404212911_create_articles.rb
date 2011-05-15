@@ -6,6 +6,7 @@ class CreateArticles < ActiveRecord::Migration
       t.date    :closed
       t.string  :title
       t.text    :highlights
+      t.text    :summary
       t.text    :content
       t.boolean :carrusel, :default => false
       t.timestamps
