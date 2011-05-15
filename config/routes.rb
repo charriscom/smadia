@@ -24,7 +24,7 @@ Smadia::Application.routes.draw do
     resources :comments
     resources :images
   end
-  
+  match '/:name' => 'microsites#show', :as => :microsite_external  
   root :to =>"pages#home"
   # The priority is based upon order of creation:
   # first created -> highest priority.
