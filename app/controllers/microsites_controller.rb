@@ -3,7 +3,8 @@ class MicrositesController < ApplicationController
   def show
     if @microsite = Microsite.find_by_name(params[:name])
       unless @microsite.external_page
-      return redirect_to root_path 
+        return redirect_to root_path 
+      end
       @external = true
       render :layout => false
     end
