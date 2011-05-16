@@ -1,6 +1,6 @@
 %li
   .cuadroi
-    %div{:id =>"promo_slide#{promotion.id}"
+    %div{:id =>"promo_slide#{promotion.id}"}
       -promotion.images.each do |image|
         =swf_or_image_tag(nil,"small",image.picture)
   .textos
