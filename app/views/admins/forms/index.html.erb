@@ -1,0 +1,44 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to "#{t("web-app-theme.list", :default => "List")}", admins_forms_path  %></li>
+    </ul>
+  </div>          
+  <div class="content">          
+    <h2 class="title"><%= t("web-app-theme.all", :default => "All")  %> Comments</h2>
+    <div class="inner">
+      <table class="table">
+        <tr>             
+          <th class="first">ID</th>
+                    <th>
+            <%= t("activerecord.attributes.admins_form.name", :default => t("activerecord.labels.name", :default => "Name")) %>
+          </th>
+                    <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @forms.each do |form| -%>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td>
+            <%= form.id %>
+          </td>
+                    <td>
+            <%= link_to form.name, admins_form_path(form) %>
+          </td>
+                    <td>
+            <%= form.created_at %>
+          </td>
+          <td class="last">
+            <%= link_to "#{t("web-app-theme.show", :default => "Show")}", admins_form_path(form) %> |
+            <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admins_form_path(form) %> |
+          </td>
+        </tr>          
+        <% end -%>
+      </table>
+      <div class="actions-bar wat-cf">
+        <div class="actions">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>

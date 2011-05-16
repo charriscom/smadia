@@ -1,0 +1,30 @@
+
+  <div class="group">
+    <%= f.label :name, t("activerecord.attributes.form.name", :default => "Name"), :class => :label %>
+    <%= f.object.name %>
+  </div>
+
+  <div class="group">
+    <%= f.label :usage, t("activerecord.attributes.form.usage", :default => "Usage"), :class => :label %>
+    <%= f.text_area :usage, :class => 'text_area' %>
+    <span class="description">Ex: a simple text</span>
+  </div>
+
+  <div class="group">
+    <%= f.label :response, t("activerecord.attributes.form.response", :default => "Response"), :class => :label %>
+    <%= f.text_area :response, :class => 'text_area' %>
+    <span class="description">Ex: a simple text</span>
+  </div>
+  <div class="group">
+    <%= f.label :website, t("activerecord.attributes.form.respose", :default => "Website"), :class => :label %>
+    <%= f.text_area :website, :class => 'text_area' %>
+    <span class="description">Ex: a simple text</span>
+  </div>
+        
+<div class="group navform wat-cf">
+  <button class="button" type="submit">
+    <%= image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>
+  </button>
+  <span class="text_button_padding"><%= t("web-app-theme.or", :default => "or") %></span>
+	<%= link_to t("web-app-theme.cancel", :default => "Cancel"), admins_forms_path, :class => "text_button_padding link_button" %>
+</div>

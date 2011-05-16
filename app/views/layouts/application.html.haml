@@ -17,6 +17,8 @@
         %span#login log in
       #menu
         %ul#nav
+          %li 
+            =link_to "Inicio", root_path
           = render @main_menu.subcategories   
         %span.search
           %input{:name => "Buscar", :type => "text"}/      

@@ -1,6 +1,8 @@
 %li
   .cuadroi
-    =swf_or_image_tag(nil,"small",promotion.images.first.picture)
+    #slide
+      -promotion.images.each do |image|
+        =swf_or_image_tag(nil,"small",image.picture)
   .textos
     %h3<
       =promotion.title
@@ -35,3 +37,4 @@
   =link_to image_tag("button.png", :class => "boton"), promotion_path(promotion.id)
 :javascript
   $('#countdown').countdown({until: new Date("#{promotion.closed.to_time.to_s}")});
+  $(window).load(function() {$('#slide').nivoSlider({ effect:'sliceUpDown'});});

@@ -35,40 +35,42 @@
   -if @microsite.space4.picture.file?
     #fotoms
       =swf_or_image_tag(nil,"small",@microsite.space4.picture) 
-  #stylized.myform2
-    %form#form{:action => "", :method => "post", :name => "form"}
-      %h1 Contactenos
-      %p Ingrese sus Datos
-      %label
-        Nombre
-        %span.small
-      %input{:id => "", :name => "", :type => "text"}/
-      %label
-        Apellido
-        %span.small
-      %input{:id => "", :name => "", :type => "text"}/
-      %label
-        Telefono Fijo
-        %span.small
-      %input{:id => "", :name => "", :type => "text"}/
-      %label
-        Celular
-        %span.small
-      %input{:id => "", :name => "", :type => "text"}/
-      %label
-        E-mail
-        %span.small E-mail Valido
-      %input{:id => "", :name => "", :type => "text"}/
-      %label
-        Confirmar E-mail
-        %span.small
-      %input{:id => "", :name => "", :type => "text"}/
-      %label
-        Comentario
-        %span.small
-      %textarea{:rows => "2"}
-      %button{:type => "submit"} Enviar
-      .spacer
+  - if @microsite.form
+    #stylized.myform
+      =form_for :contact, :url => microsite_form_path(@microsite) do |f|
+        %h1 Contactenos
+        %p 
+          =@form.usage
+        %label
+          Nombre
+          %span.small
+        =f.text_field :name
+        %label
+          Apellido
+          %span.small
+        =f.text_field :last_name
+        %label
+          Telefono Fijo
+          %span.small
+        =f.text_field :phone
+        %label
+          Celular
+          %span.small
+        =f.text_field :mobile
+        %label
+          E-mail
+          %span.small E-mail Valido
+        =f.text_field :email
+        %label
+          Confirmar E-mail
+          %span.small
+        =f.text_field :email_confirmation
+        %label
+          Comentario
+          %span.small
+        =f.text_area :comment
+        %button{:type => "submit"} Enviar
+        .spacer
 -if @external
   #footerms
     =swf_or_image_tag(nil,"small",@microsite.footer.picture)

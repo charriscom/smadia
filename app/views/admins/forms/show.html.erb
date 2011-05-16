@@ -1,0 +1,36 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", admins_forms_path  %></li>
+      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", admins_form_path %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+      
+        <p>
+          <b><%= t("activerecord.attributes.form.name", :default => t("activerecord.labels.name", :default => "Name")) %>:</b>
+          <%= @form.name %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.form.usage", :default => t("activerecord.labels.usage", :default => "Usage")) %>:</b>
+          <%= @form.usage %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.form.response", :default => t("activerecord.labels.response", :default => "Response")) %>:</b>
+          <%= @form.response %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.form.website", :default => t("activerecord.labels.website", :default => "Website")) %>:</b>
+          <%= @form.website %>
+        </p>
+
+      <div class="wat-cf">
+        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admins_form_path(@form), :class => "button" %> 
+      </div>      
+    </div>
+  </div>
+</div>

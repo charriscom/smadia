@@ -8,16 +8,13 @@
 #main
   #producto
     .cuadroic
-    #countdown
+      #slide
+        -@promotion.images.each do |image|
+          =swf_or_image_tag(nil,"original",image.picture)
     %p.bottompromo
       =image_tag "clock.png"
-      Tiempo Restante 
-      %span 20
-      h 
-      %span 10
-      m 
-      %span 06
-      s
+      Tiempo Restante
+      %span{:id =>"countdown"} 
   #comprar
     %table{ :width =>"265", :border=> "0"}
       %tr
@@ -52,4 +49,5 @@
     Politicas y condiciones
     
 :javascript
-  $('#countdown').countdown({until: new Date("#{@promotion.closed.to_time.to_s}")});
+  $('#countdown').countdown({date:'#{@promotion.closed}',id:"countdown"});
+  $(window).load(function() {$('#slide').nivoSlider({ effect:'sliceUpDown'});});
