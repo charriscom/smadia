@@ -31,10 +31,10 @@
         Oferta Conseguida
         =image_tag "clock.png"
         Tiempo Restante 
-
+        %span{:id =>"countdown#{promotion.id}"}
       =link_to image_tag("button.png"), "#"
       
   =link_to image_tag("button.png", :class => "boton"), promotion_path(promotion.id)
 :javascript
   $('#countdown').countdown({until: new Date("#{promotion.closed.to_time.to_s}")});
-  $(window).load(function() {$("#promo_slide#{promotion.id}").nivoSlider({ effect:'sliceUpDown'});});
+  $(window).load(function() {$("#promo_slide#{promotion.id}").nivoSlider({ effect:'sliceUpDown'}); $('#countdown#{promotion.id}').countdown({date:'#{promotion.closed}',id:"countdown#{promotion.id}"});});
