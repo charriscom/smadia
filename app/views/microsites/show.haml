@@ -25,16 +25,16 @@
       =swf_or_image_tag(nil,"original",@microsite.space1.picture) 
   -if @microsite.space2.picture.file?
     #fotoms.fpf
-      =swf_or_image_tag(nil,"small",@microsite.space2.picture) 
+      =swf_or_image_tag(nil,"original",@microsite.space2.picture) 
   %br
   #pms
     =raw @microsite.content
   -if @microsite.space3.picture.file?
     #fotoms.ffoto
-      =swf_or_image_tag(nil,"small",@microsite.space3.picture) 
+      =swf_or_image_tag(nil,"original",@microsite.space3.picture) 
   -if @microsite.space4.picture.file?
     #fotoms
-      =swf_or_image_tag(nil,"small",@microsite.space4.picture) 
+      =swf_or_image_tag(nil,"original",@microsite.space4.picture) 
   - if @microsite.form
     #stylized.myform
       =form_for :contact, :url => microsite_form_path(@microsite) do |f|
@@ -73,4 +73,4 @@
         .spacer
 -if @external
   #footerms
-    =swf_or_image_tag(nil,"small",@microsite.footer.picture)
+    =swf_or_image_tag(nil,"original",@microsite.footer.picture)

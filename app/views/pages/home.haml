@@ -34,7 +34,7 @@
     %ul
       =@videos.each do |video|
         %li
-          =video.link
+          = raw video.link
           %h4
             =video.title
           %p
@@ -82,30 +82,6 @@
             =image_tag "button.png", :class => "boton"
         :javascript
           $(window).load(function() { $('#countdown#{promotion.id}').countdown({date:'#{promotion.closed}',id:"countdown#{promotion.id}"});});
-    %li
-      =image_tag "about_imagen.jpg", :class => "image"
-      %h3 Cirugia Estetica
-      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra, orci nec mattis porta, mauris tellus ultricies.
-      #precio
-        %span.desc
-          50%
-          %br/
-          desc.
-        %span.pactual $ 1.000.000
-        %span.panterior $ 2.000.000
-      %p.bottompromo
-        =image_tag "chulo.png", :class => "chulo"
-        Oferta Conseguida
-        =image_tag "clock.png"
-        Tiempo Restante
-        = succeed "h" do
-          %span 20
-        = succeed "m" do
-          %span 10
-        = succeed "s" do
-          %span 06
-        %a{:href => "#"}
-          =image_tag "button.png", :class => "boton"
 
 :javascript
   $(window).load(function() {$('#slider').nivoSlider({ effect:'sliceUpDown'});});
