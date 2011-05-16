@@ -2,7 +2,7 @@ class Admins::FormsController < AdminController
   # GET /admins/forms
   # GET /admins/forms.xml
   def index
-    @forms = Admins::Form.all
+    @forms = Form.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class Admins::FormsController < AdminController
   # GET /admins/forms/1
   # GET /admins/forms/1.xml
   def show
-    @form = Admins::Form.find(params[:id])
+    @form = Form.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -23,13 +23,13 @@ class Admins::FormsController < AdminController
 
   # GET /admins/forms/1/edit
   def edit
-    @form = Admins::Form.find(params[:id])
+    @form = Form.find(params[:id])
   end
   
   # PUT /admins/forms/1
   # PUT /admins/forms/1.xml
   def update
-    @form = Admins::Form.find(params[:id])
+    @form = Form.find(params[:id])
 
     respond_to do |format|
       if @form.update_attributes(params[:form])
