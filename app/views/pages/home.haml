@@ -32,7 +32,7 @@
     .title
       %span VIDEOS
     %ul
-      =@videos.each do |video|
+      -@videos.each do |video|
         %li
           = raw video.link
           %h4
