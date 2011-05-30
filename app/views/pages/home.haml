@@ -26,7 +26,7 @@
     %ul#highlights
       -@highlights.each do |article|
         %li
-          =article.highlights
+          =link_to article.highlights, article_path(article)
 #leftcold
   .home
     .title

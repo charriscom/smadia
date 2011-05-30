@@ -19,8 +19,6 @@
               %li
                 %a{:href => "#"}= t("web-app-theme.profile", :default => "Profile")
               %li
-                %a{:href => "#"}= t("web-app-theme.settings", :default => "Settings")
-              %li
                 %a.logout{:href => destroy_admin_session_path }= t("web-app-theme.logout", :default => "Logout")
           #main-navigation
             %ul.wat-cf
@@ -44,7 +42,12 @@
               %li
                 = link_to "Fomularios", admins_forms_path
               %li
+                = link_to "Servicios", admins_services_path
+              %li
+                = link_to "Comentarios", admins_form_entries_path
+              %li
                 = link_to "Imagenes", admins_images_path
+                
       #wrapper.wat-cf
         .flash
           - flash.each do |type, message|

@@ -24,7 +24,7 @@ class Admins::ImagesController < AdminController
   # GET /admin/images/new
   # GET /admin/images/new.xml
   def new
-    @image = Image.new
+    @image = Image.where("id is not ?",nil)
 
     respond_to do |format|
       format.html # new.html.haml

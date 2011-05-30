@@ -1,0 +1,13 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", admins_form_entry_path
+
+  .content
+    %h2.title
+      = t("web-app-theme.edit", :default => "Edit")
+      FormEntry
+    .inner
+      = form_for @form_entry, :url => admins_form_entry_path(@form_entry), :html => { :class => :form } do |f|
+        = render :partial => "form", :locals => {:f => f}
+

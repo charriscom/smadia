@@ -1,7 +1,5 @@
 Smadia::Application.routes.draw do
 
-  namespace :admins do resources :forms end
-
   namespace :pages do
     get 'googlehostedservice'
     get 'home'
@@ -15,8 +13,9 @@ Smadia::Application.routes.draw do
   resources :categories, :only => [:show]
   resources :articles, :only => [:show]
   resources :promotions, :only => [:show]
-  resources :microsites, :only => [:show] do 
-    post 'form'
+  resources :microsites, :only => [:show]
+  resources :form, :only => [:show] do
+    resources :form_entries, :only => [:create]
   end
   
   namespace :admins do
@@ -30,6 +29,8 @@ Smadia::Application.routes.draw do
     resources :comments
     resources :images
     resources :forms, :only => [:index, :show, :edit, :update]
+    resources :services
+    resources :form_entries, :only => [:index, :show]
   end
   match '/:name' => 'microsites#show', :as => :microsite_external  
   root :to =>"pages#home"

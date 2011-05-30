@@ -2,7 +2,7 @@
   .cuadroi
     %div{:id =>"promo_slide#{promotion.id}"}
       -promotion.images.each do |image|
-        =swf_or_image_tag(nil,"small",image.picture)
+        =swf_or_image_tag(nil,"small",image.picture) if image.picture.file?
   .textos
     %h3<
       =promotion.title
@@ -32,7 +32,6 @@
         =image_tag "clock.png"
         Tiempo Restante 
         %span{:id =>"countdown#{promotion.id}"}
-      =link_to image_tag("button.png"), "#"
       
   =link_to image_tag("button.png", :class => "boton"), promotion_path(promotion.id)
 :javascript

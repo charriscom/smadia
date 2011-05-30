@@ -1,0 +1,14 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", admins_services_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_admins_service_path
+      %li.active= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admins_service_path
+  .content
+    %h2.title
+      = t("web-app-theme.edit", :default => "Edit")
+      Service
+    .inner
+      = form_for @service, :url => admins_service_path(@service), :html => { :class => :form } do |f|
+        = render :partial => "form", :locals => {:f => f}
+

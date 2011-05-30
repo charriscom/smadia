@@ -16,61 +16,52 @@
         #headerms
           =swf_or_image_tag(nil,"original",@microsite.header.picture)
 #wrapms
-  #menums
-    -@microsite.sub_microsites.each do |microsite|
-      %li
-        =link_to microsite.name,microsite_path(microsite.id)
+  -unless @microsite.sub_microsites.empty?
+    #menums
+      -@microsite.sub_microsites.each do |microsite|
+        %li
+          =link_to microsite.name,microsite_path(microsite.id)
   -if @microsite.space1.picture.file?
-    #fotoms.ffoto.fpf
+    #fotomsp.ffotop.fpf
       =swf_or_image_tag(nil,"original",@microsite.space1.picture) 
-  -if @microsite.space2.picture.file?
-    #fotoms.fpf
-      =swf_or_image_tag(nil,"original",@microsite.space2.picture) 
+  - if @microsite.form
+    #formms   
+      %h1 Contactenos
+      %p 
+        =@form.usage
+      =form_for :form_entry, :url => form_form_entries_path(@form) do |f|
+        .formin
+          %label
+            Nombre
+          =f.text_field :name
+          %label
+            Apellido
+          =f.text_field :last_name
+          %label
+            Telefono Fijo
+          =f.text_field :phone
+          %label
+            Celular
+          =f.text_field :mobile
+          %label
+            E-mail
+          =f.text_field :email
+          %label
+            Confirmar E-mail
+          =f.text_field :email_confirmation
+          %label
+            Comentario
+          =f.text_area :description
+          %button{:type => "submit", :class => "first"} Enviar
   %br
   #pms
     =raw @microsite.content
-  -if @microsite.space3.picture.file?
+  -if @microsite.space2.picture.file?
     #fotoms.ffoto
-      =swf_or_image_tag(nil,"original",@microsite.space3.picture) 
-  -if @microsite.space4.picture.file?
+      =swf_or_image_tag(nil,"original",@microsite.space2.picture)
+  -if @microsite.space3.picture.file?
     #fotoms
-      =swf_or_image_tag(nil,"original",@microsite.space4.picture) 
-  - if @microsite.form
-    #stylized.myform
-      =form_for :contact, :url => microsite_form_path(@microsite) do |f|
-        %h1 Contactenos
-        %p 
-          =@form.usage
-        %label
-          Nombre
-          %span.small
-        =f.text_field :name
-        %label
-          Apellido
-          %span.small
-        =f.text_field :last_name
-        %label
-          Telefono Fijo
-          %span.small
-        =f.text_field :phone
-        %label
-          Celular
-          %span.small
-        =f.text_field :mobile
-        %label
-          E-mail
-          %span.small E-mail Valido
-        =f.text_field :email
-        %label
-          Confirmar E-mail
-          %span.small
-        =f.text_field :email_confirmation
-        %label
-          Comentario
-          %span.small
-        =f.text_area :comment
-        %button{:type => "submit"} Enviar
-        .spacer
+      =swf_or_image_tag(nil,"original",@microsite.space3.picture) 
 -if @external
   #footerms
     =swf_or_image_tag(nil,"original",@microsite.footer.picture)

@@ -1,0 +1,31 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", admins_form_entries_path
+  .content
+    %h2.title
+      = t("web-app-theme.all", :default => "All")
+      FormEntries
+    .inner
+      %table.table
+        %tr
+          %th.first ID
+          %th
+            = t("activerecord.attributes.admins_form_entry.name", :default => t("activerecord.labels.name", :default => "Name"))
+          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th.last &nbsp;
+        - @form_entries.each do |form_entry|
+          %tr{:class => cycle("odd", "even")}
+            %td
+              = form_entry.id
+            %td
+              = link_to form_entry.name, admins_form_entry_path(form_entry)
+            %td
+              = form_entry.created_at
+            %td.last
+              = link_to "#{t("web-app-theme.show", :default => "Show")}", admins_form_entry_path(form_entry)
+              |
+              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", admins_form_entry_path(form_entry), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+      .actions-bar.wat-cf
+        .actions
+

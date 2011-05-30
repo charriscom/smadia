@@ -1,4 +1,6 @@
 class Admins::FormsController < AdminController
+  uses_tiny_mce 
+  
   # GET /admins/forms
   # GET /admins/forms.xml
   def index

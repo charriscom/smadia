@@ -10,7 +10,7 @@
     .cuadroic
       #slide
         -@promotion.images.each do |image|
-          =swf_or_image_tag(nil,"original",image.picture)
+          =swf_or_image_tag(nil,"original",image.picture) if image.picture.file?
     %p.bottompromo
       =image_tag "clock.png"
       Tiempo Restante
@@ -21,7 +21,8 @@
         %th{:width=>"88", :height=>"30"}
           precio
         %th{:colspan =>"2"}
-          ="$ #{@promotion.discount_value}"
+          %span.presumen
+            ="$ #{@promotion.discount_value}"
       %tr
         %td.d{:height=>"21", :align=>"center"}
           antes
@@ -33,7 +34,7 @@
         %td{:align=>"center"}
           ="$ #{@promotion.value}"
         %td{:align=>"center"}
-          ="$ #{@promotion.discount}"
+          ="#{@promotion.discount} %"
         %td{:align=>"center"}
           ="$ #{@promotion.discount_value}"
     %span
@@ -47,7 +48,8 @@
       = raw @promotion.content
   %p.pyc
     Politicas y condiciones
-    
+#pycuadro
+  =raw @promotion.terms
 :javascript
   $('#countdown').countdown({date:'#{@promotion.closed}',id:"countdown"});
   $(window).load(function() {$('#slide').nivoSlider({ effect:'sliceUpDown'});});
