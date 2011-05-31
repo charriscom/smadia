@@ -71,10 +71,10 @@
             %span.descl<
               descuentos
           %span.pactual
-            ="$ #{promotion.discount_value}"
+            =number_to_currency(promotion.discount_value,{:precision =>0})
           %br
           %span.panterior
-            ="$ #{promotion.value}"
+            =number_to_currency(promotion.value,{:precision =>0})
         
         %p.bottompromo
           =image_tag "chulo.png", :class => "chulo"
