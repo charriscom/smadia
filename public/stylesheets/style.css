@@ -740,13 +740,15 @@ li:hover { position:relative; z-index:2000; }
 
 #footer p{
 	margin-top:37px;
-	color:#FFF;
+	color:#3C3C3C;
 	font-family:Verdana, Geneva, sans-serif;
 	text-align:center;
 	font-size:14px;
-	
 }
 
+#footer span{
+	color:#F06;}
+	
 a, a:visited {
 	color:inherit;
 	text-decoration:none;

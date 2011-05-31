@@ -1,15 +1,13 @@
 %li
-  .cuadroi
-    =swf_or_image_tag(nil,"small",article.thumb.picture)
+  .conimagen
+    .imagenc
+      =swf_or_image_tag(nil,"small",article.thumb.picture)
+    .addthis_toolbox.addthis_default_style.addthis_32x32_style.redesociales
+      %a.addthis_button_preferred_1
+      %a.addthis_button_preferred_2
+      %a.addthis_button_preferred_3
   .textos
     %h3<
       =article.title
     =article.summary
-    .addthis_toolbox.addthis_default_style.redesociales
-      %a.addthis_button_preferred_1
-      %a.addthis_button_preferred_2
-      %a.addthis_button_preferred_3
-      %a.addthis_button_preferred_4
-      %a.addthis_button_compact
-      %a.addthis_counter.addthis_bubble_style
-  =link_to image_tag("button.png", :class => "boton"), article_path(article.id)
+    =link_to "Ver Articulo", article_path(article.id)

@@ -46,6 +46,8 @@
     %ul
       -@comments.each do |comment|
         %li
+          %h4
+            =comment.name
           %span
             =comment.content
           %p.cby
@@ -65,10 +67,12 @@
         #precio
           %span.desc
             ="#{promotion.discount}%"
-            %br/
-            desc.
+            %br
+            %span.descl<
+              descuentos
           %span.pactual
             ="$ #{promotion.discount_value}"
+          %br
           %span.panterior
             ="$ #{promotion.value}"
         

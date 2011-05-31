@@ -10,7 +10,7 @@
 		var defaults = {
 			date: (new Date()),
 			updateTime: 1000,
-			htmlTemplate: "%{d}<span class=\"small\">d</span> %{h}<span class=\"small\">h</span> %{m}<span class=\"small\">m</span> %{s}<span class=\"small\">s</span>",
+			htmlTemplate: "<span class=\"num\">%{d}</span>d<span class=\"num\">%{h}</span>h<span class=\"num\">%{m}</span>m<span class=\"num\">%{s}</span>s",
 			minus: false
 		};
 	 
