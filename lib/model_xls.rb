@@ -1,6 +1,6 @@
 class ModelXls
   def initialize(resource)
-    names=YAML.load_file('config/locales/es.yml')["es"]["activerecord"]["attributes"][resource.name.downcase]
+    names=YAML.load_file('config/locales/es.yml')["es"]["activerecord"]["attributes"][resource.name.underscore]
     columns={}
     resource.column_names.each do |name|
       columns[names[name]]=name unless names[name].nil?

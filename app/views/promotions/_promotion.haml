@@ -4,6 +4,10 @@
       %div{:id =>"promo_slide#{promotion.id}"}
         -promotion.images.each do |image|
           =swf_or_image_tag(nil,"small",image.picture) if image.picture.file?
+    .addthis_toolbox.addthis_default_style.addthis_32x32_style.redesociales
+      %a.addthis_button_preferred_1
+      %a.addthis_button_preferred_2
+      %a.addthis_button_preferred_3
   .textos
     %h3<
       =promotion.title

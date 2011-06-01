@@ -759,10 +759,9 @@ a:hover, a:active {
 }
 /* micrositio */
 #headerms{
-	margin:auto;
+	margin:0 auto;
 	width:960px;
-	height:235px;
-	background:url(../images/mshead.jpg) no-repeat;}
+	height:235px;}
 #headerms img{
 	width:960px;
 	height:235px;
@@ -844,14 +843,17 @@ li, li a {color:#FFF; text-decoration:none;}
 	
 #footerms{
 	width:960px;
-	height:45px;
+	height:68px;
 	background-color:#999;
 	margin:0px auto;
 	padding:0;
+	background:url(../images/fotofooterms.jpg) no-repeat;
 	color:#FFF;
 	line-height:15px;
 	overflow:hidden;}
-
+#footerms img{
+	width:960px;
+	height:68px;}
 #footerms p{
 	margin-left:20px;}
 /* Formulario Nuevo */
@@ -990,10 +992,10 @@ font-family:Tahoma, Geneva, sans-serif;}
 #cuadrosn{
 		float:left;}
 #cuadrosn ul li{
-	background:url(../images/border8.png) no-repeat;
+	background:url(../images/border9.png) no-repeat;
 	font-family:Arial;
-	width:740px;
-	height:300px;
+	width:742px;
+	height:302px;
 	margin-left:20px;
 	margin-top:12px;
 	list-style:none;
@@ -1001,8 +1003,10 @@ font-family:Tahoma, Geneva, sans-serif;}
 	
 #cuadrosn ul li .conimagen{
 	float:left;
+	margin:1px 0 0 1px;
 	width:280px;
-	height:300px;}
+	height:297px;
+	background-color:#CCC;}
 #cuadrosn ul li .imagenc{
 	float:left;
 	width:280px;
@@ -1017,7 +1021,7 @@ font-family:Tahoma, Geneva, sans-serif;}
 
 #cuadrosn ul li .redesociales{
 	float:left;
-	margin:10px 0 0 5px;
+	margin:6px 0 0 5px;
 }
 
 #cuadrosn ul li .textos{

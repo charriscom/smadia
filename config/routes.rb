@@ -12,7 +12,9 @@ Smadia::Application.routes.draw do
   
   resources :categories, :only => [:show]
   resources :articles, :only => [:show]
-  resources :promotions, :only => [:show]
+  resources :promotions, :only => [:show] do
+    get 'buy'
+  end
   resources :microsites, :only => [:show]
   resources :form, :only => [:show] do
     resources :form_entries, :only => [:create]

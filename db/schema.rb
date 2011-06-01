@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(:version => 20110522232243) do
     t.string   "email"
     t.string   "country"
     t.text     "description"
-    t.integer  "service_id"
+    t.string   "service"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

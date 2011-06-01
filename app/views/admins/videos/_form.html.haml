@@ -1,5 +1,5 @@
 .group
-  = f.label :category_id, t("activerecord.attributes.promotion.category_id", :default => "Category"), :class => :label
+  = f.label :category_id, t("activerecord.attributes.promotion.category", :default => "Category"), :class => :label
   =f.collection_select :category_id, @categories,:id,:name, :selected => @video.category.id
   %span.description Ex: a simple text
 .group

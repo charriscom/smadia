@@ -4,4 +4,9 @@ class PromotionsController < ApplicationController
   def show
     @promotion = Promotion.find(params[:id])
   end
+  def buy
+    @promotion = Promotion.find(params[:promotion_id])
+    @form = Form.find_by_name("Promociones")
+    @services = Service.all
+  end
 end

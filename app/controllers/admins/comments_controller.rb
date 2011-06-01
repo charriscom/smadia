@@ -7,6 +7,7 @@ class Admins::CommentsController < AdminController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @comments }
+      format.xls  {ModelXls.new(Comment) ;send_file "#{Rails.root}/tmp/xls/Comments.xls"}
     end
   end
 

@@ -10,7 +10,7 @@ class CreateFormEntries < ActiveRecord::Migration
       t.string  :email
       t.string  :country
       t.text    :description
-      t.integer :service_id
+      t.string :service
       t.timestamps
     end
   end

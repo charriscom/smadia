@@ -10,6 +10,7 @@ class Admins::MicrositesController < AdminController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @microsites }
+      format.xls  {ModelXls.new(Microsite) ;send_file "#{Rails.root}/tmp/xls/Microsites.xls"}
     end
   end
 

@@ -7,6 +7,7 @@ class Admins::VideosController < AdminController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @videos }
+      format.xls  {ModelXls.new(Video) ;send_file "#{Rails.root}/tmp/xls/Videos.xls"}
     end
   end
 

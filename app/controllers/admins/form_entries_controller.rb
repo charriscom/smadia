@@ -7,6 +7,7 @@ class Admins::FormEntriesController < AdminController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @form_entries }
+      format.xls  {ModelXls.new(FormEntry) ;send_file "#{Rails.root}/tmp/xls/FormEntries.xls"}
     end
   end
 

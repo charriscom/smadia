@@ -19,7 +19,9 @@
         %ul#nav
           %li 
             =link_to "Inicio", root_path
-          = render @main_menu.subcategories   
+          = render @main_menu.subcategories 
+          %li 
+            =link_to "Contacto", pages_contact_path
         %span.search
           %input{:name => "Buscar", :type => "text"}/      
       .flash
@@ -27,13 +29,18 @@
           %div{:class => "message #{type}"}
             %p= message
       = yield
-    #footer                                                             
-      %p                                                                
-        Cra 47 No. 80-45 Local 2 Barranquilla, Colombia                 
-        %br/                                                            
-        PBX. (5) 378 4140 Cel. (301) 278 5986 USA. (305) 848 9560       
-        %br/                                                            
-        www.smadiaclinic.com                                            
-        %br/                                                            
-        info@smadiaclinic.com                                           
+    #footer
+      %p
+        Cra 47 No. 80-45 Local 2 Barranquilla, Colombia
+        %br/
+        PBX.
+        %span (5) 378 4140
+        Cel.
+        %span (301) 278 5986
+        USA.
+        %span (305) 848 9560
+        %br/
+        %span www.smadiaclinic.com
+        %br/
+        %span info@smadiaclinic.com                                          
                                                                             

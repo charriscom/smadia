@@ -3,11 +3,14 @@
   %ul.nav{:class => category.parent_category.name=="Menu Principal" && "first"}
     =render category.subcategories
     -category.articles.each do |article|
-      %li
-        = link_to  article.title, article_path(article.id)
+      -unless article.closed.nil? || article.closed >= Date.today
+        %li
+          = link_to  article.title, article_path(article.id)
     -category.promotions.each do |promotion|
-      %li
-        = link_to  promotion.title, promotion_path(promotion.id)
+      -unless promotion.closed.nil? || promotion.closed >= Date.today
+        %li
+          = link_to  promotion.title, promotion_path(promotion.id)
     -category.microsites.each do |microsite|
-      %li
-        = link_to  microsite.name, microsite_path(microsite.id)
+      -unless microsite.closed.nil? || microsite.closed >= Date.today  
+        %li
+          = link_to  microsite.name, microsite_path(microsite.id)

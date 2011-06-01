@@ -106,6 +106,69 @@ es:
       category:
         name: Nombre
         description: Descripcion
+      promotion:
+        category: Categoria
+        value: Valor
+        discount: Descuento
+        discount_value: Valor con Descuento
+        published: Fecha de Publicacion
+        closed: Fecha de Cierre
+        title: Titulo
+        terms: Terminos y Condiciones
+        summary: Resumen
+        content: Contenido
+        images: Imagenes
+      video:
+        home_page: Pagina de Inicio
+        title: Titulo
+        published: Fecha de Publicacion
+        closed: Fecha de Cierre
+        link: Link
+        description: Descripcion
+        category: Categoria
+      microsite:
+        name: Nombre
+        published: Fecha de Publicacion
+        closed: Fecha de Cierre
+        summary: Resumen
+        home_page: Pagina de Inicio
+        section_page: Pagina de Seccion
+        other_category: Otra Categoria
+        external_page: Pagina Externa
+        category: Categoria
+        microsite_id: Micrositio
+        content: Contenido
+        form: Forma de Contacto
+        header: Header
+        space1: Espacio 1
+        space2: Espacio 2
+        space3: Espacio 3
+        space4: Espacio 4
+        footer: Footer
+      comment:
+        name: Nombre
+        published: Fecha de Publicacion
+        closed: Fecha de Cierre
+        content: Contenido
+        signature: Firma
+      form:
+        name: Nombre
+        usage: Mensaje de uso
+        response: Mensaje de respuesa
+        website: Mensaje en el sitio
+      service:
+        name: Nombre
+      form_entry:
+        name: Nombre
+        last_name: Apellido
+        phone: Telefono
+        mobile: Movil
+        city: Ciudad
+        identifier: Identificador
+        email: Email
+        country: Pais
+        description: Comentario
+        service: Servicio
     errors:
       messages:
         # Default messages: complete sentences
