@@ -34,7 +34,6 @@
         return this.each(function() {
 			var el = $(this);
 			el.css("overflow", "hidden");
-			
 			if (!!turbo) {
 				var w = el.width();
 				var pl = el.css("padding-left");
@@ -67,7 +66,7 @@
 			if (el.attr("tickerHeight")==0) 
 				return;
 
-			el.height(el.height());
+			el.height(200);
 			var a = 0, h = el.height();
 			while(h > a) {
 				a += i.height();

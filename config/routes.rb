@@ -1,14 +1,10 @@
 Smadia::Application.routes.draw do
 
   namespace :pages do
-    get 'googlehostedservice'
     get 'home'
     get 'contact'
-    post 'form'
+    post 'search'
   end
-
-  devise_for :admins 
-  devise_for :users
   
   resources :categories, :only => [:show]
   resources :articles, :only => [:show]
@@ -19,7 +15,8 @@ Smadia::Application.routes.draw do
   resources :form, :only => [:show] do
     resources :form_entries, :only => [:create]
   end
-  
+  devise_for :admins 
+  devise_for :users
   namespace :admins do
     resources :users
     resources :profiles

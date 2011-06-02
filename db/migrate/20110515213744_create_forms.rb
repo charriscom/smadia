@@ -5,6 +5,7 @@ class CreateForms < ActiveRecord::Migration
       t.text        :usage
       t.text        :response
       t.text        :website
+      t.text        :footer
       t.timestamps
     end
   end

@@ -1,0 +1,16 @@
+#main
+  #titulo
+    %span.tpagina 
+      SMADIA &nbsp;&nbsp;&nbsp;&nbsp;/ 
+      %br 
+      %span.letrap clinic
+    %span
+      
+.cfacebookr
+  %iframe{:allowTransparency => "true", :frameborder => "0", :scrolling => "no", :src => "http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fplatform&width=240&colorscheme=light&show_faces=true&stream=false&header=false&height=305", :style => "border:none; overflow:hidden; width:240px; height:305px;"}
+#cuadrosn
+  %ul
+    =render @microsites
+    =render @articles
+    =render @promotions
+    =render @videos

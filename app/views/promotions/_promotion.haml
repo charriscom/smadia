@@ -1,38 +1,38 @@
-%li
-  .conimagen
-    .imagenc
-      %div{:id =>"promo_slide#{promotion.id}"}
-        -promotion.images.each do |image|
-          =swf_or_image_tag(nil,"small",image.picture) if image.picture.file?
-    .addthis_toolbox.addthis_default_style.addthis_32x32_style.redesociales
-      %a.addthis_button_preferred_1
-      %a.addthis_button_preferred_2
-      %a.addthis_button_preferred_3
-  .textos
-    %h3<
-      =promotion.title
-    %p
-      =promotion.summary
-    #precio
-      %span.pactual
-        =number_to_currency(promotion.discount_value,{:precision =>0})
-      %span.desc
-        ="#{promotion.discount}%"
-        %br
-        %span.descl<
-          descuentos
-      %span.panterior
-        =number_to_currency(promotion.value,{:precision =>0})
-    =link_to "Ver el Plan", promotion_path(promotion.id)
-    .inferior
-      =image_tag "1306367126_clock.png"
-      %span.time
-        Tiempo restante para comprar
-        %br 
-        %span{:id =>"countdown#{promotion.id}"}
-      =image_tag "1306367117_check.png"
-      %span
-        Oferta Conseguida
+-if promotion.closed.nil? || promotion.closed > Date.today
+  %li
+    .conimagen
+      .imagenc
+        -image = promotion.images.first
+        =swf_or_image_tag(nil,"small",image.picture) if image.picture.file?
+      .addthis_toolbox.addthis_default_style.addthis_32x32_style.redesociales
+        %a.addthis_button_preferred_1
+        %a.addthis_button_preferred_2
+        %a.addthis_button_preferred_3
+    .textos
+      %h3<
+        =promotion.title
+      %p
+        =promotion.summary
+      #precio
+        %span.pactual
+          =number_to_currency(promotion.discount_value,{:precision =>0})
+        %span.desc
+          ="#{promotion.discount}%"
+          %br
+          %span.descl<
+            descuentos
+        %span.panterior
+          =number_to_currency(promotion.value,{:precision =>0})
+      =link_to "Ver el Plan", promotion_path(promotion.id)
+      .inferior
+        =image_tag "1306367126_clock.png"
+        %span.time
+          Tiempo restante para comprar
+          %br 
+          %span{:id =>"countdown#{promotion.id}"}
+        =image_tag "1306367117_check.png"
+        %span
+          Oferta Conseguida
   
-:javascript
-  $(window).load(function() {$('#countdown#{promotion.id}').countdown({date:'#{promotion.closed}',id:"countdown#{promotion.id}"});$("#promo_slide#{promotion.id}").nivoSlider({ effect:'sliceUpDown'});});
+  :javascript
+    $(window).load(function() {$('#countdown#{promotion.id}').countdown({date:'#{promotion.closed}',id:"countdown#{promotion.id}"});});

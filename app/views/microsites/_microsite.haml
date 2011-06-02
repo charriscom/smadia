@@ -1,14 +1,15 @@
-%li
-  .conimagen
-    .imagenc
-      =swf_or_image_tag(nil,"small",microsite.image.picture)
-    .addthis_toolbox.addthis_default_style.addthis_32x32_style.redesociales
-      %a.addthis_button_preferred_1
-      %a.addthis_button_preferred_2
-      %a.addthis_button_preferred_3
-  .textos
-    %h3<
-      =microsite.name
-    =raw microsite.content
-    =link_to "Ver Mas", microsite_path(microsite.id)
+-if microsite.closed.nil? || microsite.closed > Date.today
+  %li
+    .conimagen
+      .imagenc
+        =swf_or_image_tag(nil,"small",microsite.image.picture)
+      .addthis_toolbox.addthis_default_style.addthis_32x32_style.redesociales
+        %a.addthis_button_preferred_1
+        %a.addthis_button_preferred_2
+        %a.addthis_button_preferred_3
+    .textos
+      %h3<
+        =microsite.name
+      =raw microsite.content
+      =link_to "Ver Mas", microsite_path(microsite.id)
 

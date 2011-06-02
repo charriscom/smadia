@@ -2,8 +2,7 @@ class Admins::ImagesController < AdminController
   # GET /admin/images
   # GET /admin/images.xml
   def index
-    @images = Image.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
-
+    @images = Image.where("owner_id is ? and owner_type is ?", nil, nil).paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
     respond_to do |format|
       format.html # index.html.haml
       format.xml  { render :xml => @images }

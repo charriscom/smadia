@@ -44,9 +44,6 @@
           Confirmar E-mail
         =f.text_field :email_confirmation
         %label
-          Tratamiento
-        =f.collection_select :service, @services, :name , :name
-        %label
           Comentario
         =f.text_area :description
         %button{:type => "submit", :class => "first"} Enviar

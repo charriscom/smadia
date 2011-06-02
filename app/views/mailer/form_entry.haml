@@ -1,1 +1,40 @@
-= raw @form.response
+%p
+  %b
+    = t("activerecord.attributes.form_entry.name", :default => t("activerecord.labels.name", :default => "Name"))
+    \:
+  = @form_entry.name
+%p
+  %b
+    = t("activerecord.attributes.form_entry.phone", :default => t("activerecord.labels.phone", :default => "Phone"))
+    \:
+  = @form_entry.phone
+%p
+  %b
+    = t("activerecord.attributes.form_entry.city", :default => t("activerecord.labels.city", :default => "City"))
+    \:
+  = @form_entry.city
+%p
+  %b
+    = t("activerecord.attributes.form_entry.cedula", :default => t("activerecord.labels.cedula", :default => "Cedula"))
+    \:
+  = @form_entry.identifier
+%p
+  %b
+    = t("activerecord.attributes.form_entry.email", :default => t("activerecord.labels.email", :default => "Email"))
+    \:
+  = @form_entry.email
+%p
+  %b
+    = t("activerecord.attributes.form_entry.country", :default => t("activerecord.labels.country", :default => "Country"))
+    \:
+  = @form_entry.country
+%p
+  %b
+    = t("activerecord.attributes.form_entry.description", :default => t("activerecord.labels.description", :default => "Description"))
+    \:
+  = @form_entry.description
+%p
+  %b
+    = t("activerecord.attributes.form_entry.service", :default => t("activerecord.labels.service", :default => "Service"))
+    \:
+  = @form_entry.service

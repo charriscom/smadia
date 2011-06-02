@@ -3,7 +3,7 @@
   %head
     %title Smadia Clinic
     %link{:href => "images/smadia-ico.ico", :rel => "shortcut icon", :type => "image/ico"}/
-    = stylesheet_link_tag "style", "nivo-slider", "jquery.countdown", "turboTicker.JQuery"
+    = stylesheet_link_tag "style", "nivo-slider", "jquery.countdown"
     = javascript_include_tag "jquery-1.5.2.min","jquery-rails","jquery-ui","Cyclo_400.font","application","jquery.countdown","jquery.nivo.slider.pack", "turboTicker.JQuery"
     = csrf_meta_tag
     = javascript_include_tag "http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4dac4fa3199b4742"
@@ -14,7 +14,7 @@
     #wrapper 
       #header
         .logo
-        %span#login log in
+        /%span#login log in
       #menu
         %ul#nav
           %li 
@@ -23,7 +23,8 @@
           %li 
             =link_to "Contacto", pages_contact_path
         %span.search
-          %input{:name => "Buscar", :type => "text"}/      
+          -form_for :search, :url => pages_search_path do |f|
+            =f.text_field :param, :size => 20      
       .flash
         - flash.each do |type, message|
           %div{:class => "message #{type}"}
