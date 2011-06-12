@@ -3,8 +3,15 @@
     SMADIA     /
     %br/
     %span.letrap clinic
-  %span
-    Articulo
+  %span.titulos 
+    =link_to @article.category.name, category_path(@article.category)
+    -cat = @article.category.parent_category
+    -while cat.name != "Menu Principal"  
+      >
+      =link_to cat.name, category_path(cat)
+      -cat = cat.parent_category
+    
+    
 #main
   #infoprod
     #tinfo

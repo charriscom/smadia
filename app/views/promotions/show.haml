@@ -1,10 +1,15 @@
 #titulo
-  %span.tpagina 
-    SMADIA &nbsp;&nbsp;&nbsp;&nbsp;/
-    %br
+  %span.tpagina
+    SMADIA     /
+    %br/
     %span.letrap clinic
-  %span 
-    = @promotion.summary
+  %span.titulos 
+    =link_to @promotion.category.name, category_path(@promotion.category)
+    -cat = @promotion.category.parent_category
+    -while cat.name != "Menu Principal"  
+      >
+      =link_to cat.name, category_path(cat)
+      -cat = cat.parent_category
 #main
   #producto
     .cuadroic

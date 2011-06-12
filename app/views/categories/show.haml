@@ -6,6 +6,12 @@
       %span.letrap clinic
     %span
       =@category.name
+  -unless @category.subcategories.empty?
+    #categoria
+      %ul
+        -@category.subcategories.each do |cat|
+          %li
+            =link_to cat.name, category_path(cat)
 .cfacebookr
   %iframe{:allowTransparency => "true", :frameborder => "0", :scrolling => "no", :src => "http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fplatform&width=240&colorscheme=light&show_faces=true&stream=false&header=false&height=305", :style => "border:none; overflow:hidden; width:240px; height:305px;"}
 #cuadrosn
