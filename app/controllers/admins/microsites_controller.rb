@@ -70,8 +70,9 @@ class Admins::MicrositesController < AdminController
   def update
     @microsite = Microsite.find(params[:id])
     @microsites = Microsite.where("id != ?",@microsite.id)
+    @categories = Category.all
+    build_microsite(@microsite)
     respond_to do |format|
-      debugger
       if @microsite.update_attributes(params[:microsite])
         format.html { redirect_to admins_microsite_path(@microsite, :notice => 'Microsite was successfully updated.') }
         format.xml  { head :ok }

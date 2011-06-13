@@ -28,7 +28,7 @@
     #formms   
       %h1 Contactenos
       %p 
-        =@form.usage
+        =raw @form.usage
       =form_for :form_entry, :url => form_form_entries_path(@form) do |f|
         .formin
           %label
