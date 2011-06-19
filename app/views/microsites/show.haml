@@ -18,9 +18,25 @@
 #wrapms
   -unless @microsite.sub_microsites.empty?
     #menums
+      -if @microsite.parent_microsite
+        -if @external
+          = link_to @microsite.parent_microsite.name, microsite_external_path(@microsite.parent_microsite.name)
+        -else
+          = link_to @microsite.parent_microsite.name, microsite_path(@microsite.parent_microsite.id) 
       -@microsite.sub_microsites.each do |microsite|
         %li
-          =link_to microsite.name,microsite_path(microsite.id)
+          -if @external
+            = link_to microsite.name, microsite_external_path(microsite.name)
+          -else
+            = link_to microsite.name,microsite_path(microsite.id)
+  -else
+    -if @microsite.parent_microsite
+      #menums
+        %li
+          -if @external
+            = link_to @microsite.parent_microsite.name, microsite_external_path(@microsite.parent_microsite.name)
+          -else
+            = link_to @microsite.parent_microsite.name, microsite_path(@microsite.parent_microsite.id)
   -if @microsite.space1.picture.file?
     #fotomsp.ffotop.fpf
       =swf_or_image_tag(nil,"original",@microsite.space1.picture) 

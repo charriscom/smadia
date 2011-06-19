@@ -34,11 +34,11 @@
     %ul
       -@videos.each do |video|
         %li
-          = raw video.link
           %h4
             =video.title
-          %p
-            =video.description
+          -if video == @videos.first
+            = raw video.link
+          
 
   .comentarios
     .title
