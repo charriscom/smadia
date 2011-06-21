@@ -35,7 +35,7 @@
       -@videos.each do |video|
         %li
           %h4
-            =video.title
+            =link_to video.title, video.category
           -if video == @videos.first
             = raw video.link
           
@@ -85,8 +85,8 @@
           %a{:href => promotion_path(promotion)}
             =image_tag "button.png", :class => "boton"
         :javascript
-          $(window).load(function() { $('#countdown#{promotion.id}').countdown({date:'#{promotion.closed}',id:"countdown#{promotion.id}"});});
+          $(window).load(function() { $('#countdown#{promotion.id}').countdown({date:'#{promotion.closed}',id:"countdown#{promotion.id}"})});
 
 :javascript
-  $(window).load(function() {$('#slider').nivoSlider({ effect:'sliceUpDown'});});
+  $(window).load(function() {$('#slider').nivoSlider({ effect:'sliceUpDown'})});
   $("#highlights").ticker(50, true, true);
