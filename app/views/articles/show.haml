@@ -4,13 +4,15 @@
     %br/
     %span.letrap clinic
   %span.titulos 
-    =link_to @article.category.name, category_path(@article.category)
+    -cats =[]
+    -cats << @article.category
     -cat = @article.category.parent_category
     -while cat.name != "Menu Principal"  
-      >
-      =link_to cat.name, category_path(cat)
+      -cats << cat
       -cat = cat.parent_category
-    
+    -cats.reverse!.each do |cat|
+      =link_to cat.name, category_path(cat)
+      =">" unless cat == cats.last
     
 #main
   #infoprod
