@@ -60,7 +60,7 @@
     -@promotions.each do |promotion|
       %li
         .image
-          =swf_or_image_tag(nil,"original",promotion.images.first.picture)
+          =image_tag promotion.images.first.picture.url(:original)
         %h3 
           =promotion.title
         %p
