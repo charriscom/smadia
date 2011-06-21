@@ -59,7 +59,7 @@
   %ul
     -@promotions.each do |promotion|
       %li
-        =swf_or_image_tag(nil,"thumb",promotion.images.first.picture)
+        =swf_or_image_tag(nil,"original",promotion.images.first.picture)
         %h3 
           =promotion.title
         %p
@@ -85,7 +85,7 @@
           %a{:href => promotion_path(promotion)}
             =image_tag "button.png", :class => "boton"
         :javascript
-          $(window).load(function() { $('#countdown#{promotion.id}').countdown({date:'#{promotion.closed}',id:"countdown#{promotion.id}"})});
+          $(window).load(function() { $('#countdown#{promotion.id}').countdown({date:'#{countdown_time promotion.closed}',id:"countdown#{promotion.id}"})});
 
 :javascript
   $(window).load(function() {$('#slider').nivoSlider({ effect:'sliceUpDown'})});
