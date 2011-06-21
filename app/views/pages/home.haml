@@ -59,7 +59,8 @@
   %ul
     -@promotions.each do |promotion|
       %li
-        =swf_or_image_tag(nil,"original",promotion.images.first.picture)
+        .image
+          =swf_or_image_tag(nil,"original",promotion.images.first.picture)
         %h3 
           =promotion.title
         %p

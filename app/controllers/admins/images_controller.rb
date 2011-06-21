@@ -45,7 +45,7 @@ class Admins::ImagesController < AdminController
         format.html { redirect_to admins_image_path(@image, :notice => 'Image was successfully created.') }
         format.xml  { render :xml => @image, :status => :created, :location => @image }
       else
-        format.html { render :action => "new" }
+        format.html { flash[:error] = "Hay un error con el archivo que esta intentado subir"; render :action => "new" }
         format.xml  { render :xml => @image.errors, :status => :unprocessable_entity }
       end
     end

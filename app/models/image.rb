@@ -15,7 +15,7 @@ class Image < ActiveRecord::Base
      end
    end
   validates_attachment_size :picture, :less_than => 4.megabytes, :message => " debe pesar maximo 4MB"
-  validates_attachment_content_type :picture, :content_type => ['image/jpeg', 'image/png', 'image/jpg', 'application/x-shockwave-flash'], :message => " no es compatible"
+  #validates_attachment_content_type :picture, :content_type => ['image/jpeg', 'image/png', 'image/jpg', 'application/x-shockwave-flash'], :message => " no es compatible"
   attr_accessible :picture,:purpose
   
 end
