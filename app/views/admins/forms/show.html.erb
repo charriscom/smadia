@@ -15,17 +15,17 @@
 
         <p>
           <b><%= t("activerecord.attributes.form.usage", :default => t("activerecord.labels.usage", :default => "Usage")) %>:</b>
-          <%= @form.usage %>
+          <%= raw @form.usage %>
         </p>
 
         <p>
           <b><%= t("activerecord.attributes.form.response", :default => t("activerecord.labels.response", :default => "Response")) %>:</b>
-          <%= @form.response %>
+          <%= raw @form.response %>
         </p>
 
         <p>
           <b><%= t("activerecord.attributes.form.website", :default => t("activerecord.labels.website", :default => "Website")) %>:</b>
-          <%= @form.website %>
+          <%= raw @form.website %>
         </p>
 
       <div class="wat-cf">

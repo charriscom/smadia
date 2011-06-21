@@ -9,7 +9,7 @@ class Mailer < ActionMailer::Base
   def form_entry(form_entry, form)
     @form_entry = form_entry
     @form=form
-    mail(:to => "info@smadiaclinic.com", :subject => "SmadiaClinic")
+    mail(:to => "ventas@virtualdiseno.com", :subject => "SmadiaClinic")
   end
   
 end
