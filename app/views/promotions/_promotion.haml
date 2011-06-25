@@ -2,8 +2,7 @@
   %li
     .conimagen
       .imagenc
-        -image = promotion.images.first
-        =swf_or_image_tag(nil,"small",image.picture) if image.picture.file?
+        =image_tag promotion.images.first.picture.url(:original)
       %span.txtredes Compartir:
       .addthis_toolbox.addthis_default_style.addthis_32x32_style.redesociales
         %a.addthis_button_preferred_1
@@ -14,7 +13,7 @@
         =promotion.title
       %p
         =promotion.summary
-      #precio
+      .precio
         %span.pactual
           =number_to_currency(promotion.discount_value,{:precision =>0})
         %span.desc

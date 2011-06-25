@@ -4,12 +4,7 @@
     %br/
     %span.letrap clinic
   %span.titulos 
-    =link_to @promotion.category.name, category_path(@promotion.category)
-    -cat = @promotion.category.parent_category
-    -while cat.name != "Menu Principal"  
-      >
-      =link_to cat.name, category_path(cat)
-      -cat = cat.parent_category
+    = @promotion.summary
 #main
   #producto
     .cuadroic
@@ -31,9 +26,9 @@
       %tr
         %td.d{:height=>"21", :align=>"center"}
           antes
-        %td{:width =>"86", :align =>"center"}
+        %td.d{:width =>"86", :align =>"center"}
           descuento
-        %td{:width =>"77", :align=>"center"}
+        %td.d{:width =>"77", :align=>"center"}
           ahora
       %tr
         %td{:align=>"center"}
@@ -42,8 +37,7 @@
           ="#{@promotion.discount} %"
         %td{:align=>"center"}
           ="$ #{@promotion.discount_value}"
-    %span
-      =link_to "comprar" ,promotion_buy_path(@promotion), :class => "botoninferior"
+    =link_to "Comprar" ,promotion_buy_path(@promotion)
   .cfacebook
     %iframe{:src=>"http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fplatform&amp;width=266&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=false&amp;height=216", :scrolling=>"no", :frameborder=>"0", :style=>"border:none; overflow:hidden; width:266px; height:216px;", :allowtransparency=>"true"}
   #infoprod

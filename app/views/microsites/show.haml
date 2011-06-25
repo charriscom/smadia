@@ -65,9 +65,10 @@
           %label
             Confirmar E-mail
           =f.text_field :email_confirmation
+          %br
           %label
             Comentario
-          =f.text_area :description
+          =f.text_area :description,:cols => 40, :rows => 20
           %button{:type => "submit", :class => "first"} Enviar
   %br
   #pms
