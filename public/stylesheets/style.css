@@ -156,6 +156,7 @@ li:hover { position:relative; z-index:2000; }
 }
 
 #rightcol .noticias ul li{
+	padding-top: 5px;
 	display:block;
 	color:#666;
 	width:90%;
@@ -1179,4 +1180,6 @@ font-family:Tahoma, Geneva, sans-serif;}
 
 #categoria ul li:last-child{
 	padding-bottom:40px;}
-
+.clear{
+	clear:both;
+}

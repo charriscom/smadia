@@ -66,7 +66,7 @@
 			if (el.attr("tickerHeight")==0) 
 				return;
 
-			el.height(200);
+			el.height(390);
 			var a = 0, h = el.height();
 			while(h > a) {
 				a += i.height();
