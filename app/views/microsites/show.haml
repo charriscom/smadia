@@ -20,13 +20,13 @@
     #menums
       -if @microsite.parent_microsite
         -if @external
-          = link_to @microsite.parent_microsite.name, microsite_external_path(@microsite.parent_microsite.name)
+          = link_to @microsite.parent_microsite.name, microsite_external_path(@microsite.parent_microsite.name) if @microsite.parent_microsite.external_page
         -else
           = link_to @microsite.parent_microsite.name, microsite_path(@microsite.parent_microsite.id) 
       -@microsite.sub_microsites.each do |microsite|
         %li
           -if @external
-            = link_to microsite.name, microsite_external_path(microsite.name)
+            = link_to microsite.name, microsite_external_path(microsite.name) if @microsite.parent_microsite.external_page
           -else
             = link_to microsite.name,microsite_path(microsite.id)
   -else
@@ -34,7 +34,7 @@
       #menums
         %li
           -if @external
-            = link_to @microsite.parent_microsite.name, microsite_external_path(@microsite.parent_microsite.name)
+            = link_to @microsite.parent_microsite.name, microsite_external_path(@microsite.parent_microsite.name) if @microsite.parent_microsite.external_page
           -else
             = link_to @microsite.parent_microsite.name, microsite_path(@microsite.parent_microsite.id)
   -if @microsite.space1.picture.file?
