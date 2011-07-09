@@ -53,13 +53,13 @@ class Admins::MicrositesController < AdminController
     @microsite = Microsite.new(params[:microsite])
     @microsites = Microsite.all
     @categories = Category.all
-    build_microsite(@microsite)
     respond_to do |format|
       if @microsite.save
         @microsite.create_form_details
         format.html { redirect_to admins_microsite_path(@microsite, :notice => 'Microsite was successfully created.') }
         format.xml  { render :xml => @microsite, :status => :created, :location => @microsite }
       else
+        build_microsite(@microsite)
         format.html { render :action => "new" }
         format.xml  { render :xml => @microsite.errors, :status => :unprocessable_entity }
       end
@@ -72,13 +72,12 @@ class Admins::MicrositesController < AdminController
     @microsite = Microsite.find(params[:id])
     @microsites = Microsite.where("id != ?",@microsite.id)
     @categories = Category.all
-    build_microsite(@microsite)
     respond_to do |format|
       if @microsite.update_attributes(params[:microsite])
-        debugger
         format.html { redirect_to admins_microsite_path(@microsite, :notice => 'Microsite was successfully updated.') }
         format.xml  { head :ok }
       else
+        build_microsite(@microsite)
         format.html { render :action => "edit" }
         format.xml  { render :xml => @microsite.errors, :status => :unprocessable_entity }
       end
@@ -110,4 +109,5 @@ class Admins::MicrositesController < AdminController
       microsite.build_parent_microsite if microsite.parent_microsite.nil?
       microsite.build_category if microsite.category.nil?
     end
+    
 end

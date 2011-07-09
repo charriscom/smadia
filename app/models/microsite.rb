@@ -1,8 +1,8 @@
 class Microsite < ActiveRecord::Base
   has_one :form_details, :class_name => "Form", :foreign_key => "microsite_id"
-  has_many :sub_microsites, :class_name => "Microsite"
+  has_many :sub_microsites, :class_name => "Microsite", :foreign_key => "microsite_id"
+  belongs_to :parent_microsite, :class_name => "Microsite"
   belongs_to :category
-  belongs_to :parent_microsite, :class_name => "Microsite", :foreign_key => "microsite_id"
   has_one :image, :as => :owner, :conditions => "purpose = 'image'"
   has_one :header, :as => :owner, :class_name => "Image", :conditions => "purpose = 'header'"
   has_one :space1, :as => :owner, :class_name => "Image", :conditions => "purpose = 'space1'"
