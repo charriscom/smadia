@@ -1,4 +1,5 @@
 class Promotion < ActiveRecord::Base
+  has_one :form_details, :class_name => "Form", :foreign_key => "promotion_id"
   has_many :images, :as => "owner"
   belongs_to :category
   validates_presence_of :value, :discount, :discount_value, :title, :terms, :summary, :content

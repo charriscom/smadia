@@ -10,7 +10,15 @@
       
         <p>
           <b><%= t("activerecord.attributes.form.name", :default => t("activerecord.labels.name", :default => "Name")) %>:</b>
-          <%= @form.name %>
+          <%= 
+              if @form.microsite 
+                "Micrositio: "+@form.microsite.name
+              elsif @form.promotion
+                "Promocion: "+@form.promotion.title
+              else
+                @form.name
+              end 
+          %>
         </p>
 
         <p>

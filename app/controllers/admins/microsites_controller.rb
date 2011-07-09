@@ -56,6 +56,7 @@ class Admins::MicrositesController < AdminController
     build_microsite(@microsite)
     respond_to do |format|
       if @microsite.save
+        @microsite.create_form_details
         format.html { redirect_to admins_microsite_path(@microsite, :notice => 'Microsite was successfully created.') }
         format.xml  { render :xml => @microsite, :status => :created, :location => @microsite }
       else
@@ -74,6 +75,7 @@ class Admins::MicrositesController < AdminController
     build_microsite(@microsite)
     respond_to do |format|
       if @microsite.update_attributes(params[:microsite])
+        debugger
         format.html { redirect_to admins_microsite_path(@microsite, :notice => 'Microsite was successfully updated.') }
         format.xml  { head :ok }
       else

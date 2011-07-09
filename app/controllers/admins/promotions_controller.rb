@@ -60,6 +60,7 @@ class Admins::PromotionsController < AdminController
     @categories = Category.all
     respond_to do |format|
       if @promotion.save
+        @promotion.create_form_details
         format.html { redirect_to admins_promotion_path(@promotion, :notice => 'Promotion was successfully created.') }
         format.xml  { render :xml => @promotion, :status => :created, :location => @promotion }
       else

@@ -22,7 +22,17 @@
             <%= form.id %>
           </td>
                     <td>
-            <%= link_to form.name, admins_form_path(form) %>
+            <%
+            name=""
+              if form.microsite 
+                name="Micrositio: "+form.microsite.name
+              elsif form.promotion
+                name="Promocion: "+form.promotion.title
+              else
+                name=form.name
+              end
+             %>
+            <%= link_to name, admins_form_path(form) %>
           </td>
                     <td>
             <%= form.created_at %>

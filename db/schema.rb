@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110522232243) do
+ActiveRecord::Schema.define(:version => 20110709001815) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -82,8 +82,11 @@ ActiveRecord::Schema.define(:version => 20110522232243) do
     t.text     "usage"
     t.text     "response"
     t.text     "website"
+    t.text     "footer"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "microsite_id"
+    t.integer  "promotion_id"
   end
 
   create_table "images", :force => true do |t|

@@ -6,6 +6,6 @@ class PromotionsController < ApplicationController
   end
   def buy
     @promotion = Promotion.find(params[:promotion_id])
-    @form = Form.find_by_name("Promociones")
+    @form = @promotion.form_details
   end
 end
