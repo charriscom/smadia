@@ -29,11 +29,9 @@
           E-mail
         =f.text_field :email
         %label
-          Confirmar E-mail
-        =f.text_field :email_confirmation
-        %label
           Tratamiento
         =f.collection_select :service, @services, :name , :name
+        .clear
         %label
           Comentario
         =f.text_area :description
