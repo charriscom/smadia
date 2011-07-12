@@ -91,7 +91,7 @@ class Admins::MicrositesController < AdminController
     @microsite.destroy
 
     respond_to do |format|
-      format.html { redirect_to(microsites_url) }
+      format.html { redirect_to(admins_microsites_url) }
       format.xml  { head :ok }
     end
   end
