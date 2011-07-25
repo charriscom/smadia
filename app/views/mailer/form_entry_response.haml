@@ -1,1 +1,4 @@
+%p
+  %h2
+    =@form.microsite.try(:name) || @form.promotion.try(:title)
 = raw @form.response

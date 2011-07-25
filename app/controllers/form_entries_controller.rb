@@ -9,7 +9,8 @@ class FormEntriesController < ApplicationController
         Mailer.form_entry(@form_entry,@form).deliver
         return redirect_to form_path(@form)
       else 
-        flash[:error] = "No pudo enviar la informacion"
+        debugger
+        flash[:error] = "No pudo enviar la informacion, verifique que no existan campos vacios"
         return redirect_to :back
       end
     end

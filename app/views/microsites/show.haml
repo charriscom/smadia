@@ -42,7 +42,6 @@
       =swf_or_image_tag(nil,"original",@microsite.space1.picture) 
   - if @microsite.form
     #formms   
-      %h1 Contactenos
       %p 
         =raw @form.usage
       =form_for :form_entry, :url => form_form_entries_path(@form) do |f|
@@ -63,8 +62,8 @@
             E-mail
           =f.text_field :email
           %label
-            Cedula
-          =f.text_field :identifier
+            Ciudad
+          =f.text_field :city
           .clear
           %label
             Comentario

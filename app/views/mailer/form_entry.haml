@@ -1,4 +1,7 @@
 %p
+  %h2
+    =@form.microsite.try(:name) || @form.promotion.try(:title)
+%p
   %b
     = t("activerecord.attributes.form_entry.name", :default => t("activerecord.labels.name", :default => "Name"))
     \:
