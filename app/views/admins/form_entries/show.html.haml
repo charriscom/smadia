@@ -11,9 +11,19 @@
         = @form_entry.name
       %p
         %b
+          = t("activerecord.attributes.form_entry.last_name", :default => t("activerecord.labels.last_name", :default => "Last Name"))
+          \:
+        = @form_entry.last_name
+      %p
+        %b
           = t("activerecord.attributes.form_entry.phone", :default => t("activerecord.labels.phone", :default => "Phone"))
           \:
         = @form_entry.phone
+      %p
+        %b
+          = t("activerecord.attributes.form_entry.mobile", :default => t("activerecord.labels.mobile", :default => "Mobile"))
+          \:
+        = @form_entry.mobile
       %p
         %b
           = t("activerecord.attributes.form_entry.city", :default => t("activerecord.labels.city", :default => "City"))
