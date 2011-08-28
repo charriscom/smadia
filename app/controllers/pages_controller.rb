@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     @highlights = Article.where("highlights != '' and (closed > ? or closed is ?)", Date.today, nil).order("created_at").first(20)
     @microsites = Microsite.where("home_page = ? and (closed > ? or closed is ?)",true, Date.today, nil).order("created_at").first(20)
     @carrusel = Article.where("carrusel = ? and (closed > ? or closed is ?)", true, Date.today,nil)
-    @promotions = Promotion.where("closed > ? or closed is ?", Date.today, nil).order("created_at").first(4)
+    @promotions = Promotion.where("closed > ? or closed is ?", Date.today, nil).random(4)
     @videos = Video.where("closed > ?", Date.today).order("created_at").first(5)
     @comments = Comment.order("created_at").first(5)
   end

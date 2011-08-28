@@ -8,12 +8,13 @@ gem 'web-app-theme', '>= 0.6.2'
 gem 'hpricot', '0.8.4'
 gem 'ruby_parser', '2.0.5'
 gem 'will_paginate', '3.0.pre2'
-gem 'spreadsheet'
-gem 'tiny_mce'
-gem "paperclip"
-gem "swf_fu"
+gem 'spreadsheet', '0.6.5.3'
+gem 'tiny_mce', '0.1.4'
+gem "paperclip", '2.3.6'
+gem "swf_fu", '1.3.3'
 gem 'aws-s3', '0.6.2'
-gem 'heroku'
+gem 'heroku', '2.3.3'
+gem 'randumb'
 
 group :test do
   #gem 'ruby-debug'
