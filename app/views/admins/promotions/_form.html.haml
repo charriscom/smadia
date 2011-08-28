@@ -39,6 +39,14 @@
   = f.text_area :content, :class => 'text_area mceEditor'
   %span.description Ex: a simple text
 .group
+  = f.label :pagos_online_header, t("activerecord.attributes.promotion.pagos_online_header", :default => "Pagos Online Header"), :class => :label
+  = f.text_field :pagos_online_header, :class => 'text_field'
+  %span.description Ex: a simple text
+.group
+  = f.label :pagos_online_form, t("activerecord.attributes.promotion.pagos_online_form", :default => "Pagos Online Form"), :class => :label
+  = f.text_area :pagos_online_form, :class => 'text_area'
+  %span.description Ex: a simple text
+.group
   = f.label :images, t("activerecord.attributes.promotion.images", :default => "Images"), :class => :label
   -f.fields_for :images do |images_form|
     .group

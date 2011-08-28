@@ -10,6 +10,10 @@
 #cuadrosn
   %ul
     =render @promotion
+#div{:style => "margin:20px 0px 20px 20px;"}
+  %h1
+    = @promotion.pagos_online_header
+  = raw @promotion.pagos_online_form
 #formulario
   =form_for :form_entry, :url => form_form_entries_path(@form) do |f|
     %h1 Contactenos

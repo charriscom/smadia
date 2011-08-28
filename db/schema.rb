@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110709001815) do
+ActiveRecord::Schema.define(:version => 20110828193403) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -172,9 +172,9 @@ ActiveRecord::Schema.define(:version => 20110709001815) do
 
   create_table "promotions", :force => true do |t|
     t.integer  "category_id"
-    t.decimal  "value",          :precision => 10, :scale => 0
+    t.decimal  "value",               :precision => 10, :scale => 0
     t.integer  "discount"
-    t.decimal  "discount_value", :precision => 10, :scale => 0
+    t.decimal  "discount_value",      :precision => 10, :scale => 0
     t.date     "published"
     t.date     "closed"
     t.string   "title"
@@ -183,6 +183,8 @@ ActiveRecord::Schema.define(:version => 20110709001815) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "pagos_online_form"
+    t.string   "pagos_online_header"
   end
 
   create_table "services", :force => true do |t|

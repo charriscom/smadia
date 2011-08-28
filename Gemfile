@@ -16,7 +16,7 @@ gem 'aws-s3', '0.6.2'
 gem 'heroku'
 
 group :test do
-  gem 'ruby-debug'
+  #gem 'ruby-debug'
 end
 
 # Bundle edge Rails instead:

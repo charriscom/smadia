@@ -118,6 +118,8 @@ es:
         summary: Resumen
         content: Contenido
         images: Imagenes
+        pagos_online_form: Formulario Pagos Online
+        pagos_online_header: Titulo Formulario Pagos Online
       video:
         home_page: Pagina de Inicio
         title: Titulo
