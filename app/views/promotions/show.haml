@@ -37,7 +37,7 @@
           ="#{@promotion.discount} %"
         %td{:align=>"center"}
           ="$ #{@promotion.discount_value}"
-    =link_to "Comprar" ,promotion_buy_path(@promotion)
+    = raw @promotion.pagos_online_form
   .cfacebook
     %iframe{:src=>"http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fplatform&amp;width=266&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=false&amp;height=216", :scrolling=>"no", :frameborder=>"0", :style=>"border:none; overflow:hidden; width:266px; height:216px;", :allowtransparency=>"true"}
   #infoprod
