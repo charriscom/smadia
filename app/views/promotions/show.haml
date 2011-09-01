@@ -22,7 +22,7 @@
           precio
         %th{:colspan =>"2"}
           %span.presumen
-            ="$ #{@promotion.discount_value}"
+            =number_to_currency @promotion.discount_value
       %tr
         %td.d{:height=>"21", :align=>"center"}
           antes
