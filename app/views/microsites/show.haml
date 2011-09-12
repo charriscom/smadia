@@ -12,6 +12,11 @@
             Cufon.replace('.title span,#rightcold .title span, #login, #rightcol h3');
             var addthis_config = {"data_track_clickback":true};
     %body
+      #wrapper
+        .flash
+          - flash.each do |type, message|
+            %div{:class => "message #{type}"}
+              %p= message
       -if @microsite.header.picture.file?
         #headerms
           =swf_or_image_tag(nil,"original",@microsite.header.picture)
