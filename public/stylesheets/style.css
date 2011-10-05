@@ -1,4 +1,7 @@
 @charset "utf-8";
+.message.error{
+	color:red;
+}
 body, ul, li{ 
 	margin:0;
 	padding:0;
