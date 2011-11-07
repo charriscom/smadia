@@ -47,6 +47,11 @@
     Politicas y condiciones
 #pycuadro
   =raw @promotion.terms
+%span.txtredes Compartir:
+.addthis_toolbox.addthis_default_style.addthis_32x32_style
+  %a.addthis_button_preferred_1
+  %a.addthis_button_preferred_2
+  %a.addthis_button_preferred_3
 :javascript
   $('#countdown').countdown({date:'#{countdown_time @promotion.closed}',id:"countdown"});
   $(window).load(function() {$('#slide').nivoSlider({ effect:'sliceUpDown'});});
