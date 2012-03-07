@@ -29,7 +29,7 @@
           =link_to article.highlights, article_path(article)
   .noticias
     %h3 Otras Noticias
-    %ul#highlights
+    %ul#othernews
       -@noticias.each do |article|
         %li
           =link_to article.summary, article_path(article)
@@ -97,3 +97,4 @@
 :javascript
   $(window).load(function() {$('#slider').nivoSlider({ effect:'sliceUpDown'})});
   $("#highlights").ticker(50, true, true);
+  $("#othernews").ticker(50, true, true);
