@@ -42,7 +42,7 @@
             = link_to @microsite.parent_microsite.name, microsite_external_path(@microsite.parent_microsite.name) if @microsite.parent_microsite.external_page
           -else
             = link_to @microsite.parent_microsite.name, microsite_path(@microsite.parent_microsite)
-  -if @microsite.space1.picture.file?
+  -if @microsite.space1 && @microsite.space1.picture.file?
     #fotomsp.ffotop.fpf
       =swf_or_image_tag(nil,"original",@microsite.space1.picture) 
   - if @microsite.form
@@ -78,15 +78,15 @@
   #pms
     =raw @microsite.content
 
-  -if @microsite.space2.picture.file?
+  -if @microsite.space2 && @microsite.space2.picture.file?
     #fotoms.ffoto
       =swf_or_image_tag(nil,"original",@microsite.space2.picture)
-  -if @microsite.space3.picture.file?
+  -if @microsite.space3 && @microsite.space3.picture.file?
     #fotoms
       =swf_or_image_tag(nil,"original",@microsite.space3.picture) 
-  -if @microsite.fblike || @microsite.space4.picture.file?
+  -if @microsite.fblike || (@microsite.space3 && @microsite.space4.picture.file?)
     #pms
-      -if @microsite.space4.picture.file?
+      -if @microsite.space4 && @microsite.space4.picture.file?
         #fotoms4
           =swf_or_image_tag(nil,"original",@microsite.space4.picture) 
       - if @microsite.fblike
