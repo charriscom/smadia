@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110828193403) do
+ActiveRecord::Schema.define(:version => 20120307054000) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20110828193403) do
     t.boolean  "carrusel",    :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "categories", :force => true do |t|
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20110828193403) do
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "comments", :force => true do |t|
@@ -116,6 +118,7 @@ ActiveRecord::Schema.define(:version => 20110828193403) do
     t.boolean  "form"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "fblike",         :default => false
   end
 
   create_table "profiles", :force => true do |t|
@@ -172,9 +175,9 @@ ActiveRecord::Schema.define(:version => 20110828193403) do
 
   create_table "promotions", :force => true do |t|
     t.integer  "category_id"
-    t.decimal  "value",               :precision => 10, :scale => 0
+    t.decimal  "value"
     t.integer  "discount"
-    t.decimal  "discount_value",      :precision => 10, :scale => 0
+    t.decimal  "discount_value"
     t.date     "published"
     t.date     "closed"
     t.string   "title"
@@ -185,6 +188,7 @@ ActiveRecord::Schema.define(:version => 20110828193403) do
     t.datetime "updated_at"
     t.text     "pagos_online_form"
     t.string   "pagos_online_header"
+    t.string   "slug"
   end
 
   create_table "services", :force => true do |t|
@@ -245,6 +249,7 @@ ActiveRecord::Schema.define(:version => 20110828193403) do
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
 end

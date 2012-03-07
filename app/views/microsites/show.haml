@@ -27,13 +27,13 @@
         -if @external
           = link_to @microsite.parent_microsite.name, microsite_external_path(@microsite.parent_microsite.name) if @microsite.parent_microsite.external_page
         -else
-          = link_to @microsite.parent_microsite.name, microsite_path(@microsite.parent_microsite.id) 
+          = link_to @microsite.parent_microsite.name, microsite_path(@microsite.parent_microsite) 
       -@microsite.sub_microsites.each do |microsite|
         %li
           -if @external
             = link_to microsite.name, microsite_external_path(microsite.name) if @microsite.external_page
           -else
-            = link_to microsite.name,microsite_path(microsite.id)
+            = link_to microsite.name,microsite_path(microsite)
   -else
     -if @microsite.parent_microsite
       #menums
@@ -41,7 +41,7 @@
           -if @external
             = link_to @microsite.parent_microsite.name, microsite_external_path(@microsite.parent_microsite.name) if @microsite.parent_microsite.external_page
           -else
-            = link_to @microsite.parent_microsite.name, microsite_path(@microsite.parent_microsite.id)
+            = link_to @microsite.parent_microsite.name, microsite_path(@microsite.parent_microsite)
   -if @microsite.space1.picture.file?
     #fotomsp.ffotop.fpf
       =swf_or_image_tag(nil,"original",@microsite.space1.picture) 
@@ -77,12 +77,21 @@
   %br
   #pms
     =raw @microsite.content
+
   -if @microsite.space2.picture.file?
     #fotoms.ffoto
       =swf_or_image_tag(nil,"original",@microsite.space2.picture)
   -if @microsite.space3.picture.file?
     #fotoms
       =swf_or_image_tag(nil,"original",@microsite.space3.picture) 
+  -if @microsite.fblike || @microsite.space4.picture.file?
+    #pms
+      -if @microsite.space4.picture.file?
+        #fotoms4
+          =swf_or_image_tag(nil,"original",@microsite.space4.picture) 
+      - if @microsite.fblike
+        .facebook
+          %iframe{:allowTransparency => "true", :frameborder => "0", :scrolling => "no", :src => "http://www.facebook.com/plugins/likebox.php?href=http://www.facebook.com/pages/Smadia-Clinic/239514212752466&width=200&colorscheme=light&show_faces=true&stream=false&header=false&height=300", :style => "border:none; overflow:hidden; width:200px; height:300px;"}
 -if @external
   #footerms
     =swf_or_image_tag(nil,"original",@microsite.footer.picture)

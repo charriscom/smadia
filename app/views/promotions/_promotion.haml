@@ -23,7 +23,7 @@
             descuentos
         %span.panterior
           =number_to_currency(promotion.value,{:precision =>0})
-      =link_to "Ver el Plan", promotion_path(promotion.id)
+      =link_to "Ver el Plan", promotion_path(promotion)
       .inferior
         =image_tag "1306367126_clock.png"
         %span.time

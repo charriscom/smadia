@@ -1,4 +1,9 @@
 class Promotion < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :slug_name, :use => :slugged
+  def slug_name
+    "#{id} #{title}"
+  end
   has_one :form_details, :class_name => "Form", :foreign_key => "promotion_id"
   has_many :images, :as => "owner"
   belongs_to :category

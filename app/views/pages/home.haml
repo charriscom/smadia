@@ -2,7 +2,7 @@
 #containerslider
   #slider.nivoSlider
     -@carrusel.each do |article|
-      = link_to swf_or_image_tag(article.summary,"carrusel",article.carrusel_image.picture) , article_path(article.id)
+      = link_to swf_or_image_tag(article.summary,"carrusel",article.carrusel_image.picture) , article_path(article)
   #htmlcaption.nivo-html-caption
     %strong This
     is SPARTA of a
@@ -16,15 +16,21 @@
     %ul
       -@microsites.each do |microsite|
         %li
-          =link_to microsite.name, microsite_path(microsite.id)
+          =link_to microsite.name, microsite_path(microsite)
         %li
           %hr/
   .facebook
     %iframe{:allowTransparency => "true", :frameborder => "0", :scrolling => "no", :src => "http://www.facebook.com/plugins/likebox.php?href=http://www.facebook.com/pages/Smadia-Clinic/239514212752466&width=200&colorscheme=light&show_faces=true&stream=false&header=false&height=300", :style => "border:none; overflow:hidden; width:200px; height:300px;"}
   .noticias
-    %h3 Highlights
+    %h3 Mas Leidos
     %ul#highlights
       -@highlights.each do |article|
+        %li
+          =link_to article.highlights, article_path(article)
+  .noticias
+    %h3 Otras Noticias
+    %ul#highlights
+      -@noticias.each do |article|
         %li
           =link_to article.highlights, article_path(article)
 #leftcold
@@ -32,12 +38,11 @@
     .title
       %span VIDEOS
     %ul
-      -@videos.each do |video|
+      -@videos.each_with_index do |video, index|
         %li
           %h4
-            =link_to video.title, video.category
-          -if video == @videos.first
-            = raw video.link
+            =link_to video.title, article_path(video)
+            = raw video.link if index == 0
           
 
   .comentarios
@@ -65,7 +70,7 @@
         %h3 
           =promotion.title
         %p
-          =promotion.summary
+          =truncate(promotion.summary, :length => 130)
         #precio
           %span.desc
             ="#{promotion.discount}%"

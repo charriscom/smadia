@@ -1,4 +1,9 @@
 class Article < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :slug_name, :use => :slugged
+  def slug_name
+    "#{id} #{title}"
+  end
   validates_presence_of :title, :content
   belongs_to :category
   has_one :thumb, :class_name => "Image", :as => :owner, :conditions => "purpose = 'thumb'"

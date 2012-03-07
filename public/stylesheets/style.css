@@ -2,6 +2,12 @@
 .message.error{
 	color:red;
 }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, 
+samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, 
+legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	vertical-align: top;
+}
 body, ul, li{ 
 	margin:0;
 	padding:0;
@@ -53,7 +59,7 @@ body{
 #nav li ul.first {left:-1px; top:100%;}
 
 #nav li, li a {color:#666; text-decoration:none;}
-#nav .nav li { width:100%; text-indent:10px; line-height:30px; margin-right:10px; border-left:none; border-right:none; background:url(../images/bckgrd-menu.jpg) repeat-x; z-index:1001;}
+#nav .nav li { width:100%; text-indent:10px; line-height:22px; margin-right:10px; border-left:none; border-right:none; background:url(../images/bckgrd-menu.jpg) repeat-x; z-index:1001; font-size:14px;}
 #nav li a {display:block; width:inherit; height:inherit;}
 
 ul.nav { display:none; }
@@ -134,7 +140,7 @@ li:hover { position:relative; z-index:2000; }
 	border-bottom:#F9C solid 1px;  }
 	
 .facebook{
-	float:left;
+	float:right;
 	background-color:#FFF;
 	width:200px;
 	height:300px;;
@@ -153,7 +159,7 @@ li:hover { position:relative; z-index:2000; }
 	
 .noticias{
 	width:200px;
-	height:440px;
+	height:300px;
 	background:#CCC;
 	overflow:hidden;
 }
@@ -163,7 +169,7 @@ li:hover { position:relative; z-index:2000; }
 	display:block;
 	color:#666;
 	width:90%;
-	margin-top:5px;
+	margin-top:15px;
 	margin-left:10px;
 	font-size:10px;
 	overflow:hidden;}
@@ -245,7 +251,7 @@ li:hover { position:relative; z-index:2000; }
 	}
 	
 #leftcold .comentarios  ul li{
-	height:80px;
+	height: auto;
 	width:265px;
 	margin-left:15px;
 	margin-top:18px;
@@ -857,6 +863,20 @@ a:hover, a:active {
 #fotomsp img{
 	width:322px;
 	height:310px;}
+#fotoms4{
+	float:left;
+	width:390px;
+	max-width:390px;
+	margin-right:2px;
+	margin-bottom:30px;
+	overflow:hidden;
+}
+
+#fotoms4 img {
+	width:100%;
+	height:100%;
+}
+
 .ffotop{
 	margin-left:130px;}
 	

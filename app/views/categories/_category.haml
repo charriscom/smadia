@@ -1,16 +1,16 @@
 %li
-  = link_to category.name, category_path(category.id)
+  = link_to category.name, category_path(category)
   %ul.nav{:class => category.parent_category.name=="Menu Principal" && "first"}
     =render category.subcategories
     -category.articles.each do |article|
       -if article.closed.nil? || article.closed > Date.today
         %li
-          = link_to  article.title, article_path(article.id)
+          = link_to  article.title, article_path(article)
     -category.promotions.each do |promotion|
       -if promotion.closed.nil? || promotion.closed > Date.today
         %li
-          = link_to  promotion.title, promotion_path(promotion.id)
+          = link_to  promotion.title, promotion_path(promotion)
     -category.microsites.each do |microsite|
       -if microsite.closed.nil? || microsite.closed > Date.today  
         %li
-          = link_to  microsite.name, microsite_path(microsite.id)
+          = link_to  microsite.name, microsite_path(microsite)

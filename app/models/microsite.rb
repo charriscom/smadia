@@ -1,4 +1,7 @@
 class Microsite < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name
+
   has_one :form_details, :class_name => "Form", :foreign_key => "microsite_id"
   has_many :sub_microsites, :class_name => "Microsite"
   belongs_to :parent_microsite, :class_name => "Microsite", :foreign_key => "microsite_id"

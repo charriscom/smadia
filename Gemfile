@@ -12,6 +12,7 @@ gem "paperclip", '2.3.6'
 gem "swf_fu", '1.3.3'
 gem 'aws-s3', '0.6.2'
 gem 'randumb'
+gem 'friendly_id', "~> 4.0.1"
 
 group :development, :test do
   gem 'wirble',             '0.1.3'  # used to look better the console
@@ -20,7 +21,4 @@ group :development, :test do
   gem 'heroku',             '2.17.0' # Used for heroku cli
   gem 'taps',               '0.3.23' # Used for heroku cli
   gem 'hpricot' # Used to convert from html/erb templates to haml using html2haml
-  gem 'ruby_parser' # Used to convert from html/erb templates to haml using html2haml
-  gem 'ruby-debug19', :require => 'ruby-debug'
-  gem "mocha"
 end

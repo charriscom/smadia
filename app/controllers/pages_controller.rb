@@ -3,10 +3,11 @@ class PagesController < ApplicationController
   
   def home
     @highlights = Article.where("highlights != '' and (closed > ? or closed is ?)", Date.today, nil).order("created_at").first(20)
+    @noticias = Article.where("(highlights = '' or highlights is NULL) and (closed > ? or closed is ?)", Date.today, nil).order("created_at").first(20)
     @microsites = Microsite.where("home_page = ? and (closed > ? or closed is ?)",true, Date.today, nil).order("created_at").first(20)
     @carrusel = Article.where("carrusel = ? and (closed > ? or closed is ?)", true, Date.today,nil)
-    @promotions = Promotion.where("closed > ? or closed is ?", Date.today, nil).random(4)
-    @videos = Video.where("closed > ?", Date.today).order("created_at").first(5)
+    @promotions = Promotion.where("closed > ? or closed is ?", Date.today, nil).shuffle.slice(0,4)
+    @videos = Video.where("(closed > ? or closed is ?) and home_page = ?", Date.today, nil, true).shuffle.slice(0,5)
     @comments = Comment.order("created_at").first(5)
   end
   def contact

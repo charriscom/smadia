@@ -64,6 +64,15 @@
   = f.check_box :form, :class => 'check_box'
   %span.description Ex: a simple text
 .group
+  = f.label :space4, t("activerecord.attributes.microsite.space4", :default => "Space4"), :class => :label
+  = f.fields_for :space4 do |space_form|
+    = space_form.file_field :picture
+    = space_form.hidden_field :purpose, :value => "space4"
+.group
+  = f.label :fblike, t("activerecord.attributes.microsite.fblike", :default => "Facebook"), :class => :label
+  = f.check_box :fblike, :class => 'check_box'
+  %span.description Ex: Facebook Me Gusta
+.group
   = f.label :footer, t("activerecord.attributes.microsite.footer", :default => "Footer"), :class => :label
   = f.fields_for :footer do |footer_form|
     = footer_form.file_field :picture

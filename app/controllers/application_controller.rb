@@ -18,6 +18,6 @@ class ApplicationController < ActionController::Base
   end
   
   def menu_bar
-    @main_menu=Category.find_by_name("Menu Principal")
+    @main_menu = Category.find_by_name("Menu Principal")
   end
 end
