@@ -9,6 +9,7 @@ jQuery.fn.toggleAttr = function(attr) {
 
 $(function(){
   $(".contact_form").submit(function(evt){
+    //evt.preventDefault();
     var $form = $(this);
     var hash = {
       name: $form.find("input[name='form_entry[name]']").val(),
@@ -21,11 +22,11 @@ $(function(){
       treatment: getTreatmentId($form.find("select[name='form_entry[service]']").find("option:selected").val()),
       sorce: 13
     };
-    var url = "http://crm.smadiaclinic.com/up.php";
+    var url = "http://crm.smadiaclinic.com/up.php?callback=?";
     $.ajax({
-      type: 'GET',
       url: url,
-      data: hash
+      data: hash,
+      dataType: 'jsonp'
     });
   });
 })
