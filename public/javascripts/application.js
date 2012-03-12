@@ -20,7 +20,7 @@ $(function(){
       city: $form.find("input[name='form_entry[city]']").val(),
       mail: $form.find("input[name='form_entry[email]']").val(),
       treatment: getTreatmentId($form.find("select[name='form_entry[service]']").find("option:selected").val()),
-      sorce: 13
+      source: 13
     };
     var url = "http://crm.smadiaclinic.com/up.php?callback=?";
     $.ajax({
