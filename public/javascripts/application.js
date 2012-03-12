@@ -8,9 +8,9 @@ jQuery.fn.toggleAttr = function(attr) {
 };
 
 $(function(){
-  $(".contact_form").submit(function(evt){
-    //evt.preventDefault();
-    var $form = $(this);
+  $(".contact_form button").click(function(evt){
+    evt.preventDefault();
+    var $form = $(this).parents(".contact_form");
     var hash = {
       name: $form.find("input[name='form_entry[name]']").val(),
       last_name: $form.find("input[name='form_entry[last_name]']").val(),
@@ -26,7 +26,10 @@ $(function(){
     $.ajax({
       url: url,
       data: hash,
-      dataType: 'jsonp'
+      dataType: 'jsonp',
+      complete: function(){
+        $form.submit();
+      }
     });
   });
 })
