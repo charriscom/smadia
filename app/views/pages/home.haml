@@ -36,14 +36,15 @@
 #leftcold
   .home
     .title
-      %span VIDEOS
+      - video_category = Category.find_by_name "Videos"
+      %span= link_to "VIDEOS", category_path(video_category)
     %ul
       -@videos.each_with_index do |video, index|
         %li
           %h4
-            =link_to video.title, article_path(video)
+            =link_to video.title, category_path(video_category)
             = raw video.link if index == 0
-          
+
 
   .comentarios
     .title
@@ -67,7 +68,7 @@
       %li
         .image
           =image_tag promotion.images.first.picture.url(:original)
-        %h3 
+        %h3
           =promotion.title
         %p
           =truncate(promotion.summary, :length => 130)
@@ -82,7 +83,7 @@
           %br
           %span.panterior
             =number_to_currency(promotion.value,{:precision =>0})
-        
+
         %p.bottompromo
           =image_tag "chulo.png", :class => "chulo"
           Oferta Conseguida
