@@ -16,7 +16,7 @@
     %ul
       -@microsites.each do |microsite|
         %li
-          =link_to microsite.name, microsite_path(microsite)
+          =link_to microsite.name.humanize, microsite_path(microsite)
         %li
           %hr/
   .facebook
