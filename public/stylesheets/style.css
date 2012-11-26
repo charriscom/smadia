@@ -11,7 +11,7 @@ legend, table, caption, tbody, tfoot, thead, tr, th, td {
 body, ul, li{ 
 	margin:0;
 	padding:0;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
 	}
 body{
 	background:url(../images/web-background.jpg) repeat-x;
@@ -20,7 +20,6 @@ body{
 
 #wrapper{
 	width:1020px;
-	background-color:#FFF;
 	margin:0 auto;
 	overflow:hidden;
 	}
@@ -28,7 +27,6 @@ body{
 #header{
 	width:1020px;
 	height:173px;
-	background:#FFF;
 }
 
 .logo{
@@ -54,16 +52,16 @@ body{
 	height:47px;
 	background:url(../images/bckgrd-menu.jpg) repeat-x;
 	}
-#nav li {float:left; display:inline; cursor:pointer; list-style:none; padding:13px 20px 12px 20px; position:relative; font-family:Verdana, Geneva, sans-serif;color:#666;}
+#nav li {float:left; display:inline; cursor:pointer; list-style:none; padding:13px 20px 12px 20px; position:relative; font-family:Arial, Helvetica, sans-serif;color:#666;}
 #nav li.first{margin-left:30px;}
 #nav li ul.first {left:-1px; top:100%;}
 
-#nav li, li a {color:#666; text-decoration:none;}
+#nav li, li a {color:#FFF; text-decoration:none;}
 #nav .nav li { width:100%; text-indent:10px; line-height:22px; margin-right:10px; border-left:none; border-right:none; background:url(../images/bckgrd-menu.jpg) repeat-x; z-index:1001; font-size:14px;}
 #nav li a {display:block; width:inherit; height:inherit;}
 
 ul.nav { display:none; }
-#nav li:hover > a, #nav li:hover { color:#FFF;background:#CCC; }
+#nav li:hover > a, #nav li:hover { color:#FFF;background:#860557; }
 li:hover > .nav { display:block; position:absolute; width:200px; top:0px; left:100%; z-index:1000;  }
 li:hover { position:relative; z-index:2000; }
 
@@ -102,16 +100,22 @@ li:hover { position:relative; z-index:2000; }
 	width:200px;
 	height:1200px;
 	overflow:hidden;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
 }
 
 .categorias{
-	width:200px;
+	width:198px;
 	min-height:250px;
 	max-height:710px;
-	overflow:hidden;
-	background-color:#CCC;
+	border: 1px solid #AAA;
+	background:url(../images/bg_top_noticias.png) top no-repeat;
+	margin-top:10px;
 }
+
+.categorias a{
+	color:#cd1a89;
+}
+
 
 #rightcol h3{
 	color:#FFF;
@@ -160,10 +164,25 @@ li:hover { position:relative; z-index:2000; }
 .noticias{
 	width: 198px;
 	height: 300px;
-	background: #CCC;
+	background: #fff;
 	overflow: hidden;
 	border: 1px solid #AAA;
+	background:url(../images/bg_top_noticias.png) top no-repeat;
 }
+
+.noticias p{
+	font-family:Arial, Helvetica, sans-serif;
+	color:#666;
+	font-size:12px;
+}
+
+.noticias a{
+	font-family:Arial, Helvetica, sans-serif;
+	color:#666;
+	font-size:12px;
+}
+
+
 
 .noticias > ul{ 
 	border-top: 1px solid #AAA;
@@ -186,7 +205,7 @@ li:hover { position:relative; z-index:2000; }
 	height:810px;
 	margin-left:30px;
 	margin-top:11px;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
 	}
 	
 .home{
@@ -290,7 +309,7 @@ li:hover { position:relative; z-index:2000; }
 	height:173px;
 	width:401px;
 	list-style-type:none;    
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
 	background:url(../images/border1.png) no-repeat;
 	}
 
@@ -440,7 +459,7 @@ li:hover { position:relative; z-index:2000; }
 	color:#FFF;
 	float:left;
 	background:url(../images/boton.png) no-repeat;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
 	font-size:9px;
 	font-weight:bold;
 	width:75px;
@@ -630,7 +649,7 @@ li:hover { position:relative; z-index:2000; }
 	margin-left:20px;
 }
 #comprar table{
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
 	margin:0px auto 0px;
 	font-size:12px;
 	color:#F06;
@@ -777,8 +796,8 @@ li:hover { position:relative; z-index:2000; }
 	float:left;
 	margin-left:300px;
 	margin-top:37px;
-	color:#3C3C3C;
-	font-family:Verdana, Geneva, sans-serif;
+	color:#fff;
+	font-family:Arial, Helvetica, sans-serif;
 	text-align:center;
 	font-size:14px;
 }
@@ -829,7 +848,7 @@ a:hover, a:active {
 	list-style:none;
 	padding:5px 10px;
 	position:relative; 
-	font-family:Verdana, Geneva, sans-serif;}
+	font-family:Arial, Helvetica, sans-serif;}
 	
 #menums li.first{margin-left:30px;}
 #menums li, #menums li a {color:#666; text-decoration:none;}
@@ -901,7 +920,7 @@ a:hover, a:active {
 #pms h3{ font-family:Tahoma, Geneva, sans-serif;
 	}
 #pms p{
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Arial, Helvetica, sans-serif;
 	font-size:12px;}
 	
 #footerms{

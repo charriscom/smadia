@@ -18,7 +18,4 @@ group :development, :test do
   gem 'wirble',             '0.1.3'  # used to look better the console
   gem 'hirb',               '0.5.0'  # used to look better the console
   gem 'awesome_print',      '1.0.2'  # used to look better the console
-  gem 'heroku',             '2.17.0' # Used for heroku cli
-  gem 'taps',               '0.3.23' # Used for heroku cli
-  gem 'hpricot' # Used to convert from html/erb templates to haml using html2haml
 end
