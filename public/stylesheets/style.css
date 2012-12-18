@@ -7,6 +7,7 @@ pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, k
 samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, 
 legend, table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: top;
+	font-family:Arial, Helvetica, sans-serif !important;
 }
 body, ul, li{ 
 	margin:0;
@@ -22,6 +23,7 @@ body{
 	width:1020px;
 	margin:0 auto;
 	overflow:hidden;
+	background-color: #FFF;
 	}
 
 #header{
@@ -32,10 +34,9 @@ body{
 .logo{
 	position:absolute;
 	background:url(../images/smadia-logo.png) no-repeat;
-	width:415px;
-	height:137px;
-	margin-left:37px;
-    top:25px;
+	background-color:#15132e;
+	width:1020px;
+	height:173px;
 }
 
 #login{
@@ -785,7 +786,7 @@ li:hover { position:relative; z-index:2000; }
 	color:#000;}
 #footer,#footerms{
 	background-color:#C0C0C0;
-	width:1020px;
+	width:100%x;
 	height:134px;
 	margin:0px auto 0;
 	background:url(../images/footer-bckgrnd.jpg) repeat-x;
@@ -794,9 +795,9 @@ li:hover { position:relative; z-index:2000; }
 
 #footer p, #footerms p{
 	float:left;
-	margin-left:300px;
-	margin-top:37px;
 	color:#fff;
+	margin-left:33%;
+    margin-top:30px;
 	font-family:Arial, Helvetica, sans-serif;
 	text-align:center;
 	font-size:14px;
@@ -818,7 +819,7 @@ a, a:visited {
 	text-decoration:none;
 }
 a:hover, a:active {
-	color:#9e805c;
+	color:#fff;
 	text-decoration:none;
 }
 /* micrositio */
@@ -1164,7 +1165,7 @@ font-family:Tahoma, Geneva, sans-serif;}
 	text-align:center;
 	font-weight:bold;
 	line-height:36px;
-	color:#666;
+	color:#fff;
 	margin-right:38px;
 	margin-top:20px;
 	}
@@ -1229,4 +1230,10 @@ font-family:Tahoma, Geneva, sans-serif;}
 	padding-bottom:40px;}
 .clear{
 	clear:both;
+}
+
+p{
+	font-family:Arial, Helvetica, sans-serif !important;
+	font-size:12px;
+	color:#999;
 }
